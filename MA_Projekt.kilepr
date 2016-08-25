@@ -76,10 +76,10 @@ order=0
 
 [item:Einleitung.tex]
 archive=true
-column=17
+column=14
 encoding=ISO-8859-1
 highlight=LaTeX
-line=30
+line=23
 mode=LaTeX
 open=true
 order=2
@@ -131,10 +131,10 @@ JumpList=
 ViMarks=.,0,15,[,0,15,],0,15
 
 [view-settings,view=0,item:Einleitung.tex]
-CursorColumn=17
-CursorLine=30
+CursorColumn=14
+CursorLine=23
 JumpList=
-ViMarks=.,34,24,[,34,24,],34,24
+ViMarks=.,23,13,[,23,13,],23,13
 
 [view-settings,view=0,item:MA_Projekt.tex]
 CursorColumn=43
