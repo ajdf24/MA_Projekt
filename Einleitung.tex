@@ -1,22 +1,29 @@
 \section{Einleitung}
 In einer vernetzen Welt wie unserer, werden unablässig neue und bessere Web-Technologien entwickelt. Diese neuen Technologien bringen zum einen eine bessere Programmierfreundlichkeit mit sich, aber sie sind zum anderen durch neue Ansätze auch schneller als ältere Technologien.
 
-Um heute eine Webanwendung zu entwickeln die nicht nur tut was sie soll, sondern die auch performat und auf vielen Systemen läuft, muss eine Vielzahl von Technoliegen beherrscht und angewendet werden.
-%kreterien mobile endgeräte betriebssystem browser asynchron (Website als Anwendung)
-Das Ziel diese Arbeit ist es herauszufinden wie neue Technoliegen von heute kombiniert werden können, um ein möglichst leistungsstarkes und performantes System zu schaffen.
-%moderne aktuelle (nicht heute)
-Hierbei sollen Programmieransätze wie Google Polymer, AngularJS, HTML5, CSS3, PHP7 und Google Dart unter dem Portalserver Typo3 vereint werden.
-%typo weg
-%gradwanderung zwischen performant und leistungsstark
+Heutige Webanwendungen müssen eine Vielzahl an kriterien erfüllen. Eine gute Webseite sollte heute möglichst auf einen Handy, sowie auf einem Desktop-PC oder Fernseher darstellbar sein. Um dies zu ermöglichen, müssen besondere Anforderungen an das Design gestellt werden. 
+Natürlich muss sie auch von möglichst allen Browsern anzeigbar sein.
+Ein weitere Punkt ist, dass Webseiten sich heute so flüssig und performant wie ein natives Programm verhalten sollen. Hierbei ist es Natürlich auch wichtig vorhande Hardware anzusprechen und mit ihr zu interagieren.
 
-Es soll geprüft werden, wie und ob es möglich ist diese verschiedenen Technoliegen in möglichst modularen Typo3-Extensions unterzubringen.
+Das Ziel dieser Arbeit ist es herauszufinden, wie unter zu Hilfenahme moderner Technologien alle diese kriterien möglichst gut erfüllt werden können.
+Es sollen Programmieransätze wie Google Polymer, AngularJS, HTML5, CSS3, PHP7 und Google Dart unter dem Portalserver vereint werden, welcher die Webseite beziehungsweise die Anwendung bereitstellt.
+
+Es soll geprüft werden, wie und ob es möglich ist diese verschiedenen Technoliegen in möglichst modularen Portalserver-Erweiterungen unterzubringen, um eine möglichst performate und zu gleich leistungsstarke Webseite zu entwickeln.
+Dieses Oxymoron aufzulösen ist der Schwerpunkt der vorliegenden Arbeit, obwohl doch schon jetzt ersichtlich ist, dass ein auf beiden Seiten ein Kompromiss gefunden werden muss. Wie dieser genau aussieht, wird im weiteren Verlauf eine wichtige Rolle spielen.
 %typo weg
 
 Diese Arbeit soll der theoretischen Grundstock für eine weitere Arbeit sein, in der das Support-Portal der PDV System Erfurt GmbH neu entwickelt wird.
-Im Verlauf sollen mehrer Beispiel Extensions für Typo3 entstehen, welche das Ziel verfolgen Programmieransätze für eine spätere Neuentwicklung zu sein.
+Im Verlauf dieser Arbeit, wird evaluiert werden, welcher der gängigen Portalserver für ein Supportportal am besten geeignet ist.
+Außerdem wird geprüft werden, wie es möglich ist, modulare Erweiterungen für einen solchen Server zu entwickeln, um unnötige Datenredundanz zu vermeiden.
+
+Durch einen modularen Aufbau, soll außerdem die Kommunikation zwischen verschieden Erweiterungen vereinfacht werden. Des weiteren soll es möglich werden, nur beliebige Erweiterungen zu verwenden, wenn für den jeweiligen Use-Case niccht alle benötigt werden.
+
+
+% Im Verlauf sollen mehrer Beispiel Extensions für einen Portalserver entstehen, welche das Ziel verfolgen Programmieransätze für eine spätere Neuentwicklung zu sein.
 %typo weg
 
-In den nun folgenden Abschnitten werden Progammierbeispiele und Hinweise gegeben, wie eine solche Neuentwicklung unter den Gesichtspunkten Performance, Umsetzbarkeit und Usability vorgenommen werden kann.
+In den nun folgenden Abschnitten werden Progammierbeispiele und Hinweise gegeben, wie eine solche Neuentwicklung unter den Gesichtspunkten Performance, Umsetzbarkeit und Usability vorgenommen werden kann. 
+Um Mitarbeitern und Kunden ein möglichst performantes Supportportal bieten zu können, welches den Arbeitsalltag eines jeden Nutzers erleichert.
 
 \section{Portalserver/ CMS-Systeme im Vergleich}
 \subsection{Typo3}
