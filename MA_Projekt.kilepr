@@ -50,7 +50,11 @@ Mode=LaTeX
 
 [document-settings,item:Portalserver.tex]
 Bookmarks=
+<<<<<<< HEAD
 Encoding=ISO-8859-1
+=======
+Encoding=ISO-8859-15
+>>>>>>> 2d8fee5ffd3e409bd1715583a713e2f33e0aa11f
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
@@ -103,10 +107,17 @@ order=1
 
 [item:Portalserver.tex]
 archive=true
+<<<<<<< HEAD
 column=20
 encoding=ISO-8859-1
 highlight=LaTeX
 line=14
+=======
+column=0
+encoding=ISO-8859-15
+highlight=LaTeX
+line=0
+>>>>>>> 2d8fee5ffd3e409bd1715583a713e2f33e0aa11f
 mode=LaTeX
 open=true
 order=4
@@ -149,7 +160,11 @@ ViMarks=.,1,0,[,1,0,],1,1
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=0
+<<<<<<< HEAD
 CursorLine=27
+=======
+CursorLine=23
+>>>>>>> 2d8fee5ffd3e409bd1715583a713e2f33e0aa11f
 JumpList=
 ViMarks=.,27,0,[,27,0,],27,0
 
@@ -164,6 +179,12 @@ CursorColumn=20
 CursorLine=14
 JumpList=
 ViMarks=.,14,6,[,14,6,],14,19
+
+[view-settings,view=0,item:Portalserver.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+ViMarks=
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=0
