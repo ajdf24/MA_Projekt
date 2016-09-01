@@ -8,20 +8,46 @@ Ein Portalserver, welcher für das Projekt heran gezogen wird muss die folgenden 
  \item Das System muss Open-Source sein, um ggf. in den Quellcode eingreifen zu können
  \item Die Nutzer-Community sollte möglichst groß sein, damit Probleme leicht diskutiert und behoben werden können
  \item Der Server muss die Möglichkeit bieten Dateien zu verwalten, welche als Download oder Kontent in das Portal einfließen
+ \item Lauffähing unter einer SQL-Datenbank wie MySQL oder MariaDB
 \end{itemize}
 
 Auf die Betrachtung reiner \ac{CMS}-System wird an dieser Stelle verzichtet, da diese nicht die gewünschten Anforderungen eines Portalservers erfüllen.
-Ein Vergleich verschiedener reiner \ac{CMS}-Systeme ist in der Bachelorarbeit ``Konzept und prototypische Implementierung eines übergreifenden Dokumenten- und Medienmanagements'' zu finden.
+Ein Vergleich verschiedener reiner \ac{CMS}-Systeme ist in der Bachelorarbeit "`Konzept und prototypische Implementierung eines übergreifenden Dokumenten- und Medienmanagements"' zu finden.
 \cite{Bachelorarbeit}
 
-\cite{WikiTypo3}
+
 \subsection{Typo3}
+Typo3 ist ein Verwaltungssystem für Internetseiten. Es basiert in der neusten Version 8.2 auf der PHP Version 7. 
+Seit der Version 7.0 welche zugleich eine \ac{LTS} Version ist, wird es unter dem Namen Typo3 \ac{CMS} vertrieben. 
+\cite{WikiTypo3}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/Typo3_Backend.png}
+\caption{Typo3 Backend im Seitenbearbeitungs Modus \cite{Typo3Bild}}
+\label{Typo3_Backend_Bild}
+\centering
+\end{figure}
+
+Es ist möglich unter Verwendung von PHP, Extbase und Fluid eigene Erweiterungen für den Portalserver zu entwickeln. Die jeweiligen Erweiterungen wirken im Fronten von Typo3 wie ganz normale Webseiten.
+Auf Extbase und Fluid wird im Kapitel \ref{Typo3} genauer eingegangen.
+
+Ein Vorteil von Typo3 ist, dass es eines der am häufigsten verbreiteten Portalserver auf dem Markt ist. Selbst große Firmen wie "`Sixt"' setzten auf Typo3 bei der Erstellung ihrer Internetportale.
+Durch die große Verbreitung von Typo3 ist auch die Community um die Software sehr groß und man findest schell zu fast jedem Problem im Internet eine Lösung.
+
+Typo3 kann im Zusammenspiel mit MySQL, MariaDB, PostgreSQL oder Oracle als Datenbank betrieben werden. Nur mit Hilfe einer dieser Datenbank im Hintergrund ist Typo3 stabil Lauffähing und kann produktiv eingesetzt werden.
+
+Durch ein übersichtliches Backend (siehe Abbildung \ref{Typo3_Backend_Bild}), ist es auf für Laien möglich qualitativ Hochwertige Webseiten zu erstellen, ohne viel Kenntnis von Webtechnologien wie HTML oder CSS zu haben.
+
+Ein Upload von Dateien für den Download beziehungsweise als Seiten-Kontent ist ebenfalls unter Typo3 möglich. Zusätzlich dazu ist es möglich das Nutzer Dateien auf den hochladen. 
+Hierdurch entsteht auch die Möglichkeit ein Austauschportal für Dateien zu schaffen. Nutzer können so in einer sicheren Umgebung sensible Daten untereinander oder mit Mitarbeitern austauschen.
 \cite{LobacherTypo3}
+
 \subsection{Typo3 Neos}
 \subsection{Joomla}
 \subsection{Drupal}
 \subsection{Auswertung der möglichkeiten}
-\section{Typo3}
+\section{Typo3}\label{Typo3}
 \subsection{Typo3 8.2}
 \subsection{Extensions}
 \subsection{TypoScript}
@@ -33,7 +59,7 @@ Ein Vergleich verschiedener reiner \ac{CMS}-Systeme ist in der Bachelorarbeit ``
 \subsection{HTML5}
 \subsection{CSS3}
 \subsubsection{Bootstrap}
-\subsubsection{Foundation Framework}
+\subsubsection{MaterializeCSS}
 \subsection{PHP7}
 \subsection{Google Dart}
 \section{Zusammenspiel der Technologien}

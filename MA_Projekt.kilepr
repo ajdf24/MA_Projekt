@@ -50,11 +50,7 @@ Mode=LaTeX
 
 [document-settings,item:Portalserver.tex]
 Bookmarks=
-<<<<<<< HEAD
-Encoding=ISO-8859-1
-=======
 Encoding=ISO-8859-15
->>>>>>> 2d8fee5ffd3e409bd1715583a713e2f33e0aa11f
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
@@ -77,10 +73,10 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=14
+column=34
 encoding=ISO-8859-1
 highlight=LaTeX
-line=1
+line=3
 mode=LaTeX
 open=true
 order=0
@@ -90,34 +86,27 @@ archive=true
 column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=27
+line=23
 mode=LaTeX
 open=true
 order=2
 
 [item:MA_Projekt.tex]
 archive=true
-column=21
+column=46
 encoding=ISO-8859-1
 highlight=LaTeX
-line=179
+line=119
 mode=LaTeX
 open=true
 order=1
 
 [item:Portalserver.tex]
 archive=true
-<<<<<<< HEAD
-column=20
-encoding=ISO-8859-1
-highlight=LaTeX
-line=14
-=======
 column=0
 encoding=ISO-8859-15
 highlight=LaTeX
-line=0
->>>>>>> 2d8fee5ffd3e409bd1715583a713e2f33e0aa11f
+line=44
 mode=LaTeX
 open=true
 order=4
@@ -153,44 +142,34 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=14
-CursorLine=1
+CursorColumn=34
+CursorLine=3
 JumpList=
-ViMarks=.,1,0,[,1,0,],1,1
+ViMarks=.,3,33,[,3,17,],3,33
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=0
-<<<<<<< HEAD
-CursorLine=27
-=======
 CursorLine=23
->>>>>>> 2d8fee5ffd3e409bd1715583a713e2f33e0aa11f
 JumpList=
 ViMarks=.,27,0,[,27,0,],27,0
 
 [view-settings,view=0,item:MA_Projekt.tex]
-CursorColumn=21
-CursorLine=179
+CursorColumn=46
+CursorLine=119
 JumpList=
-ViMarks=.,179,20,[,179,9,],179,20
-
-[view-settings,view=0,item:Portalserver.tex]
-CursorColumn=20
-CursorLine=14
-JumpList=
-ViMarks=.,14,6,[,14,6,],14,19
+ViMarks=.,119,45,[,119,43,],119,45
 
 [view-settings,view=0,item:Portalserver.tex]
 CursorColumn=0
-CursorLine=0
+CursorLine=44
 JumpList=
-ViMarks=
+ViMarks=.,43,20,[,44,0,],-1,-1
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=0
 CursorLine=0
 JumpList=
-ViMarks=.,0,0,[,0,0,],0,0
+ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Zusammenfassung.tex]
 CursorColumn=0
