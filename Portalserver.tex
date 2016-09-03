@@ -16,7 +16,7 @@ Ein Vergleich verschiedener reiner \ac{CMS}-Systeme ist in der Bachelorarbeit "`
 \cite{Bachelorarbeit}
 
 
-\subsection{Typo3}
+\subsection{Typo3}\label{PortalServerTypo3}
 Typo3 ist ein Verwaltungssystem für Internetseiten. Es basiert in der neusten Version 8.2 auf der PHP Version 7. 
 Seit der Version 7.0 welche zugleich eine \ac{LTS} Version ist, wird es unter dem Namen Typo3 \ac{CMS} vertrieben. 
 \cite{WikiTypo3}
@@ -44,14 +44,45 @@ Hierdurch entsteht auch die Möglichkeit ein Austauschportal für Dateien zu schaf
 \cite{LobacherTypo3}
 
 \subsection{Typo3 Neos}
+Typo3 Neos ist ein relativ neuer Internetportal Server, welcher 2012 aus dem Wunsch heraus entstand Typo3 zukunftssicher zu gestalten.
+
+Als erkannt wurde, dass eine zukunftssichere Typo3 Entwickung basierend auf dem \ac{MVC}-Prinzip eine koplette Neuimplementierung erfordert wurde der Grundstein für Typo3 Neos gelegt.
+Neben der Entwickung von Typo3 \ac{CMS} wurde die Entwicklung von Typo3 Neos begonnen. Das Ziel war es, einen Nachfolger für Typo3 zu entwickeln. Dies gelang jedoch nicht wie vorgesehen.
+\cite{WikiTypo3}
+
+Früh wurde festgestellt das sich diese die beiden Projekte in unterschiedliche Richtungen entwickeln. Typo3 Neos ist heute in der Version 2.0 erhältlich und hat sich zum Ziel gesetzt Webseiten im gegensatz zu Typo3 live im Frontend zu bearbeiten.
+Einfach gesagt ist Typo3 ein Internet-Portalserver welcher auf dem \ac{WYSIWYG}-Prinzip aufbaut. Es ist möglich Webseiten live oder getrennt vom Livesystem im Frontend zu erstellen. 
+Die Frontend-Bearbeitung bingt viele Vorteile für die Webseitenerstellung für Laien. Diese können eine Seite direkt bearbeiten und Live nehmen.
+\cite{LobacherTypo3}
+
+Neos ist bei weitem nicht so verbreitet wie Typo3 \ac{CMS} und die Community um das Projekt ist deutlich geringer. Dies ist ein klarer Nachteil zum großen Bruder Typo3 \ac{CMS} ist.
+
+Ähnlich wie bei Typo3 \ac{CMS} ist es in Neos möglich sogenannte Plugins zu entwickeln. Diese basieren auf dem "`Typo3 Flow"'-Framework, welche zusammen mit Neos entwickelt wurde.
+Flow ist ein Framework, welches es erlaubt Templates mit Hilfe von "`Fluid"' zu entwickeln. Auf die Fluid wird im Abschnitt \ref{Fluid} näher eingegangen.
+\cite{WikiFlow}
+
+Ähnlich wie Typo3 \ac{CMS} benötigt auch Neos eine SQL-Datenbank zur Datenhaltung und ist Quelloffen verfügbar. Nach der Abspaltung von Typo3 Neos vom Typo3 Projekt, wird es heute von einer relativ kleinen Gemeinde entwickelt.
+Aus diesem Grund, gibt es keine Roadmap für das Projekt und die Veröffentlichung von neuen Version ist träger als die von Typo3 \ac{CMS}. 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/neos_backend.jpg}
+\caption{Typo3 Neos Backend im Seitenbearbeitungs Modus \cite{NeosBild}}
+\label{Typo3_Neos_Backend_Bild}
+\centering
+\end{figure}
+
+In Abbildung \ref{Typo3_Neos_Backend_Bild} ist der Seitenbearbeitungs-Modus von Neos zu sehen. Es ist gut zu erkennen, das Inhalte einer Webseite direkt bearbeitet werden können. Dies macht eine Webentwicklung für Laien einfacher.
 \subsection{Joomla}
 \subsection{Drupal}
 \subsection{Auswertung der möglichkeiten}
+Auch wenn Typo3 Neos Typo3 \ac{CMS} in nichts nachsteht, so wurde sich dennoch gegen die Verwendung von Neos entschieden, da eine vorranscchreitende Entwicklung nicht gewehrleistet. 
+Im Punkto Zukunftssicherheit ist Typo3 \ac{CMS} deutlich besser aufgestellt. 
 \section{Typo3}\label{Typo3}
 \subsection{Typo3 8.2}
 \subsection{Extensions}
 \subsection{TypoScript}
-\subsection{Fluid}
+\subsection{Fluid}\label{Fluid}
 \section{Modulare Extensions}
 \section{Neue Webtechnologien}
 \subsection{Google Polymer}

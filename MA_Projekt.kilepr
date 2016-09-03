@@ -73,10 +73,10 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=34
+column=54
 encoding=ISO-8859-1
 highlight=LaTeX
-line=3
+line=5
 mode=LaTeX
 open=true
 order=0
@@ -103,10 +103,10 @@ order=1
 
 [item:Portalserver.tex]
 archive=true
-column=0
+column=28
 encoding=ISO-8859-15
 highlight=LaTeX
-line=44
+line=80
 mode=LaTeX
 open=true
 order=4
@@ -142,10 +142,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=34
-CursorLine=3
+CursorColumn=54
+CursorLine=5
 JumpList=
-ViMarks=.,3,33,[,3,17,],3,33
+ViMarks=.,5,53,[,5,36,],5,53
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=0
@@ -160,10 +160,10 @@ JumpList=
 ViMarks=.,119,45,[,119,43,],119,45
 
 [view-settings,view=0,item:Portalserver.tex]
-CursorColumn=0
-CursorLine=44
+CursorColumn=28
+CursorLine=80
 JumpList=
-ViMarks=.,43,20,[,44,0,],-1,-1
+ViMarks=.,74,229,[,74,221,],74,229
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=0
