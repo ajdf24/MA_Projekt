@@ -1,0 +1,43 @@
+\section{Neue Webtechnologien}
+\subsection{Google Polymer}
+\subsection{AngularJS}
+\subsection{HTML5}
+\subsection{CSS3}
+\ac{CSS} ist eine Designsprache für HTML und ist deshalb eine der Hauptkomponenten der Webentwicklung. Mit Hilfe von \ac{CSS} ist es möglich einzelne HTML-Elemente oder Gruppen zu stylen.
+Seit der ersten Version die 1993 erschien, wird CSS kontinuirlich weiterentwickelt und ist heute auf praktisch jeder Web-Seite im einsatz.
+
+Auf der Basis von CSS entwickelten sich im laufe der Jahre immer mehr Frameworks, welche einen Designansatz umsetzten und fertige Klassen für die Verwendung bereitstellen.
+Eines der heute am häufigsten anzutreffenden \ac{CSS}-Frameworks ist "`Bootstrap"'.
+
+Innerhalb der PDV Systeme Erfurt wurde beschlossen das neue Supportportal im "`Material Design"' aufzubauen. Als "`Material Design"' werden Gestaltungsrichtlinen von Google bezeichnet, welche angeben wie eine Android-Applikation oder eine mobile Web-Seite für Android aussehen sollte.
+
+Die nun folgenden Betrachtungen beziehen sich auf die Umsetzung im "`Material Design"'.
+\cite{}
+\subsubsection{Bootstrap}
+Bootstrap ist ein \ac{CSS} Framework, welches von "`Twitter"' entwickelt wird und das unter der "`MIT-Lizenz"' frei erhältlich ist. Durch den modularen Ansatz von Bootstrap ist es sehr leicht möglich das Framework um eigene Style-Anweisungen zu ergänzen.
+
+Ein Nachteil von Bootstrap ist, dass es nicht leichtgewichtig ist. Zwar kann es sehr gut erweitert werden, dies macht jedoch das Framework auch Schwerfällig. 
+Soll zum Beispiel ein Bootstrap-Template für das "`Material Design"' verwendet werden, muss zunächst das "`standard Framework"' eingebunden werden. Ein Template wie "`Material Design for Bootstrap"' überschreibt dann nach der Einbindung zum Teil das standard Framework und ergänzt es um eigene Klassen.
+Der Vorteil bei diesem Vorgehen ist ganz klar, dass ein bestehendes Template relativ leicht ausgetauscht werden kann, ohne dass der eigentliche HTML-Code der Web-Seite angepasst werden muss.
+
+Dieser Vorteil wird schnell zum Nachteil, wenn eine Web-Seite erstellt werden soll bei der es auf Geschwindigkeit ankommt. Durch das überscheiben des standard Frameworks wird zusätzliche Zeit beim parsen der Web-Seite benötigt, was vorallem bei älteren PCs auffällt. 
+Zusätzlich steigt der Overhead beim laden einer Seite, da mehr CSS geladen wird, als tatsächlich benötigt wird.
+
+Standardmäßig enthält Bootstrap zum Beispiel keinen Date-Picker, welcher jedoch in einem Supportportal unerlässlich ist. Auch "`Bootstrap Material"' enthält keinen Date-Picker im "`Material Design"'.
+Durch den modularen Aufbau von Bootstrap kann natürlich schnell und einfach ein entsprechendendes Template ergänzt werden. Dies bedeutet aber wieder zusätzlichen Overhead.
+\subsubsection{MaterializeCSS}
+Ein anderes Framework, welches die Design-Richtlinien des "`Material Design"' umsetzt ist das noch recht neue Framework "`MaterializeCSS"'. 
+MaterializeCSS ist ein eigenständiges Framework, welches versucht alle gegebenen Gestaltungsrichtlinen möglichst elegant und performat umzusetzen.
+
+Die MaterializeCSS Quellen sind mit \ac{SASS} geschrieben, und müssen vor der Verwendung in CSS komiliert werden. Dieses Vorgehen hat meherer Vorteile. So ist es zum einen sehr einfach möglich das Framework um eigene Style-Objete zu erweitern. Zum anderen hat es den Vorteil, dass die Farbgebung des gesamten Frameworks an einer Stelle zusammen gefasst ist. 
+Soll also die Farbgebung geändert werden, so werden in den \ac{SASS}-Quellen des Frameworks die Farben zentral angepasst. Nach einer erneuten kompilierung stehen dann die Farben im gesamten Framework zur Verfügung.
+Ohne dieses Vorgehen müssten die entsprechenden Farben an unzähligen Stellen innerhalb der \ac{CSS}-Datei angepasst werden.
+
+Ein weitere Vorteil von MaterializeCSS ist, das viele Templates wie ein Date-Picker im "`Material Design"' schon vorhanden sind. Diese Templates können ohne zusätzlichen Overhead verwendet werden.
+
+Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist, so ist es doch eine gute alternative, wenn eine Web-Seite im "`Material Design"' umgesetzt werden soll.
+\subsection{PHP7}
+\subsection{Google Dart}
+\section{Zusammenspiel der Technologien}
+\section{Zusammenfassung}
+\section{Fazit}
