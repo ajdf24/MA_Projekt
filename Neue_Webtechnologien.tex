@@ -1,5 +1,75 @@
 \section{Neue Webtechnologien}
 \subsection{Google Polymer}
+Polymer Einleitung!
+\subsection{Wozu Polymer Elemente}\label{Wozu Polymer Elemente}
+Polymer Elemente versuchen so genannten Boiler-Code zu vermeiden. Als Boiler-Code wird die Verschmelzung verschiedener Programmiersprachen innerhalb einer Datei oder eines Elements bezeichnet. Boiler-Code ist häufig in Web-Seiten zu finden. 
+
+Um eine HTML-Element zu erstellen wird als Grundgerüst HTML verwendet. Zusätzlich enthält das HTML-Element aber auch CSS um das aussehen zu beeinflussen. Um ein HTML-Element dynamisch oder interaktiv zu gestalten wird meist zusätzlich auch noch Java-Skript oder AngularJS verwendet. Typischer weise findet mal alle drei Sprachen in einer HTML-Datei oder in getrennten Dateien. 
+
+Jedoch haben beide Ansätze Nachteile. Bei der Vereinigung verschiedener Sprachen in einer Datei, leidet meist die Übersicht, denn CSS, Java-Skript und zugehöriges HTML muss nicht an festen Positionen sein. So kommt es öfter vor, dass zusammengehörige Elemente innerhalb einer Datei weit auseinander stehen.
+
+Der Ansatz die verschiedenen Sprachen zu trennen, beseitigt zwar das durcheinander innerhalb der HTML-Dateien, jedoch entstehen hier wieder neue Probleme. Wenn alle Sprachen strikt in verschiedenen Dateien sind, ist es oft nur schwer nachzuvollziehen, welches Java-Skript zu welchem HTML-Element gehört. Für außenstehende Programmiere ist dies oft eine unlösbare Aufgabe.
+
+\subsection{Was macht Polymer aus}
+Polymer wiederum geht, im Gegensatz zu den beiden im Abschnitt \ref{Wozu Polymer Elemente} genannten, einen dritten sehr eleganten Ansatz. Grundsätzlich kommen bei Polymer verschiedene Programmiersprachen und Konzepte wieder zusammen in eine HTML-Datei. 
+
+Der entscheidende Unterschied jedoch ist, das HTML, CSS und Skripte ihre festen Bereiche haben, in denen sie implementiert werden. Dies gestaltet die HTML-Datei des jeweiligen Elements sehr übersichtlich. 
+
+Ein weiterer Vorteil ist, dass in der Web-Seite, in der das Element Verwendung findet nur noch ein einzelner Tag zu sehen ist, der auf das Polymer Element verweist.
+
+Damit der Polymer das entsprechende Element parsen kann muss vor der Verwendung das jeweilige Element über den HTML-Link-Tag eingebunden werden.
+
+\subsection{Ein eigenes Polymer Element erstellen}
+Um zu zeigen, wie einfach es ist auf Basis von Polymer Elemente selbst zu erstellen folgt in den nun kommenden Abschnitten nun Beispiel, welches im Kapitel \ref{Zusammenspiel der Technologien} in Typo3 eingebunden wird.
+
+\lstinputlisting[language=html, caption=Beispiel für ein eigenes Polymer-Element, label=Polymer Element, captionpos=b]{Code/polymer_element.html}
+
+Als erstes wird der Polymer-Link hinzugefügt, welcher immer vorhanden sein muss. Danach folgt der Tag "`dom-module"', welcher die genaue Beschreibung des Elements enthält. Im "`template"'-Tag wird das HTML eingefügt, welches das Element beinhaltet. Hierauf kann optional ein "`style"'-Tag folgen, in welchem der Style des HTML-Elements per CSS angegeben wird. 
+
+\subsubsection{CSS für ein Element}
+Die Definition von CSS hat nur Einfluss auf das jeweilige Template. Elemente außerhalb des Element-DOM werden von dem hier definiertem CSS nicht beeinflusst.
+
+Es ist jedoch umgekehrt möglich, CSS-Klassen zu nutzen, im globalen CSS beschrieben sind. Eine erneute Einbindung der CSS-Datei in das Polymer-Element ist nicht notwendig.
+Die Verwendung von CSS-Abhängigkeiten in Polymer ist jedoch unschön, da dies ein Element gegebenen Falls auf Web-Seiten beschränkt, welche diese bestimmte CSS-Datei verwenden.
+Es ist somit in den meisten Fällen besser keine CSS-Abhängigkeiten in Elementen zu verwenden, vor allem dann wenn diese öffentlich sind.
+
+Im Listing \ref{Polymer Element} wurden CSS-Abhängigkeiten zu MaterializeCSS (Abschnitt \ref{MaterializeCSS}) aufgebaut, eine Begründung hierfür ist im Kapitel/Abschnitt (?????) zu finden.
+
+\subsubsection{Element-Script}
+Der "`script"'-Tag enthält das jeweilige Skript zum Element. Es ist JSON-Notation gehalten und basiert auf Callbacks.
+
+\paragraph{Registrierung}
+\lstinputlisting[language=html, caption=Polymer-Element Registrierung, label=Element Registrierung, captionpos=b]{Code/element_registration.html}
+
+Als erstes wird das Element registriert. Dieser Teil des Skriptes muss also immer vorhanden sein, damit das jeweilige Element überhaupt dargestellt werden kann.
+
+\paragraph{Handler}
+
+\lstinputlisting[language=html, caption=Polymer-Element Handler, label=Element Handler, captionpos=b]{Code/element_handler.html}
+
+Als nächstes können verschiedene Callbacks folgen, wie im Beispiel oben der Klick-Handler.Innerhalb des Handlers kann ein Java-Skript definiert sein, das ausgeführt wird, wenn der jeweilige Handler getriggert wird.
+
+\lstinputlisting[language=html, caption=Polymer-Element Handler Registration, label=Element Handler Registration, captionpos=b]{Code/element_handler_registration.html}
+
+Damit ein Handler überhaupt zum Tragen kommt, muss er innerhalb des HTML-Tags für das dass jeweilige Skript sein soll registriert werden.
+
+\paragraph{Attribute}
+\lstinputlisting[language=html, caption=Polymer-Element Attribute, label=Element Attribute, captionpos=b]{Code/element_attributes.html}
+
+Attribute, welche das Polymer-Element haben soll, müssen ebenfalls im Skript definiert werden.
+
+Das Attribut "`owner"' wird im Beispiel als String definiert, und hat den Standardwert "`Daniel"'.
+Jedes im Skript definiertes Attribut lässt sich bei Verwendung des Elements wie ein normales XML-Attribut verwenden. Wird bei Verwendung des Elements das "`owner"'-Attribut nicht angegeben, so ist es "`Daniel"'. 
+Um den Inhalt des Attributs im Template zu verwenden, muss es in doppelten geschweiften Klammern aufgerufen werden. So kann zum Beispiel ein B-Tag wie folgt geschrieben werden.
+
+\lstinputlisting[language=html, caption=Polymer-Element Attribute benutzen, label=Element Attribute benutzen, captionpos=b]{Code/element_attributes_use.html}
+
+\subsubsection{Zusammenfassung}
+Polymer bietet wie gezeigt wurde eine echte Alternative zum normalen Web-Seiten-Boiler-Code. Durch die Verwendung von Polymer-Elementen entsteht keine nennenswerte Verzögerung beim parsen einer Web-Seite durch den Browser.
+Es bietet sich daher an, bei Neuentwicklungen auf Polymer zu setzen.
+
+Ob und wie eine Intergration von Polymer in Typo3 möglich ist, wird im Kapitel \ref{Zusammenspiel der Technologien} näher beschrieben.
+
 \subsection{AngularJS}
 \subsection{HTML5}
 \subsection{CSS3}
@@ -35,7 +105,7 @@ Zusätzlich steigt der Overhead beim laden einer Seite, da mehr CSS geladen wird,
 Standardmäßig enthält Bootstrap zum Beispiel keinen Date-Picker, welcher jedoch in einem Supportportal unerlässlich ist. Auch "`Bootstrap Material"' enthält keinen Date-Picker im "`Material Design"'.
 Durch den modularen Aufbau von Bootstrap kann natürlich schnell und einfach ein entsprechendendes Template ergänzt werden. Dies bedeutet aber wieder zusätzlichen Overhead.
 \cite{MaterialBootstrap}
-\subsubsection{MaterializeCSS}
+\subsubsection{MaterializeCSS}\label{MaterializeCSS}
 Ein anderes Framework, welches die Design-Richtlinien des "`Material Design"' umsetzt ist das noch recht neue Framework "`MaterializeCSS"'. 
 MaterializeCSS ist ein eigenständiges Framework, welches versucht alle gegebenen Gestaltungsrichtlinen möglichst elegant und performat umzusetzen.
 
@@ -48,6 +118,6 @@ Ein weitere Vorteil von MaterializeCSS ist, das viele Templates wie ein Date-Pic
 Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist, so ist es doch eine gute alternative, wenn eine Web-Seite im "`Material Design"' umgesetzt werden soll.
 \subsection{PHP7}
 \subsection{Google Dart}
-\section{Zusammenspiel der Technologien}
+\section{Zusammenspiel der Technologien}\label{Zusammenspiel der Technologien}
 \section{Zusammenfassung}
 \section{Fazit}

@@ -117,10 +117,10 @@ order=1
 
 [item:Neue_Webtechnologien.tex]
 archive=true
-column=17
+column=3
 encoding=ISO-8859-1
 highlight=LaTeX
-line=44
+line=70
 mode=LaTeX
 open=true
 order=6
@@ -194,10 +194,10 @@ JumpList=
 ViMarks=.,185,9,[,185,9,],185,28
 
 [view-settings,view=0,item:Neue_Webtechnologien.tex]
-CursorColumn=17
-CursorLine=44
+CursorColumn=3
+CursorLine=70
 JumpList=
-ViMarks=.,44,17,[,44,17,],44,17
+ViMarks=.,70,133,[,70,115,],70,133
 
 [view-settings,view=0,item:Portalserver.tex]
 CursorColumn=0

@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="button-up">
+    <template>
+        <button id="scrollToTopFAB"
+                class="btn-floating btn-large waves-effect waves-light waves-circle half-out-button tooltipped fix-scroll-button"
+                data-position="top" data-delay="50" data-tooltip="Nach oben Scrollen"
+                on-click="handleClick">
+            <i class="material-icons">navigation</i>
+        </button>
+    </template>
+    <script>
+        Polymer({
+            is: "button-up",
+            handleClick:
+                function (e){
+                    $("html, body").animate({scrollTop: 0}, "slow");
+                },
+        });
+    </script>
+</dom-module>
