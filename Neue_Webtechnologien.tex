@@ -1,7 +1,7 @@
 \section{Neue Webtechnologien}
-\subsection{Google Polymer}
+\subsection{Google Polymer}\label{Google Polymer}
 Polymer Einleitung!
-\subsection{Wozu Polymer Elemente}\label{Wozu Polymer Elemente}
+\subsubsection{Wozu Polymer Elemente}\label{Wozu Polymer Elemente}
 Polymer Elemente versuchen so genannten Boiler-Code zu vermeiden. Als Boiler-Code wird die Verschmelzung verschiedener Programmiersprachen innerhalb einer Datei oder eines Elements bezeichnet. Boiler-Code ist häufig in Web-Seiten zu finden. 
 
 Um eine HTML-Element zu erstellen wird als Grundgerüst HTML verwendet. Zusätzlich enthält das HTML-Element aber auch CSS um das aussehen zu beeinflussen. Um ein HTML-Element dynamisch oder interaktiv zu gestalten wird meist zusätzlich auch noch Java-Skript oder AngularJS verwendet. Typischer weise findet mal alle drei Sprachen in einer HTML-Datei oder in getrennten Dateien. 
@@ -10,7 +10,7 @@ Jedoch haben beide Ansätze Nachteile. Bei der Vereinigung verschiedener Sprachen
 
 Der Ansatz die verschiedenen Sprachen zu trennen, beseitigt zwar das durcheinander innerhalb der HTML-Dateien, jedoch entstehen hier wieder neue Probleme. Wenn alle Sprachen strikt in verschiedenen Dateien sind, ist es oft nur schwer nachzuvollziehen, welches Java-Skript zu welchem HTML-Element gehört. Für außenstehende Programmiere ist dies oft eine unlösbare Aufgabe.
 
-\subsection{Was macht Polymer aus}
+\subsubsection{Was macht Polymer aus}
 Polymer wiederum geht, im Gegensatz zu den beiden im Abschnitt \ref{Wozu Polymer Elemente} genannten, einen dritten sehr eleganten Ansatz. Grundsätzlich kommen bei Polymer verschiedene Programmiersprachen und Konzepte wieder zusammen in eine HTML-Datei. 
 
 Der entscheidende Unterschied jedoch ist, das HTML, CSS und Skripte ihre festen Bereiche haben, in denen sie implementiert werden. Dies gestaltet die HTML-Datei des jeweiligen Elements sehr übersichtlich. 
@@ -19,14 +19,14 @@ Ein weiterer Vorteil ist, dass in der Web-Seite, in der das Element Verwendung f
 
 Damit der Polymer das entsprechende Element parsen kann muss vor der Verwendung das jeweilige Element über den HTML-Link-Tag eingebunden werden.
 
-\subsection{Ein eigenes Polymer Element erstellen}
+\subsubsection{Ein eigenes Polymer Element erstellen}\label{Ein eigenes Polymer Element erstellen}
 Um zu zeigen, wie einfach es ist auf Basis von Polymer Elemente selbst zu erstellen folgt in den nun kommenden Abschnitten nun Beispiel, welches im Kapitel \ref{Zusammenspiel der Technologien} in Typo3 eingebunden wird.
 
 \lstinputlisting[language=html, caption=Beispiel für ein eigenes Polymer-Element, label=Polymer Element, captionpos=b]{Code/polymer_element.html}
 
 Als erstes wird der Polymer-Link hinzugefügt, welcher immer vorhanden sein muss. Danach folgt der Tag "`dom-module"', welcher die genaue Beschreibung des Elements enthält. Im "`template"'-Tag wird das HTML eingefügt, welches das Element beinhaltet. Hierauf kann optional ein "`style"'-Tag folgen, in welchem der Style des HTML-Elements per CSS angegeben wird. 
 
-\subsubsection{CSS für ein Element}
+\paragraph{CSS für ein Element}
 Die Definition von CSS hat nur Einfluss auf das jeweilige Template. Elemente außerhalb des Element-DOM werden von dem hier definiertem CSS nicht beeinflusst.
 
 Es ist jedoch umgekehrt möglich, CSS-Klassen zu nutzen, im globalen CSS beschrieben sind. Eine erneute Einbindung der CSS-Datei in das Polymer-Element ist nicht notwendig.
@@ -35,34 +35,32 @@ Es ist somit in den meisten Fällen besser keine CSS-Abhängigkeiten in Elementen 
 
 Im Listing \ref{Polymer Element} wurden CSS-Abhängigkeiten zu MaterializeCSS (Abschnitt \ref{MaterializeCSS}) aufgebaut, eine Begründung hierfür ist im Kapitel/Abschnitt (?????) zu finden.
 
-\subsubsection{Element-Script}
+\paragraph{Element-Script}
 Der "`script"'-Tag enthält das jeweilige Skript zum Element. Es ist JSON-Notation gehalten und basiert auf Callbacks.
 
-\paragraph{Registrierung}
+\subparagraph{Die Registrierung} eines Elements steht immer zu begin des Skripts. Dieser Teil muss also immer vorhanden sein, damit das jeweilige Element überhaupt dargestellt werden kann.
+
 \lstinputlisting[language=html, caption=Polymer-Element Registrierung, label=Element Registrierung, captionpos=b]{Code/element_registration.html}
 
-Als erstes wird das Element registriert. Dieser Teil des Skriptes muss also immer vorhanden sein, damit das jeweilige Element überhaupt dargestellt werden kann.
-
-\paragraph{Handler}
+\subparagraph{Handler} werden in Polymer verwendet um einzelne Skripte aufzurufen. Innerhalb des Handlers kann ein Java-Skript definiert sein, das ausgeführt wird, wenn der jeweilige Handler getriggert wird.
 
 \lstinputlisting[language=html, caption=Polymer-Element Handler, label=Element Handler, captionpos=b]{Code/element_handler.html}
 
-Als nächstes können verschiedene Callbacks folgen, wie im Beispiel oben der Klick-Handler.Innerhalb des Handlers kann ein Java-Skript definiert sein, das ausgeführt wird, wenn der jeweilige Handler getriggert wird.
+Damit ein Handler überhaupt zum Tragen kommt, muss er innerhalb des HTML-Tags für das dass jeweilige Skript sein soll registriert werden.
 
 \lstinputlisting[language=html, caption=Polymer-Element Handler Registration, label=Element Handler Registration, captionpos=b]{Code/element_handler_registration.html}
 
-Damit ein Handler überhaupt zum Tragen kommt, muss er innerhalb des HTML-Tags für das dass jeweilige Skript sein soll registriert werden.
+\subparagraph{Attribute,} welche das Polymer-Element haben soll, müssen ebenfalls im Skript definiert werden.
 
-\paragraph{Attribute}
 \lstinputlisting[language=html, caption=Polymer-Element Attribute, label=Element Attribute, captionpos=b]{Code/element_attributes.html}
-
-Attribute, welche das Polymer-Element haben soll, müssen ebenfalls im Skript definiert werden.
 
 Das Attribut "`owner"' wird im Beispiel als String definiert, und hat den Standardwert "`Daniel"'.
 Jedes im Skript definiertes Attribut lässt sich bei Verwendung des Elements wie ein normales XML-Attribut verwenden. Wird bei Verwendung des Elements das "`owner"'-Attribut nicht angegeben, so ist es "`Daniel"'. 
 Um den Inhalt des Attributs im Template zu verwenden, muss es in doppelten geschweiften Klammern aufgerufen werden. So kann zum Beispiel ein B-Tag wie folgt geschrieben werden.
 
 \lstinputlisting[language=html, caption=Polymer-Element Attribute benutzen, label=Element Attribute benutzen, captionpos=b]{Code/element_attributes_use.html}
+
+\subparagraph{Der Aufruf} dieses Polymer-Elements muss wie im Beispiel umgesetzt werden
 
 \subsubsection{Zusammenfassung}
 Polymer bietet wie gezeigt wurde eine echte Alternative zum normalen Web-Seiten-Boiler-Code. Durch die Verwendung von Polymer-Elementen entsteht keine nennenswerte Verzögerung beim parsen einer Web-Seite durch den Browser.
@@ -119,5 +117,40 @@ Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist, so ist es
 \subsection{PHP7}
 \subsection{Google Dart}
 \section{Zusammenspiel der Technologien}\label{Zusammenspiel der Technologien}
+\subsection{Integration von Polymer in Typo3}
+Im Abschnitt \ref{Google Polymer} wurde ausführlicher auf die Verwendung und die Erstellung von Polymer-Elementen eingegangen. Nun soll untersucht werden wie sich Polymer möglichst elegant in Typo3 integrieren lässt.
+
+Der beste Weg Polymer-Elemente in Typo3 zu integrieren ist, diese in ViewHelper zu kapseln (Siehe Kapitel ?????). 
+
+Das Ziel ist es also, einen ViewHelper zu erstellen, welcher einen ViewHelper-Tag in einen Polymer-Tag umwandelt.
+
+Am Beispiel des Button-Up Elements (siehe \ref{Ein eigenes Polymer Element erstellen}), wird im folgenden erklärt, wie ein ViewHelper das Polymer Element aufruft.
+
+\lstinputlisting[language=php, caption=Polymer ViewHelper, label=Polymer ViewHelper, captionpos=b]{Code/viewhelper.php}
+
+Der ViewHelper erbt von der abstrakten Klasse "`AbstractTagBasedViewHelper"'. Dieser ist in der ViewHelper ist anschließend in der Lage, einen HTML-Tag zu verändern.
+
+Mit dem Attribut \$tagname, wird definiert wie der neue Tag heißen soll, welcher den ViewHelper-Tag ersetzt. Dieser Tag muss nun so heißen wie das Polymer-Element.
+
+Die Methode "`render"' des ViewHelpers gibt den String zurück, der den ViewHelper-Tag ersetzt.
+
+Die "`return"'-Anweisung gibt immer den Link zum entsprechenden Polymer-Element zurück, und den Polymer-Tag.
+
+Der ViewHelper wird nun wie folgt aufgerufen.
+
+\lstinputlisting[language=html, caption=Polymer ViewHelper aufrufen, label=Polymer ViewHelper aufrufen, captionpos=b]{Code/viewhelper_call.php}
+
+Beim ausliefern der Web-Seite ersetzt Typo3 nun den ViewHelper-Tag gegen die folgenden HTML-Elemente
+
+\lstinputlisting[language=html, caption=Polymer ViewHelper Ersetzung, label=Polymer ViewHelper Ersetung, captionpos=b]{Code/viewhelper_after.php}
+
+Wird die Web-Seite nun vom Browser gerendert wird, ersetzt er diesen Polymer-Tag schließlich durch das definierte Polymer-Element.
+
+Durch die Verwendung von ViewHelpern, kann jedes beliebige Polymer-Element auch unter Typo3 zum Einsatz kommen. Es ist also sehr elegant möglich Boiler-Code auch in Typo3-Templates und -Partial mit der Hilfe von Polymer zu umgehen.
+
+Durch die Kapselung der Polymer-Elemente in ViewHelpern verhalten sich diese sich außerdem wie standardmäßige ViewHelper mit Boiler-Code.
+
+Um nun Polymer-Elemente in einem Template zu verwenden, ist kein extra Wissen notwendig, was eine Verwendung so einfach wie möglich macht. Der Programmierer eines Templates muss sich keine Gedanken über Links zu Polymer-Elementen machen und muss sich auch nicht mit Polymer auskennen. Es wird einfach der ViewHelper verwendet und alles andere passiert im Hintergrund.
+
 \section{Zusammenfassung}
 \section{Fazit}
