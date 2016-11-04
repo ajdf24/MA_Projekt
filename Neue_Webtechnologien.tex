@@ -124,8 +124,30 @@ Der beste Weg Polymer-Elemente in Typo3 zu integrieren ist, diese in ViewHelper 
 
 Das Ziel ist es also, einen ViewHelper zu erstellen, welcher einen ViewHelper-Tag in einen Polymer-Tag umwandelt.
 
-Am Beispiel des Button-Up Elements (siehe \ref{Ein eigenes Polymer Element erstellen}), wird im folgenden erklärt, wie ein ViewHelper das Polymer Element aufruft.
+\begin{wrapfigure}{r}{4cm}
+\centering
+\includegraphics[width=4cm]{Bilder/Polymer.eps}
+\caption{Polymer ViewHelper Hirarchie}
+\label{Polymer ViewHelper Hirarchie}
+\vspace{-40pt}
+\end{wrapfigure}
 
+In Abbildung \ref{Polymer ViewHelper Hirarchie} (rechts) ist die Aufrufhirarchie zu sehen, welche innerhalb des Projektes entwickelt wurde, um Polymer Elemente elegant in Typo3 einzuarbeiten.
+
+Die beim laden einer Seite aufgerufene "`Action"' eines bestimmten "`Controllers"' wird aufgerufen. Der "`Controller"' stellt alle zum Rendern des Templates benötigte Daten bereit und übergibt sie dem Template.
+
+Das Template wiederum beinhaltet einen für das Polymer Element entwickelten ViewHelper, welcher innerhalb des Templates aufgerufen wird.
+
+Das Fluid-Framework ruft beim Rendern eines Templates den entsprechenden ViewHelper auf. 
+
+Der ViewHelper wiederum gibt den Link zum entsprechenden Polymer Element und den Polymer Tag zurück.
+
+Ist das Template fertig gerendert, so wird es an den aufrufenden Client gesendet.
+
+Der Client wiederum ersetzt das Polymer Element durch HTML.
+
+Am Beispiel des Button-Up Elements (siehe Abschnitt \ref{Ein eigenes Polymer Element erstellen}), wird im folgenden erklärt, wie dieser Prozess im Quellcode umgesetzt wird.
+\newpage
 \lstinputlisting[language=php, caption=Polymer ViewHelper, label=Polymer ViewHelper, captionpos=b]{Code/viewhelper.php}
 
 Der ViewHelper erbt von der abstrakten Klasse "`AbstractTagBasedViewHelper"'. Dieser ist in der ViewHelper ist anschließend in der Lage, einen HTML-Tag zu verändern.
@@ -151,6 +173,19 @@ Durch die Verwendung von ViewHelpern, kann jedes beliebige Polymer-Element auch 
 Durch die Kapselung der Polymer-Elemente in ViewHelpern verhalten sich diese sich außerdem wie standardmäßige ViewHelper mit Boiler-Code.
 
 Um nun Polymer-Elemente in einem Template zu verwenden, ist kein extra Wissen notwendig, was eine Verwendung so einfach wie möglich macht. Der Programmierer eines Templates muss sich keine Gedanken über Links zu Polymer-Elementen machen und muss sich auch nicht mit Polymer auskennen. Es wird einfach der ViewHelper verwendet und alles andere passiert im Hintergrund.
+
+\subsection{MaterialzeCSS}
+Die Integration von MaterializeCSS in Typo3 ist genau so einfach, wie die Integration von Bootstrap oder jedem anderem CSS-Frameworks.
+Um MaterializeCSS in Typo3 verwenden zu können, muss im Template nur angegeben werden, welche CSS-Dateien Typo3 einbinden soll.
+
+Zusätzlich zu der CSS-Datei benötigt MaterializeCSS noch eine eigene Java-Script-Datei und eine aktuelle Version von JQuery. 
+Diese Dateien werden zusammen mit dem CSS im Template definiert.
+
+Außerdem ist es möglich mit MaterialieCSS die standard Icons und Schriftarten von Google zu nutzen. Sollen dieses Sachen verwendet werden, so müssen sie nur zusätzlich zum CSS und Java-Script im Template definiert werden.
+
+Im Listing \ref{MaterialieCSS Anbindung} ist ein Typo-Script-Beispiel zu sehen, mit welchem MaterializeCSS in Typo3 integriert wird. Das angegebe Typo-Script an entweder in der Konfiguration einer Extension angegeben sein oder es wird direkt in einem Typo3-Template definiert.
+\lstinputlisting[caption=MaterialieCSS Anbindung, label=MaterialieCSS Anbindung, captionpos=b]{Code/materilaize_anbindung.txt}
+\subsection{Nutzer Anmeldung und Registrierung}
 
 \section{Zusammenfassung}
 \section{Fazit}

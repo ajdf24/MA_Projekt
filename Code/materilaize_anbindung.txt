@@ -1,0 +1,11 @@
+page{
+	includeCSS{
+        icons = https://fonts.googleapis.com/icon?family=Material+Icons
+        material = EXT:pdvtemplate/Resources/Public/Materialize/css/materialize.css
+	}
+	includeJS{
+        query = EXT:pdvtemplate/Resources/Public/jquery-2.1.1.min.js
+        materialjs = EXT:pdvtemplate/Resources/Public/Materialize/js/materialize.js
+        webcomponents = EXT:pdvtemplate/Resources/Public/webcomponents-lite.js
+    }
+}
