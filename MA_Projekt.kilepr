@@ -85,12 +85,19 @@ Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
+[document-settings,item:Zusammenspiel_der_Technologien.tex]
+Bookmarks=
+Encoding=ISO-8859-1
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [item:Abkuerzungen.tex]
 archive=true
-column=53
+column=38
 encoding=ISO-8859-1
 highlight=LaTeX
-line=7
+line=8
 mode=LaTeX
 open=true
 order=0
@@ -107,10 +114,10 @@ order=2
 
 [item:MA_Projekt.tex]
 archive=true
-column=61
+column=18
 encoding=ISO-8859-1
 highlight=LaTeX
-line=164
+line=187
 mode=LaTeX
 open=true
 order=1
@@ -120,7 +127,7 @@ archive=true
 column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=169
+line=141
 mode=LaTeX
 open=true
 order=6
@@ -162,8 +169,18 @@ encoding=ISO-8859-1
 highlight=LaTeX
 line=0
 mode=LaTeX
+open=true
+order=7
+
+[item:Zusammenspiel_der_Technologien.tex]
+archive=true
+column=0
+encoding=ISO-8859-1
+highlight=LaTeX
+line=0
+mode=LaTeX
 open=false
-order=13
+order=-1
 
 [item:studienarbeit_semester_5.kilepr]
 archive=true
@@ -176,10 +193,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=53
-CursorLine=7
+CursorColumn=38
+CursorLine=8
 JumpList=
-ViMarks=.,7,53,[,7,53,],7,53
+ViMarks=.,8,37,[,8,18,],8,37
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=0
@@ -188,16 +205,16 @@ JumpList=
 ViMarks=.,27,0,[,27,0,],27,0
 
 [view-settings,view=0,item:MA_Projekt.tex]
-CursorColumn=61
-CursorLine=164
+CursorColumn=18
+CursorLine=187
 JumpList=
 ViMarks=.,187,26,[,187,26,],187,26
 
 [view-settings,view=0,item:Neue_Webtechnologien.tex]
 CursorColumn=0
-CursorLine=169
+CursorLine=141
 JumpList=
-ViMarks=.,186,17,[,186,17,],186,17
+ViMarks=.,136,136,[,136,129,],136,136
 
 [view-settings,view=0,item:Portalserver.tex]
 CursorColumn=0
@@ -222,3 +239,9 @@ CursorColumn=0
 CursorLine=0
 JumpList=
 ViMarks=.,-1,-1,[,-1,-1,],-1,-1
+
+[view-settings,view=0,item:Zusammenspiel_der_Technologien.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+ViMarks=

@@ -1,23 +1,87 @@
 \section{Neue Webtechnologien}
+Im folgenden Kapitel wird auf neue Webtechnologien eingegangen, welche für die Verwendung eines modularen Supportportals in Frage kommen.
+\subsection{Web Components}
+Web Components sind eine neue Technologie zur Erstellung von Web-Seiten. 
+Die Spezifikation des W3C für Web Components sehen, wie der Name sagt, vor Komponenten speziell für Web-Seiten zu erstellen. 
+Diese Komponenten können entweder vom Programmierer selbst oder aus Fremdquellen stammen.
+
+Durch die Verwendung soll die Programmierung von Webtechnologien vereinfacht werden. Komponenten kapseln spezielle Elemente wie zum Beispiel Tabellen oder Button mit ihren Funktionen zusammen in ein Element.
+Komponenten können also auf einer Vielzahl von Technologien aufbauen. Die Nutzung einer Komponente durch einen Programmierer geht somit auch ohne die Kenntnis aller in der Komponente verwendeten Technologien. 
+Ein Programmiere muss sich nicht um die Funktion oder den Aufbau einer Komponente kümmern. Er kann sie einfach benutzen.
+
+Dies bringt zum einen den Vorteil, dass Programmierer sich nicht mehr mit allen Technologien beschäftigen und auskennen muss. Zum anderen können Komponenten schnell in bestehende und neue Projekte integriert werden. 
+Hierdurch kann die Entwicklungszeit einer Web-Seite im Idealfall drastisch gesenkt werden.
+\cite{GolemWebComponents}
+
+Web Components bestehen nach der Definition des W3C aus fünf bestandteilen:
+\begin{itemize}
+ \item Templates
+ \item Decorators
+ \item Custom Elements
+ \item Shadow DOM
+ \item Imports
+\end{itemize}
+
+\paragraph{Templates}
+sind HTML-Teile, welche beim rendern einer Web Komponente zum tragen kommen. Sie werden innerhalb der Komponente definiert (siehe Listing \ref{Polymer Element}) und sind innerhalb von HTML5 standardisiert.
+
+\paragraph{Decorators}
+beschreiben das Aussehen eines Templates innerhalb einer Komponente mit Hilfe von CSS. Zum aktuellen Zeitpunkt sind sie jedoch nicht spezifiziert.
+
+\paragraph{Custom Elements}
+sind Komponenten, die vom Programmierer selbst erstellt wurden. Sie bilden den Grundstein für wiederverwendbare und eigene Web Components.
+
+\paragraph{Shadow DOM}
+ist eine HTML-Struktur, welche vom normalen HTML-DOM aus nicht beeinflusst werden kann (siehe Abschnitt \ref{Shadow DOM}).
+
+\paragraph{Imports}
+sind Anweisungen, die dem Browser sagen welche Komponenten er zusätzlich laden muss.
+Sie sind essentiell, damit Web Components überhaupt in eine DOM-Struktur eingebunden werden können.
+Imports sind wie Templates ebenfalls schon in HTML standardisiert.
+\cite{W3CWebComponents}
+
+\subsubsection{Shadow DOM} \label{Shadow DOM}
+Damit Komponenten nicht durch CSS-Klassen von der eigentlichen Web-Seite oder untereinander beeinflussen, wurde der Shadow DOM erfunden.
+
+Der Shadow DOM ist ein konstrukt um Komponenten vor dem eigentlichen HTML-DOM zu verbergen. Dieses vorgehen ist notwendig, um Komponenten verwenden zu können, denn Komponenten sollen sich werder untereinander Beeinflussen noch sollen sie von der Web-Seite beeinflusst werden.
+
+Komponenten im Shadow DOM werden vor dem eigentlich HTML-DOM verborgen, wie der Name schon sagt, liegen sie im Schatten. Der Browser rendert also zuerst das HTML-DOM und anschließend den Shadow DOM, ohne das dieser vom eigentlichen DOM beeinflusst wird.
+JQuery aufrufe auf der Hautseite zum Beispiel, können sich nicht auf Elemente im Shadow beziehen, da sie diese nicht kennen.
+
+Zur aktuellen Stunde, können alle modernen Browser den Shadow DOM umsetzten.
+\cite{ShadowDomPolymer}
+
 \subsection{Google Polymer}\label{Google Polymer}
-Polymer Einleitung!
+Das Polymer Projekt wird seit 2012 von Google entwickelt und basiert auf dem Web Component-Standard des W3C. Polymer ist eine Library, welche mit Hilfe des Shadow DOM arbeitet. 
+
+Die erste stabile Version von Polymer wurde im März 2016 veröffentlicht und ist stark von AngularJS (siehe Abschnitt \ref{AngularJS}) beeinflusst worden. 
+
+Zur Zeit der Bearbeitung ist Polymer in der Version 1.0 veröffentlicht. Jedoch wird momentan schon an der Version 2.0 gearbeitet, welche auch als Beta verfügbar ist.
+
+In den folgenten Abschnitten wird nun weiter auf Polymer in der Version 1.0 eingegangen.
+\cite{PolymerProject}
+
 \subsubsection{Wozu Polymer Elemente}\label{Wozu Polymer Elemente}
-Polymer Elemente versuchen so genannten Boiler-Code zu vermeiden. Als Boiler-Code wird die Verschmelzung verschiedener Programmiersprachen innerhalb einer Datei oder eines Elements bezeichnet. Boiler-Code ist häufig in Web-Seiten zu finden. 
+Polymer Elemente versuchen sogenannten Boiler-Code unter Zuhilfenahme von Web Komponenten zu vermeiden. Als Boiler-Code wird die Verschmelzung verschiedener Programmiersprachen innerhalb einer Datei oder eines Elements bezeichnet. Boiler-Code ist häufig in Web-Seiten zu finden, was historsch bis heute bedingt ist. Eine weiter gängiger Name für Boiler-Code im Web ist "`DOM Pollution"', was so viel aussagt wie, das der DOM mit verschiedenen Sprachen verschmutzt ist.
 
 Um eine HTML-Element zu erstellen wird als Grundgerüst HTML verwendet. Zusätzlich enthält das HTML-Element aber auch CSS um das aussehen zu beeinflussen. Um ein HTML-Element dynamisch oder interaktiv zu gestalten wird meist zusätzlich auch noch Java-Skript oder AngularJS verwendet. Typischer weise findet mal alle drei Sprachen in einer HTML-Datei oder in getrennten Dateien. 
 
-Jedoch haben beide Ansätze Nachteile. Bei der Vereinigung verschiedener Sprachen in einer Datei, leidet meist die Übersicht, denn CSS, Java-Skript und zugehöriges HTML muss nicht an festen Positionen sein. So kommt es öfter vor, dass zusammengehörige Elemente innerhalb einer Datei weit auseinander stehen.
+Beide Ansätze haben jedoch Nachteile. Bei der Vereinigung verschiedener Sprachen in einer Datei, leidet meist die Übersicht, denn CSS, Java-Skript und zugehöriges HTML muss nicht an festen Positionen sein. So kommt es öfter vor, dass zusammengehörige Elemente innerhalb einer Datei weit auseinander stehen. Hier leidet die Übersicht und Zusammenhänge sich wenn überhaupt oft nur schwer für fremde Programmierer zu erkennen.
 
-Der Ansatz die verschiedenen Sprachen zu trennen, beseitigt zwar das durcheinander innerhalb der HTML-Dateien, jedoch entstehen hier wieder neue Probleme. Wenn alle Sprachen strikt in verschiedenen Dateien sind, ist es oft nur schwer nachzuvollziehen, welches Java-Skript zu welchem HTML-Element gehört. Für außenstehende Programmiere ist dies oft eine unlösbare Aufgabe.
+Der Ansatz die verschiedenen Sprachen zu trennen, beseitigt zwar das durcheinander innerhalb der HTML-Dateien, jedoch entstehen hier wieder neue Probleme. Wenn alle Sprachen strikt in verschiedenen Dateien sind, ist es oft nur schwer nachzuvollziehen, welches Java-Skript zu welchem HTML-Element gehört. Für außenstehende Programmiere ist dies oft eine unlösbare Aufgabe. Nachteilig ist auch, dass immer alle Dateien benötigt werden, um das Gesamtbild verstehen zu können.
 
 \subsubsection{Was macht Polymer aus}
-Polymer wiederum geht, im Gegensatz zu den beiden im Abschnitt \ref{Wozu Polymer Elemente} genannten, einen dritten sehr eleganten Ansatz. Grundsätzlich kommen bei Polymer verschiedene Programmiersprachen und Konzepte wieder zusammen in eine HTML-Datei. 
+Polymer wiederum geht, im Gegensatz zu den beiden im Abschnitt \ref{Wozu Polymer Elemente} genannten, einen dritten sehr eleganten Ansatz. Den der Web Components. Grundsätzlich kommen bei Polymer verschiedene Programmiersprachen und Konzepte wieder zusammen in eine HTML-Datei. 
 
-Der entscheidende Unterschied jedoch ist, das HTML, CSS und Skripte ihre festen Bereiche haben, in denen sie implementiert werden. Dies gestaltet die HTML-Datei des jeweiligen Elements sehr übersichtlich. 
+Der entscheidende Unterschied jedoch ist, das HTML, CSS und Skripte ihre festen Bereiche haben, in denen sie implementiert werden. Dies gestaltet die HTML-Datei des jeweiligen Elements sehr übersichtlich und wurde so in den Web Components vom W3C spezifiziert.
 
 Ein weiterer Vorteil ist, dass in der Web-Seite, in der das Element Verwendung findet nur noch ein einzelner Tag zu sehen ist, der auf das Polymer Element verweist.
 
-Damit der Polymer das entsprechende Element parsen kann muss vor der Verwendung das jeweilige Element über den HTML-Link-Tag eingebunden werden.
+Damit der Browser das entsprechende Element mit Hilfe der Polymer Library parsen kann muss vor der Verwendung das jeweilige Element über den HTML-Link-Tag eingebunden werden.
+
+Das Polymer Projekt bietet eine ganze Reihe fertige Elemente, welche einfach verwendet werden können\footnote{\url{https://elements.polymer-project.org/}}.
+
+Wem diese Elemente mit ihren Funktion noch nicht reichen, kann entweder die bestehenden Elemente erweitern oder neue Elemente erstellen.
 
 \subsubsection{Ein eigenes Polymer Element erstellen}\label{Ein eigenes Polymer Element erstellen}
 Um zu zeigen, wie einfach es ist auf Basis von Polymer Elemente selbst zu erstellen folgt in den nun kommenden Abschnitten nun Beispiel, welches im Kapitel \ref{Zusammenspiel der Technologien} in Typo3 eingebunden wird.
@@ -68,7 +132,20 @@ Es bietet sich daher an, bei Neuentwicklungen auf Polymer zu setzen.
 
 Ob und wie eine Intergration von Polymer in Typo3 möglich ist, wird im Kapitel \ref{Zusammenspiel der Technologien} näher beschrieben.
 
-\subsection{AngularJS}
+\subsection{AngularJS} \label{AngularJS}
+AngularJS oder kurz Angular ist ein von Google entwickeltes Javascript Framework, welches sich sehr gut für Singe-Page-Web-Sites eignet. 
+Angular ist nach dem \ac{MVVM}-Prinzip aufgebaut, welches eine Trennung zwischen Darstellung und Logik bietet und arbeitet Client-Seitig.
+
+Die Darstellung wird über HTML abgebildet, welches Angular durch eigene Attribute ergänzt. Die Logik wiederum wird durch Javascript auf Basis von Angular abgebildet.
+
+Angular ist in der Lage das HTML-DOM entsprechend der Befehle der Logik umzubauen ohne dafür auf JQuery zurückgreifen zu müssen.
+
+Aufgaben, wie das Suchen oder Sortieren einer Tabelle sind typische Anwendungsbeispiele von Angular.
+\cite{AngularBuch}
+
+Die momentan aktuelle Version von Angular ist 1.5.6, welche auch in dieser Arbeit verwendet wird. Zur Zeit wird aber auch der Release von Angular 2.0 vorbereitet, wobei die neue Version nicht abwertskompatibel ist, da sich sehr viel an der Codebasis geändert hat.
+
+Durch das neue Framework, soll das ohnehin schon schnelle Framework noch einmal an Geschwindigkeit zunehmen. 
 \subsection{HTML5}
 \subsection{CSS3}
 \ac{CSS} ist eine Designsprache für HTML und ist deshalb eine der Hauptkomponenten der Webentwicklung. Mit Hilfe von \ac{CSS} ist es möglich einzelne HTML-Elemente oder Gruppen zu stylen.
@@ -80,7 +157,7 @@ Eines der heute am häufigsten anzutreffenden \ac{CSS}-Frameworks ist "`Bootstrap
 Innerhalb der PDV Systeme Erfurt wurde beschlossen das neue Supportportal im "`Material Design"' aufzubauen. Als "`Material Design"' werden Gestaltungsrichtlinen von Google bezeichnet, welche angeben wie eine Android-Applikation oder eine mobile Web-Seite für Android aussehen sollte.
 
 Das "`Material Design"' ist ein flaches Design, und geht von der Metapher aus, dass der Bildschirm Papier ist. Jedes Element soll sich also wie reales Papier verhalten und auch so aussehen.
-Obwohl das Design sehr schlicht gehalten ist, so kann mit viel Farbe gearbeite werden.
+Obwohl das Design sehr schlicht gehalten ist, so kann mit viel Farbe gearbeitet werden.
 \cite{MaterialDesign}
 
 Die nun folgenden Betrachtungen beziehen sich auf die Umsetzung im "`Material Design"'.
@@ -114,6 +191,17 @@ Ohne dieses Vorgehen müssten die entsprechenden Farben an unzähligen Stellen inn
 Ein weitere Vorteil von MaterializeCSS ist, das viele Templates wie ein Date-Picker im "`Material Design"' schon vorhanden sind. Diese Templates können ohne zusätzlichen Overhead verwendet werden.
 
 Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist, so ist es doch eine gute alternative, wenn eine Web-Seite im "`Material Design"' umgesetzt werden soll.
+\subsubsection{Vergleich beider CSS-Frameworks}
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+	Vergleichspunkte & Bootstrap Material & MaterializeCSS\\ \hline
+	Abhängigkeiten & Bootstrap JQuery & JQuery\\ \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+????? Hier geht es noch weiter
 \subsection{PHP7}
 \subsection{Google Dart}
 \section{Zusammenspiel der Technologien}\label{Zusammenspiel der Technologien}
