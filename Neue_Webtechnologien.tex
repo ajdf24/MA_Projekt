@@ -146,6 +146,30 @@ Aufgaben, wie das Suchen oder Sortieren einer Tabelle sind typische Anwendungsbe
 Die momentan aktuelle Version von Angular ist 1.5.6, welche auch in dieser Arbeit verwendet wird. Zur Zeit wird aber auch der Release von Angular 2.0 vorbereitet, wobei die neue Version nicht abwertskompatibel ist, da sich sehr viel an der Codebasis geändert hat.
 
 Durch das neue Framework, soll das ohnehin schon schnelle Framework noch einmal an Geschwindigkeit zunehmen. 
+
+Im folgenden Beispiel der W3C-School wird gezeigt wie Angular eingesetzt werden kann.
+
+\lstinputlisting[language=html, caption=Angular View im HTML-DOM \cite{W3CAngular}, label=Angular View, captionpos=b]{Code/angular_view.html}
+
+Die im Div-Tag zu sehenden Attribute "`ng-app"' und "`ng-controller"' werden von Angular genutzt. "`ng-app"' gibt dabei an, wie die Angular Applikation heißen soll. "`ng-controller"' gibt den Namen des Controllers an, welcher für das HTML-Element zum Einsatz kommen soll.
+
+Innerhalb des Div-Tags, welcher die Applikation darstellt, sind zwei Input-Tag zu sehen, welche das Angular-Attribut "`ng-model"' beinhalten. "`ng-model"' sagt aus, dass diese Elemente zum Datenmodell gehören und welchen Namen sie tragen.
+
+In doppelten geschweiften Klammern werden Modell-Attribute, welche zur Laufzeit von Angular durch die konkreten Werte der Modell-Attribut ersetzt werden.
+
+\lstinputlisting[language=html, caption=Angular ViewModel und Model im HTML-DOM \cite{W3CAngular}, label=Angular ViewModel und Model, captionpos=b]{Code/angular_view-model.html}
+
+Im Listing \ref{Angular ViewModel und Model} ist das ViewModel beziehungsweise das Model des im Listing \ref{Angular View} gezeigten Views zu sehen.
+
+Als erster Schritt, wird der zu referenzierende Angular View angegeben und in der Variable "`app"' abgelegt. Daraufhin wird ein Controller innerhalb der Applikation, unter Verwendung des Namens, angelegt.
+
+Innerhalb des Controllers werden dann für die Model-Attribute angegeben. Im Beispiel sind das die Werte "`John"' und "`Doe"'. 
+
+Wird nun die entsprechende HTML-Seite im Browser aufgerufen, füllt Angular die beiden Input-Tags mit den Standardwerten und ersetzt auch die Platzhalter in geschweiften Klammern.
+Ändert ein Nutzer nun den Inhalt der Input-Tags, so passt Angular automatisch das HTML-Dom an und aktualisiert die Werte innerhalb der geschweiten Klammern.
+
+Das vom Browser geparste Dom enthält keine Angaben darüber, wo sich Platzhalter befinden. Einzig Angular weis, welche Elemente bei einer Änderung angepasst werden müssen.
+\cite{W3CAngular}
 \subsection{HTML5}
 \subsection{CSS3}
 \ac{CSS} ist eine Designsprache für HTML und ist deshalb eine der Hauptkomponenten der Webentwicklung. Mit Hilfe von \ac{CSS} ist es möglich einzelne HTML-Elemente oder Gruppen zu stylen.
@@ -194,12 +218,44 @@ Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist, so ist es
 \subsubsection{Vergleich beider CSS-Frameworks}
 \begin{table}[htbp]
   \begin{center}
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.4\textwidth}|}
       \hline
 	Vergleichspunkte & Bootstrap Material & MaterializeCSS\\ \hline
-	Abhängigkeiten & Bootstrap JQuery & JQuery\\ \hline
+	Abhängigkeiten & \begin{minipage}[t]{0.3\textwidth}
+	                  \begin{itemize}
+	                    \item Bootstrap
+	                    \item JQuery
+	                   \end{itemize} 
+	                 \end{minipage}
+		      & \begin{minipage}[t]{0.3\textwidth}
+	                  \begin{itemize}
+	                   \item JQuery
+	                  \end{itemize}
+	                \end{minipage}\\ \hline
+	Umfang & \begin{minipage}{0.3\textwidth}
+	          \begin{itemize}
+	           \item Standard Layout
+	           \item Dialoge
+	          \end{itemize}
+	         \end{minipage}
+	       & \begin{minipage}{0.3\textwidth}
+	          \begin{itemize}
+	           \item Standard Layout
+	           \item Dialoge
+	           \item Date-Picker
+	           \item Card-Views
+	           \item Side-Navs
+	           \item viele weitere
+	          \end{itemize}
+	         \end{minipage}\\ \hline
+	Farbanpassung & über CSS Klassen (17 Farben) & Farben werden in SASS-Quellcode definiert (kein Limit)\\ \hline
+	Icons & Verwendung von Material Icons & Verwendung von Material Icons\\ \hline
+	Subjektive Geschwindigkeit & teilweise Träge und Langsam & immer schnell und flüssig\\ \hline
+
     \end{tabular}
   \end{center}
+  \caption{Vergleich von Bootstrap Material und MaterializeCSS}
+  \label{CSS Vergleich}
 \end{table}
 ????? Hier geht es noch weiter
 \subsection{PHP7}
@@ -215,7 +271,7 @@ Das Ziel ist es also, einen ViewHelper zu erstellen, welcher einen ViewHelper-Ta
 \begin{wrapfigure}{r}{4cm}
 \centering
 \includegraphics[width=4cm]{Bilder/Polymer.eps}
-\caption{Polymer ViewHelper Hirarchie}
+\caption{Polymer ViewHelper Hierarchie}
 \label{Polymer ViewHelper Hirarchie}
 \vspace{-40pt}
 \end{wrapfigure}
