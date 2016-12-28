@@ -1,4 +1,4 @@
-\section{Portalserver/ CMS-Systeme im Vergleich}
+\section{Portalserver/ CMS-Systeme im Vergleich} \label{Portalserver}
 Das zukünftige Supportportal der PDV Systeme GmbH soll auf Basis eines Portalservers bzw. \ac{CMS}-Servers aufgebaut werden. Hierfür werden im folgenden einige Möglichkeiten genauer betrachtet.
 
 Ein Portalserver, welcher für das Projekt heran gezogen wird muss die folgenden Eigenschaften aufweisen.
@@ -73,6 +73,7 @@ Aus diesem Grund, gibt es keine Roadmap für das Projekt und die Veröffentlichung
 \end{figure}
 
 In Abbildung \ref{Typo3_Neos_Backend_Bild} ist der Seitenbearbeitungs-Modus von Neos zu sehen. Es ist gut zu erkennen, das Inhalte einer Webseite direkt bearbeitet werden können. Dies macht eine Webentwicklung für Laien einfacher.
+
 \subsection{Joomla}
 Joomla ist ein weiteres \ac{CMS}-System für die Erstellung von Webseiten. Ähnlich wie Typo3 ist es Open Source und nutzt eine MySQL-Datenbank im Hintergrund. Das System ist in PHP5 geschrieben und dient in erster Linie zur Erstellung von Webseiten.
 Am besten kann Joomla mit Typo3 Neos verglichen werden, da es einen ähnlichen Ansatz zur Erstellung von Webseiten aufgreift. 
@@ -85,7 +86,51 @@ Eine freie Gestalltung der Webseiten ist zwar gegeben, aber für die Entwicklung 
 Es gibt momentan keine garantierte Weiterentwicklung des Portalservers und eine Unterstützung von MariaDB ist nicht offiziell gegeben.
 
 Auch wenn Joomla durchaus seinen Charm hat, so ist es für die Entwicklung eines Supportportals, welches modular aufgebaut werden soll nicht zu empfehlen. Dies bedingt sich zum einen aus der abgelaufen Roadmap, aber auch durch die schlechtere Erweiterungsentwicklung im Gegensatz zu Typo3 \ac{CMS} oder Neos.
+
 \subsection{Drupal}
+
+Drupal ist ein \ac{CMS}-System welches 2001 veröffentlicht wurde. Das Hauptaugenmerk von Drupal liegt auf der Organisation von Webseite un unterstützt verschiedene Datenbanken wie MySQL, MariaDB, oder PostgreSQL. Mit einem Marktanteil von ca. 2,2\% ist Drupal nicht sehr weit verbreitet, ob wohl es mit einer sehr großen Community wirbt. Das System von Drupal, ist in erster Linie für die Gestaltung und die Administration von Webseiten gedacht. Es bietet aber auch \ac{CMS}-Funktionalität, wie das Verwalten von Dateien.
+
+Drupal ist in PHP geschrieben und kann mit Hilfe so genannter Module erweitert werden. Die Module bassieren auf dem \ac{MVC}-Prinzip und ähneln in der Programmierung etwas an Typo3-Extensions. Module in Drupal sind aber den Typo3-Extensions um einiges unterlegen, da sie kein ersatz für das Fluid-Framework bieten und es so nicht möglich ist Abfragen oder ähnliches in Templates unterzubringen.
+
+
 \subsection{Auswertung der möglichkeiten}
-Auch wenn Typo3 Neos Typo3 \ac{CMS} in nichts nachsteht, so wurde sich dennoch gegen die Verwendung von Neos entschieden, da eine vorranscchreitende Entwicklung nicht gewehrleistet. 
-Im Punkto Zukunftssicherheit ist Typo3 \ac{CMS} deutlich besser aufgestellt. 
+In der folgenden Tabelle werden die, zum Begin des Kapitels \ref{Portalserver}, genannten noch einmal aufgezählt und ausgewertet.
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ Anforderung 			& Priorisierung & Typo3 Neos 			& Typo3 \ac{CMS} 		& Joomla 				& Drupal \\\hline
+ 
+ Frei gestalltbar 		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark}\\ \hline
+ 
+ Eigene Erweiterungen 		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{orange}{\checkmark X} 	& \textcolor{orange}{\checkmark X} \\ \hline
+ 
+ Open-Source 			& gering 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} \\ \hline
+ 
+ Große Community		& hoch 		&\textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} & \textcolor{red}{X}		 	& \textcolor{orange}{\checkmark X} \\ \hline
+ 
+ Verwaltung von Dateien 	& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} \\ \hline
+ 
+ Unterstützt MySQL/MariaDB	& hoch 		& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{red}{X}		 	& \textcolor{green}{\checkmark} \\ \hline
+ 
+ Gesicherte Weiterentwicklung	& sehr hoch 	& \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{orange}{\checkmark X} 	& \textcolor{orange}{\checkmark X} \\ \hline
+ 
+\end{tabular}
+\end{center}
+\caption{Tabellarischer Vergleich der betrachteten Systeme}
+\label{Systemvergleich}
+\end{table}
+
+Joomla und Drupal haben beide ihre eigenen Ansätze und Vorzüge, so kann Drupal mit besonders vielen Datenbanken zusammen arbeiten und Joomla ist sehr gut für die Erstellung von Webseiten geeignet. 
+
+Leider bietet Joomla keine aktuelle Roadmap und eine Weiterentwicklung ist fraglich. Aus diesen Grund, sollte es nicht für die Entwicklung eines neuen Portals verwendet werden, welches zukunftssicher und lange Lauffähing sein soll. 
+
+Drupal bietet zwar eine stetige Weiterentwicklung anhand einer Roadmap, ist aber leider in Bezug auf die Entwicklung von Erweiterungen Typo3 \ac{CMS} und Neos unterlegen.
+
+Auch wenn Typo3 Neos Typo3 \ac{CMS} in nichts nachsteht, so wurde sich dennoch gegen die Verwendung von Neos entschieden, da eine vorranschreitende Entwicklung nicht gewehrleistet ist. 
+Im Punkto Zukunftssicherheit ist Typo3 \ac{CMS} am besten aufgestellt. 
+
+Der gezeigte Vergleich zeigt, dass Typo3 \ac{CMS} das beste System ist um ein modulares Supportsystem für die PDV Systeme Erfurt GmbH zu entwickeln, weshalb im weiteren Verlauf der Arbeit auf die Entwicklung mit diesem System eingegangen wird.
