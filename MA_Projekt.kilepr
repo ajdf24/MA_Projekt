@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Neue_Webtechnologien.tex
+lastDocument=Typo3.tex
 masterDocument=
 name=MA_Projekt
 pkg_extIsRegExp=false
@@ -73,7 +73,7 @@ Mode=BibTeX
 
 [document-settings,item:Typo3.tex]
 Bookmarks=
-Encoding=UTF-8
+Encoding=ISO-8859-15
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
@@ -94,10 +94,10 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=38
+column=33
 encoding=ISO-8859-1
 highlight=LaTeX
-line=8
+line=9
 mode=LaTeX
 open=true
 order=0
@@ -110,7 +110,7 @@ highlight=LaTeX
 line=23
 mode=LaTeX
 open=true
-order=2
+order=3
 
 [item:MA_Projekt.tex]
 archive=true
@@ -120,27 +120,27 @@ highlight=LaTeX
 line=187
 mode=LaTeX
 open=true
-order=1
+order=2
 
 [item:Neue_Webtechnologien.tex]
 archive=true
-column=78
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=270
+line=278
 mode=LaTeX
 open=true
 order=6
 
 [item:Portalserver.tex]
 archive=true
-column=0
+column=70
 encoding=ISO-8859-15
 highlight=LaTeX
-line=66
+line=96
 mode=LaTeX
 open=true
-order=4
+order=5
 
 [item:Quellen.bib]
 archive=true
@@ -150,17 +150,17 @@ highlight=BibTeX
 line=83
 mode=BibTeX
 open=true
-order=3
+order=4
 
 [item:Typo3.tex]
 archive=true
 column=0
-encoding=UTF-8
+encoding=ISO-8859-15
 highlight=LaTeX
-line=5
+line=48
 mode=LaTeX
 open=true
-order=5
+order=1
 
 [item:Zusammenfassung.tex]
 archive=true
@@ -179,8 +179,8 @@ encoding=ISO-8859-1
 highlight=LaTeX
 line=0
 mode=LaTeX
-open=false
-order=-1
+open=true
+order=8
 
 [item:studienarbeit_semester_5.kilepr]
 archive=true
@@ -193,10 +193,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=38
-CursorLine=8
+CursorColumn=33
+CursorLine=9
 JumpList=
-ViMarks=.,8,37,[,8,18,],8,37
+ViMarks=.,9,32,[,9,17,],9,32
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=0
@@ -211,16 +211,16 @@ JumpList=
 ViMarks=.,187,26,[,187,26,],187,26
 
 [view-settings,view=0,item:Neue_Webtechnologien.tex]
-CursorColumn=78
-CursorLine=270
+CursorColumn=0
+CursorLine=278
 JumpList=
 ViMarks=.,269,25,[,269,22,],269,25
 
 [view-settings,view=0,item:Portalserver.tex]
-CursorColumn=0
-CursorLine=66
+CursorColumn=70
+CursorLine=96
 JumpList=
-ViMarks=.,91,0,[,91,0,],91,0
+ViMarks=.,96,69,[,96,68,],96,69
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=1
@@ -230,9 +230,9 @@ ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Typo3.tex]
 CursorColumn=0
-CursorLine=5
+CursorLine=48
 JumpList=
-ViMarks=
+ViMarks=.,47,0,[,47,0,],-1,-1
 
 [view-settings,view=0,item:Zusammenfassung.tex]
 CursorColumn=0
