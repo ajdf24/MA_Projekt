@@ -117,7 +117,7 @@ stringstyle=\color{blue}
 % Falls es kein Firmenlogo gibt:
 %  \newcommand{\FirmenLogoDeckblatt}{}
 
-\newcommand{\BetreuerFirma}{Dipl. -Inform. FH Nico Kaiser}
+\newcommand{\BetreuerFirma}{Dipl. -Witschaftsinform. (FH) Nico Kaiser}
 \newcommand{\BetreuerDHBW}{Prof. Rolf Kruse}
 \newcommand{\Titel}{Evaluation moderner Webtechnologien für die Entwicklung eines modularen Supportportals}
 \newcommand{\AbgabeDatum}{01.03.2017}
@@ -138,6 +138,10 @@ stringstyle=\color{blue}
 \setboolean{bilder}{true} %Zuweisung
 % \setboolean{bilder}{false} %Zuweisung
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
 
 \begin{document}
 

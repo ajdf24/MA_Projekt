@@ -1,98 +1,99 @@
 \section{Portalserver/ CMS-Systeme im Vergleich} \label{Portalserver}
-Das zukünftige Supportportal der PDV Systeme GmbH soll auf Basis eines Portalservers bzw. \ac{CMS}-Servers aufgebaut werden. Hierfür werden im folgenden einige Möglichkeiten genauer betrachtet.
+Das zukünftige Supportportal der PDV Systeme GmbH soll auf Basis eines Portalservers bzw. Enterprise \ac{CMS}-Servers aufgebaut werden. Hierfür werden im folgenden einige Möglichkeiten genauer betrachtet.
 
-Ein Portalserver, welcher für das Projekt heran gezogen wird muss die folgenden Eigenschaften aufweisen.
+Ein \ac{CMS}-Server, welcher für das Projekt heran gezogen wird muss die folgenden Eigenschaften aufweisen.
 \begin{itemize}
- \item Webseiten müssen frei gestalltbar sein
+ \item Webseiten müssen frei gestaltbar sein
  \item Es muss die Möglichkeit bestehen Anwendungen für den Server zu entwickeln
  \item Das System muss Open-Source sein, um ggf. in den Quellcode eingreifen zu können
  \item Die Nutzer-Community sollte möglichst groß sein, damit Probleme leicht diskutiert und behoben werden können
  \item Der Server muss die Möglichkeit bieten Dateien zu verwalten, welche als Download oder Kontent in das Portal einfließen
  \item Lauffähing unter einer SQL-Datenbank wie MySQL oder MariaDB
+ \item Sollte einfache Web-Technologien wie HTML, CSS, PHP und JavaScript verwenden
 \end{itemize}
 
-Auf die Betrachtung reiner \ac{CMS}-System wird an dieser Stelle verzichtet, da diese nicht die gewünschten Anforderungen eines Portalservers erfüllen.
+Auf die Betrachtung reiner \ac{CMS}-System wie zum Beispiel Alfresco (Java-Tomcat) wird an dieser Stelle verzichtet, da diese nicht die gewünschten Anforderungen eines Portalservers erfüllen und zumeist nicht als Webanwendung zur Verfügung stehen.
 Ein Vergleich verschiedener reiner \ac{CMS}-Systeme ist in der Bachelorarbeit "`Konzept und prototypische Implementierung eines übergreifenden Dokumenten- und Medienmanagements"' zu finden.
 \cite{Bachelorarbeit}
 
+Soll ein \ac{CMS}-System eingesetzt werden, muss eine Firma zuerst abwägen, welches System zur Verwendung kommen soll. Die Webseite "`CMS Matrix"'\footnote{\url{http://www.cmsmatrix.org/}} listet die meisten bekannten Systeme, welche auch verglichen werden können. Nach einer ersten internen Gegenüberstellung werden nun die Systeme TYPO3, NEOS, Drupal und Joomla genauer betrachtet.
 
-\subsection{Typo3}\label{PortalServerTypo3}
-Typo3 ist ein Verwaltungssystem für Internetseiten. Es basiert in der neusten Version 8.2 auf der PHP Version 7. 
-Seit der Version 7.0 welche zugleich eine \ac{LTS} Version ist, wird es unter dem Namen Typo3 \ac{CMS} vertrieben. 
+\subsection{TYPO3}\label{PortalServerTypo3}
+TYPO3 ist ein \ac{CMS}-System für Internetseiten und basiert in der neusten Version 8.2 auf der PHP Version 7. Es wurde 1998 von Kasper Skårhøj entwickelt und seit der Version 7.6 welche zugleich eine \ac{LTS} Version ist unter dem Namen TYPO3 \ac{CMS} vertrieben. 
 \cite{WikiTypo3}
+
+TYPO3 spaltet sich intern in ein Backend und ein Frontend, wobei im Backend nicht nur Einstellungen für das Frontend vorgenommen werden. Das TYPO3 Backend, arbeitet als eine Art eigene Webseite, welche es erlaubt anfallende Aufgaben vom Frontend abzuarbeiten. Interne Mitarbeiter, arbeiten somit innerhalb des TYPO3 Bachends, wobei Anwender im Frontend mit der Webseite interagieren.
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=16cm]{Bilder/Typo3_Backend.png}
-\caption{Typo3 Backend im Seitenbearbeitungs Modus \cite{Typo3Bild}}
+\caption{TYPO3 Backend im Seitenbearbeitungs Modus \cite{Typo3Bild}}
 \label{Typo3_Backend_Bild}
 \centering
 \end{figure}
 
-Es ist möglich unter Verwendung von PHP, Extbase und Fluid eigene Erweiterungen für den Portalserver zu entwickeln. Die jeweiligen Erweiterungen wirken im Fronten von Typo3 wie ganz normale Webseiten.
+Es ist möglich unter Verwendung von HTML, CSS, JavaScript, PHP, Extbase und Fluid eigene Erweiterungen für den Portalserver zu entwickeln. Die jeweiligen Erweiterungen wirken im Frontend von TYPO3 wie ganz normale Webseiten.
 Auf Extbase und Fluid wird im Kapitel \ref{Typo3} genauer eingegangen.
 
-Ein Vorteil von Typo3 ist, dass es eines der am häufigsten verbreiteten Portalserver auf dem Markt ist. Selbst große Firmen wie "`Sixt"' setzten auf Typo3 bei der Erstellung ihrer Internetportale.
-Durch die große Verbreitung von Typo3 ist auch die Community um die Software sehr groß und man findest schell zu fast jedem Problem im Internet eine Lösung.
+Ein Vorteil von TYPO3 ist, dass es eines der am häufigsten verbreiteten Portalserver auf dem Markt ist. Selbst große Firmen wie "`Sixt"' setzten auf TYPO3 bei der Erstellung ihrer Internetportale.
+Durch die große Verbreitung von TYPO3 ist auch die Community um die Software sehr groß und man findest schell zu fast jedem Problem im Internet eine Lösung.
 
-Typo3 kann im Zusammenspiel mit MySQL, MariaDB, PostgreSQL oder Oracle als Datenbank betrieben werden. Nur mit Hilfe einer dieser Datenbank im Hintergrund ist Typo3 stabil Lauffähing und kann produktiv eingesetzt werden.
+TYPO3 kann im Zusammenspiel mit MySQL, MariaDB, PostgreSQL oder Oracle als Datenbank betrieben werden. Nur mit Hilfe einer dieser Datenbank garantiert TYPO3 eine stabile und lauffähinge Software.
 
-Durch ein übersichtliches Backend (siehe Abbildung \ref{Typo3_Backend_Bild}), ist es auf für Laien möglich qualitativ Hochwertige Webseiten zu erstellen, ohne viel Kenntnis von Webtechnologien wie HTML oder CSS zu haben.
+Durch das übersichtliche Backend (siehe Abbildung \ref{Typo3_Backend_Bild}), ist es auch für Anwender möglich qualitativ Hochwertige Webseiten zu erstellen, ohne viel Kenntnis von Webtechnologien wie HTML oder CSS zu haben.
 
-Ein Upload von Dateien für den Download beziehungsweise als Seiten-Kontent ist ebenfalls unter Typo3 möglich. Zusätzlich dazu ist es möglich das Nutzer Dateien auf den hochladen. 
-Hierdurch entsteht auch die Möglichkeit ein Austauschportal für Dateien zu schaffen. Nutzer können so in einer sicheren Umgebung sensible Daten untereinander oder mit Mitarbeitern austauschen.
+Ein Upload von Dateien für den Download beziehungsweise als Seiten-Kontent ist ebenfalls unter TYPO3 möglich. Zusätzlich dazu ist es möglich das Nutzer Dateien auf den Server vom Frontend aus hochladen. 
+Hierdurch entsteht die Möglichkeit ein Austauschportal für Dateien zu schaffen. Nutzer können so in einer sicheren Umgebung sensible Daten untereinander oder mit Mitarbeitern austauschen.
 \cite{LobacherTypo3}
 
-\subsection{Typo3 Neos}
-Typo3 Neos ist ein relativ neuer Internetportal Server, welcher 2012 aus dem Wunsch heraus entstand Typo3 zukunftssicher zu gestalten.
+\subsection{TYPO3 Neos}
+TYPO3 Neos ist ein relativ neuer Internetportal Server und ein Fork von TYPO3 \ac{CMS}, welcher 2012 aus dem Wunsch heraus entstand TYPO3 zukunftssicher zu gestalten.
 
-Als erkannt wurde, dass eine zukunftssichere Typo3 Entwickung basierend auf dem \ac{MVC}-Prinzip eine koplette Neuimplementierung erfordert wurde der Grundstein für Typo3 Neos gelegt.
-Neben der Entwickung von Typo3 \ac{CMS} wurde die Entwicklung von Typo3 Neos begonnen. Das Ziel war es, einen Nachfolger für Typo3 zu entwickeln. Dies gelang jedoch nicht wie vorgesehen.
+Als erkannt wurde, dass eine zukunftssichere TYPO3 Entwickung basierend auf dem \ac{MVC}-Prinzip eine koplette Neuimplementierung erfordert wurde der Grundstein für TYPO3 Neos gelegt.
+Neben der Entwickung von TYPO3 \ac{CMS} wurde die Entwicklung von TYPO3 Neos begonnen. Ziel war es, einen Nachfolger für TYPO3 zu entwickeln. Dies gelang jedoch nicht wie vorgesehen.
 \cite{WikiTypo3}
 
-Früh wurde festgestellt das sich diese die beiden Projekte in unterschiedliche Richtungen entwickeln. Typo3 Neos ist heute in der Version 2.0 erhältlich und hat sich zum Ziel gesetzt Webseiten im gegensatz zu Typo3 live im Frontend zu bearbeiten.
-Einfach gesagt ist Typo3 ein Internet-Portalserver welcher auf dem \ac{WYSIWYG}-Prinzip aufbaut. Es ist möglich Webseiten live oder getrennt vom Livesystem im Frontend zu erstellen. 
-Die Frontend-Bearbeitung bingt viele Vorteile für die Webseitenerstellung für Laien. Diese können eine Seite direkt bearbeiten und Live nehmen.
+Früh wurde festgestellt das sich beiden Projekte in unterschiedliche Richtungen entwickeln. TYPO3 Neos ist heute in der Version 2.0 erhältlich und hat sich zum Ziel gesetzt Webseiten im gegensatz zu TYPO3 live im Frontend zu bearbeiten. Mit der Veröffentlichung der Version 2.0 wurde der Name außerdem in Neos geändert.
+Einfach gesagt ist TYPO3 ein Internet-Portalserver welcher auf dem \ac{WYSIWYG}-Prinzip aufbaut. Es ist möglich Webseiten live oder getrennt vom Livesystem im Frontend zu erstellen. 
+Die Frontend-Bearbeitung bingt viele Vorteile für die Webseitenerstellung für Anwender. Diese können eine Seite direkt bearbeiten und Live nehmen.
 \cite{LobacherTypo3}
 
-Neos ist bei weitem nicht so verbreitet wie Typo3 \ac{CMS} und die Community um das Projekt ist deutlich geringer. Dies ist ein klarer Nachteil zum großen Bruder Typo3 \ac{CMS} ist.
+Neos ist bei weitem nicht so verbreitet wie TYPO3 \ac{CMS} und die Community um das Projekt ist deutlich kleiner. Dies ist ein klarer Nachteil zu TYPO3 \ac{CMS}.
 
-Ähnlich wie bei Typo3 \ac{CMS} ist es in Neos möglich sogenannte Plugins zu entwickeln. Diese basieren auf dem "`Typo3 Flow"'-Framework, welche zusammen mit Neos entwickelt wurde.
-Flow ist ein Framework, welches es erlaubt Templates mit Hilfe von "`Fluid"' zu entwickeln. Auf die Fluid wird im Abschnitt \ref{Fluid} näher eingegangen.
+Ähnlich wie bei TYPO3 \ac{CMS} ist es in Neos möglich sogenannte Plugins zu entwickeln. Diese basieren auf dem "`TYPO3 Flow"'-Framework, welches zusammen mit Neos entwickelt wurde.
+Flow ist ein Framework, welches es erlaubt Templates mit Hilfe von "`Fluid"' zu entwickeln. Auf das Fluid-Framework wird im Abschnitt \ref{Fluid} näher eingegangen.
 \cite{WikiFlow}
 
-Ähnlich wie Typo3 \ac{CMS} benötigt auch Neos eine SQL-Datenbank zur Datenhaltung und ist Quelloffen verfügbar. Nach der Abspaltung von Typo3 Neos vom Typo3 Projekt, wird es heute von einer relativ kleinen Gemeinde entwickelt.
-Aus diesem Grund, gibt es keine Roadmap für das Projekt und die Veröffentlichung von neuen Version ist träger als die von Typo3 \ac{CMS}. 
+Ähnlich wie TYPO3 \ac{CMS} benötigt auch Neos eine SQL-Datenbank zur Datenhaltung und ist Quelloffen verfügbar. Nach der Abspaltung von Neos vom TYPO3 Projekt, wird es heute von einer relativ kleinen Gemeinde entwickelt.
+Aus diesem Grund, gibt es keine Roadmap für das Projekt und die Veröffentlichung von neuen Version ist langsamer als die von TYPO3 \ac{CMS}. 
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=16cm]{Bilder/neos_backend.jpg}
-\caption{Typo3 Neos Backend im Seitenbearbeitungs Modus \cite{NeosBild}}
+\caption{TYPO3 Neos Backend im Seitenbearbeitungs Modus \cite{NeosBild}}
 \label{Typo3_Neos_Backend_Bild}
 \centering
 \end{figure}
 
-In Abbildung \ref{Typo3_Neos_Backend_Bild} ist der Seitenbearbeitungs-Modus von Neos zu sehen. Es ist gut zu erkennen, das Inhalte einer Webseite direkt bearbeitet werden können. Dies macht eine Webentwicklung für Laien einfacher.
+In Abbildung \ref{Typo3_Neos_Backend_Bild} ist der Seitenbearbeitungs-Modus von Neos zu sehen. Es ist gut zu erkennen, das Inhalte einer Webseite direkt bearbeitet werden können. Dies macht eine Webentwicklung für Anwender einfacher.
 
 \subsection{Joomla}
-Joomla ist ein weiteres \ac{CMS}-System für die Erstellung von Webseiten. Ähnlich wie Typo3 ist es Open Source und nutzt eine MySQL-Datenbank im Hintergrund. Das System ist in PHP5 geschrieben und dient in erster Linie zur Erstellung von Webseiten.
-Am besten kann Joomla mit Typo3 Neos verglichen werden, da es einen ähnlichen Ansatz zur Erstellung von Webseiten aufgreift. 
+Joomla ist ein weiteres \ac{CMS}-System für die Erstellung von Webseiten, welches 2005 erstmalig veröffentlicht wurde. Ähnlich wie TYPO3 ist es Open Source und nutzt eine MySQL-Datenbank im Hintergrund. Das System ist in PHP5 geschrieben und dient in erster Linie zur Erstellung von Webseiten.
+Am besten kann Joomla mit TYPO3 Neos verglichen werden, da es einen ähnlichen Ansatz zur Erstellung von Webseiten aufgreift. 
 
-Ein Vorteil gegenüber Neos ist, das Joomla weit verbreitet ist und eine beachtliche Community hat, welche bei Neos geringer ausfällt. Nachteilig an Neos ist jedoch, das es eine Bearbeitung von Web-Inhalten nur im Backend zulässt. Dies bedeutet wiederum, das mehr Erfahrung benötigt wird um eine Webseite zu erstellen.
+Ein Vorteil gegenüber Neos ist, das Joomla weiter verbreitet ist und eine beachtliche Community hat, welche bei Neos geringer ausfällt. Nachteilig an Joomla ist jedoch, das es eine Bearbeitung von Web-Inhalten nur im Backend zulässt. Dies bedeutet wiederum, das mehr Erfahrung benötigt wird um eine Webseite zu erstellen.
 
-Weitere Nachteile sind zum einen die kaum existente Roadmap, welche zur Zeit der Bearbeitung nicht aktuell war. Zum anderen ist die Entwicklung von Erweiterungen für Joomla nicht so gut strukturiert wie es bei Typo3 mit Fluid der Fall ist.
+Weitere Nachteile sind zum einen die kaum existente Roadmap, welche zur Zeit der Bearbeitung nicht aktuell war. Zum anderen ist die Entwicklung von Erweiterungen für Joomla nicht so gut strukturiert wie es bei TYPO3 mit Fluid der Fall ist.
 
-Eine freie Gestalltung der Webseiten ist zwar gegeben, aber für die Entwicklung eines komplexes Supportportals wie es später einmal entstehen soll ist Joomla nicht oder nur bedingt geeignet.
-Es gibt momentan keine garantierte Weiterentwicklung des Portalservers und eine Unterstützung von MariaDB ist nicht offiziell gegeben.
-
-Auch wenn Joomla durchaus seinen Charm hat, so ist es für die Entwicklung eines Supportportals, welches modular aufgebaut werden soll nicht zu empfehlen. Dies bedingt sich zum einen aus der abgelaufen Roadmap, aber auch durch die schlechtere Erweiterungsentwicklung im Gegensatz zu Typo3 \ac{CMS} oder Neos. \cite{Joomla} \cite{JoomlaWiki}
+Eine freie Gestaltung der Webseiten ist zwar gegeben, jedoch ist die Erstellung von Erweiterungen wesentlich schwieriger als unter TYPO3 \ac{CMS}.
+Es gibt momentan keine garantierte Weiterentwicklung des Portalservers. Auch wenn Joomla den SQL-Standard unterstützt, ist es es nicht offiziell für die Verwendung mit MariaDB freigegeben.
 
 \subsection{Drupal}
+Drupal ist ein \ac{CMS}-System welches 2001 veröffentlicht wurde. Es ist momentan in der Version 8.2.3 erhältlich. Das Hauptaugenmerk von Drupal liegt auf der Organisation von Webseite. Es unterstützt verschiedene Datenbanken wie MySQL, MariaDB, oder PostgreSQL. Mit einem Marktanteil von ca. 2,2\% ist Drupal jedoch nicht sehr weit verbreitet, obwohl es mit einer sehr großen Community wirbt. Das System von Drupal, ist in erster Linie für die Gestaltung und die Administration von Webseiten gedacht. Es bietet aber auch \ac{CMS}-Funktionalität, wie das Verwalten von Dateien. \cite{DrupalWiki}
 
-Drupal ist ein \ac{CMS}-System welches 2001 veröffentlicht wurde. Das Hauptaugenmerk von Drupal liegt auf der Organisation von Webseite un unterstützt verschiedene Datenbanken wie MySQL, MariaDB, oder PostgreSQL. Mit einem Marktanteil von ca. 2,2\% ist Drupal nicht sehr weit verbreitet, ob wohl es mit einer sehr großen Community wirbt. Das System von Drupal, ist in erster Linie für die Gestaltung und die Administration von Webseiten gedacht. Es bietet aber auch \ac{CMS}-Funktionalität, wie das Verwalten von Dateien. \cite{DrupalWiki}
+Drupal ist in PHP geschrieben und unterstützt PHP 7. Mit Hilfe so genannter Module kann es erweitert werden. Die Module bassieren auf dem \ac{MVC}-Prinzip und ähneln in der Programmierung TYPO3-Extensions. Module in Drupal sind aber den TYPO3-Extensions um einiges unterlegen, da sie kein Ersatz für das Fluid-Framework bieten und es so nicht möglich ist Abfragen oder Kontrollstrukturen innerhalb von Templates zu realisieren. \cite{Drupal} 
 
-Drupal ist in PHP geschrieben und kann mit Hilfe so genannter Module erweitert werden. Die Module bassieren auf dem \ac{MVC}-Prinzip und ähneln in der Programmierung etwas an Typo3-Extensions. Module in Drupal sind aber den Typo3-Extensions um einiges unterlegen, da sie kein ersatz für das Fluid-Framework bieten und es so nicht möglich ist Abfragen oder ähnliches in Templates unterzubringen. \cite{Drupal} 
-
+Drupal bietet keinen Support für Enterprise-\ac{CMS}-Funktionalitäten von hause aus. Somit müssen viele Use-Cases wie zum Beispiel das Workflow-Management selbst programmiert werden.
 
 \subsection{Auswertung der möglichkeiten}\label{PortalserverAuswertung}
 In der folgenden Tabelle werden die, zum Begin des Kapitels \ref{Portalserver}, genannten noch einmal aufgezählt und ausgewertet.
@@ -102,7 +103,7 @@ In der folgenden Tabelle werden die, zum Begin des Kapitels \ref{Portalserver}, 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
- Anforderung 			& Priorisierung & Typo3 Neos 			& Typo3 \ac{CMS} 		& Joomla 				& Drupal \\\hline
+ Anforderung 			& Priorisierung & Neos 				& TYPO3 \ac{CMS} 		& Joomla 				& Drupal \\\hline
  
  Frei gestalltbar 		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark}\\ \hline
  
@@ -118,19 +119,25 @@ In der folgenden Tabelle werden die, zum Begin des Kapitels \ref{Portalserver}, 
  
  Gesicherte Weiterentwicklung	& sehr hoch 	& \textcolor{orange}{\checkmark X} & \textcolor{green}{\checkmark} & \textcolor{orange}{\checkmark X} 	& \textcolor{orange}{\checkmark X} \\ \hline
  
+ Basiert auf Webtechnologien	& sehr hoch	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark}\\ \hline
+ 
 \end{tabular}
 \end{center}
 \caption{Tabellarischer Vergleich der betrachteten Systeme}
 \label{Systemvergleich}
 \end{table}
 
-Joomla und Drupal haben beide ihre eigenen Ansätze und Vorzüge, so kann Drupal mit besonders vielen Datenbanken zusammen arbeiten und Joomla ist sehr gut für die Erstellung von Webseiten geeignet. 
+Joomla hat durchaus seinen Charm, so ist es für die Entwicklung eines Supportportals, welches modular aufgebaut werden soll nicht zu empfehlen. Dies bedingt sich zum einen aus der abgelaufen Roadmap, aber auch durch die schlechtere Erweiterungsentwicklung im Gegensatz zu TYPO3 \ac{CMS} oder Neos. \cite{Joomla} \cite{JoomlaWiki}
 
-Leider bietet Joomla keine aktuelle Roadmap und eine Weiterentwicklung ist fraglich. Aus diesen Grund, sollte es nicht für die Entwicklung eines neuen Portals verwendet werden, welches zukunftssicher und lange Lauffähing sein soll. 
+Drupal und Joomla haben beide ihre eigenen Ansätze und Vorzüge, so kann Drupal mit besonders vielen Datenbanken zusammen arbeiten und Joomla ist sehr gut für die Erstellung von Webseiten geeignet. 
 
-Drupal bietet zwar eine stetige Weiterentwicklung anhand einer Roadmap, ist aber leider in Bezug auf die Entwicklung von Erweiterungen Typo3 \ac{CMS} und Neos unterlegen.
+Leider bietet Joomla keine aktuelle Roadmap und eine Weiterentwicklung ist fraglich. Aus diesen Grund, sollte es nicht für die Entwicklung eines neuen Portals verwendet werden, welches zukunftssicher und lange lauffähig sein soll. 
 
-Auch wenn Typo3 Neos Typo3 \ac{CMS} in nichts nachsteht, so wurde sich dennoch gegen die Verwendung von Neos entschieden, da eine vorranschreitende Entwicklung nicht gewehrleistet ist. 
-Im Punkto Zukunftssicherheit ist Typo3 \ac{CMS} am besten aufgestellt. 
+Drupal bietet zwar eine stetige Weiterentwicklung anhand einer Roadmap, ist aber leider in Bezug auf die Entwicklung von Erweiterungen TYPO3 \ac{CMS} und Neos unterlegen.
 
-Der gezeigte Vergleich zeigt, dass Typo3 \ac{CMS} das beste System ist um ein modulares Supportsystem für die PDV Systeme Erfurt GmbH zu entwickeln, weshalb im weiteren Verlauf der Arbeit auf die Entwicklung mit diesem System eingegangen wird.
+Auch wenn TYPO3 Neos TYPO3 \ac{CMS} in nichts nachsteht, so wurde sich dennoch gegen die Verwendung von Neos entschieden, da eine vorranschreitende Entwicklung nicht gewehrleistet ist. 
+Im Punkto Zukunftssicherheit ist TYPO3 \ac{CMS} am besten aufgestellt. 
+
+Der gezeigte Vergleich zeigt, dass TYPO3 \ac{CMS} das beste System ist um ein modulares Supportsystem für die PDV Systeme Erfurt GmbH zu entwickeln, weshalb im weiteren Verlauf der Arbeit auf die Entwicklung mit diesem System eingegangen wird.
+
+Natürlich, gibt es noch viele weitere Punkte, in denen die Systeme verglichen werden. Da aber alle, für die Entwicklung eines Supportportals, wichtigen Punkte betrachtet wurden, muss an dieser Stelle auf die "`CMS Matrix"'\footnote{\url{http://www.cmsmatrix.org/}} verwiesen werden.
