@@ -1,5 +1,5 @@
 \section{TYPO3}\label{Typo3}
-Im Abschnitt \ref{PortalServerTypo3} wurde schon grundlegend auf TYPO3 eingegangen. Es stellte sich im Abschnitt \ref{PortalserverAuswertung} heraus, dass TYPO3 die besten Möglichkeiten bietet um ein modulares Supportsystem aufzubauen.
+Im Abschnitt \ref{PortalServerTypo3} wurde schon grundlegend auf TYPO3 eingegangen. Es stellte sich im Abschnitt \ref{PortalserverAuswertung} heraus, dass TYPO3 die besten Möglichkeiten bietet, um ein modulares Supportsystem aufzubauen.
 
 Im folgenden Kapitel wird genauer auf die Verwendung von TYPO3 \ac{CMS} (im weiteren als TYPO3 bezeichnet) eingegangen.
 Hierbei wird auf die Roadmap von TYPO3 eingegangen und gezeigt wie eine TYPO3 Extension grundlegend entwickelt wird.
@@ -8,7 +8,7 @@ Hierbei wird auf die Roadmap von TYPO3 eingegangen und gezeigt wie eine TYPO3 Ex
 Die momentan aktuelle \ac{LTS}-Version von TYPO3 ist die Version 7.6, welche aktuell (Stand Dezember 2016) noch immer unterstützt wird.
 Gleichzeitg wird eine neue \ac{LTS}-Version entwickelt, welche iterativ innerhalb der Version 8.x entsteht. Momentan ist die aktuelle Version 8.5, welche zum Beispiel einen neuen \ac{RTE}-Editor mitbringt. \cite{Typo85}
 
-Im Verlauf des Jahres 2017, soll dann die neue \ac{LTS}-Version von TYPO3 erscheinen. Da sich die Entwicklung des Supportportals vorraussichtlich bis Ende 2017 erstrecken wird, ist es nur logisch die Neuentwicklung auf den momentanen Zwischenversionen zu entwickeln, um bei der Fertigstellung möglichst auf einer neuen \ac{LTS}-Version aufsetzen zu können.
+Im Verlauf des Jahres 2017 soll dann die neue \ac{LTS}-Version von TYPO3 erscheinen. Da sich die Entwicklung des Supportportals vorraussichtlich bis Ende 2017 erstrecken wird, ist es nur logisch die Neuentwicklung auf den momentanen Zwischenversionen zu entwickeln, um bei der Fertigstellung möglichst auf einer neuen \ac{LTS}-Version aufsetzen zu können.
 
 Bis zum erscheinen der neuen \ac{LTS}-Version, soll auch die Seitenbearbeitung im Frontend, wie sie bei NEOS vorhanden ist umgesetzt werden soll. Hierfür wird der Code von NEOS angepasst und zurückportiert.
 
@@ -22,7 +22,7 @@ Das TYPO3 Frontend existiert momentan nur zum Anzeigen von Webseiten, redakation
 Innerhalb des TYPO3 Backends können sehr viele Funktionen realisiert werden. Es können Seiten hinzugefügt, entfernt oder bearbeitet werden. Die Bereitstellung von redaktionellen Inhalten ist natürlich auch möglich. TYPO3 bietet auch die Möglichkeit eine sehr umfangreiche Nutzeradministrierung für Backend und Frontendnutzer durchzuführen. Auch Workflows können innerhalb des TYPO3 Backends abgebildet werden.
 
 \subsection{TypoScript}
-TypoScript ist eine eigens von Kasper Skårhøj für TYPO3 entwickelte Konfigurationssprache mit der es möglich ist, eine TYPO3 Extension zu konfigurieren.
+TypoScript ist eine eigens von Kasper Skårhøj für TYPO3 entwickelte Konfigurationssprache, mit der es möglich ist, eine TYPO3 Extension zu konfigurieren.
 Eine Sprachdefinition zu TypoScript findet sich in der TypoScript Reference\footnote{\url{https://docs.typo3.org/typo3cms/TyposcriptReference/}}.
 
 Weiterhin ist es möglich mit Hilfe von TypoScript TYPO3 zu konfigurieren, ohne hierfür große Programmierkentnisse zu besitzen.
@@ -30,22 +30,21 @@ Weiterhin ist es möglich mit Hilfe von TypoScript TYPO3 zu konfigurieren, ohne h
 Das eigentliche TypoScript für jede Extension ist unter Configuration/TypoScript (siehe Abbildung \ref{Extension Struktur}) in der Datei setup.txt zu finden.
 Zusätzlich zu der Konfiguration findet sich im selben Ordner noch die Datei constants.txt, in welcher globale Konstanten für die Extension definiert werden können. \cite{TypoScript}
 
-Konstanten, welche in der constants.txt, zu finden sind, können aber zusätzlich innerhalb von TYPO3 überschrieben werden. Dies bietet bei richtiger Programmierung einer Extension eine große Flexibilität. Zum Beispiel können in einer, entsprechend zur vorliegenden Arbeit, entwickelten Extension über Konstanten verschiedene Dinge angepasst werden. Es ist so möglich ohne Eingriff in den Quellcode, Links im Footer der Extension zu ändern. (Mehr zu entwickelten Extension siehe Kapitel \ref{Modulare Extensions})
+Konstanten, welche in der constants.txt zu finden sind, können aber zusätzlich innerhalb von TYPO3 überschrieben werden. Dies bietet bei richtiger Programmierung einer Extension eine große Flexibilität. Zum Beispiel können in einer, entsprechend zur vorliegenden Arbeit, entwickelten Extension über Konstanten verschiedene Dinge angepasst werden. Es ist so möglich, ohne Eingriff in den Quellcode, Links im Footer der Extension zu ändern. (Mehr zu entwickelten Extension siehe Kapitel \ref{Modulare Extensions})
 
 Wie genau Extension mit Hilfe von TypoScript konfiguriert werden können, ist in der offizellen Dokumentation oder in den Büchern von Patrick Lobacher genauer beschrieben. \cite{LobacherTypo3}
 
 \subsection{Extensions}
-Es ist möglich beinahe jede benötigte Funktion in TYPO3 einzubauen. Dies geschieht über so genannte Extensions, welche den Funktionsumfang von TYPO3 erweitern oder verändern können.
+Es ist möglich, beinahe jede benötigte Funktion in TYPO3 einzubauen. Dies geschieht über so genannte Extensions, welche den Funktionsumfang von TYPO3 erweitern oder verändern können.
 Das Grundsystem, welches nach der Installation vorzufinden ist, basiert zum Teil schon auf Extensions, den sogenannten System-Extensions. Diese Extensions bringen grundlegende Funktionalitäten in das Grundsystem ein und erweitern dieses. 
 
 Das Auslagern von Funktionalitäten in Extensions hat mehrere Vorteile. Zum einen entlastet es den System-Kern und macht diesen schlanker und übersichtlicher. Zum anderen können Fehler in Extensions behoben werden, ohne das ganze System zu updaten. 
-
 Konzepte von TYPO3 Extensions sind zum einen die objektorienterte Programmierung und das \ac{MVC}-Prinzip.
 
 \newpage
 \paragraph{Objektorienterte Programmierung} sagt aus, dass alles und jedes im Programm auf Klassen basiert. Lediglich PHP-Funktionalitäten wie finale Klassen oder die Sichtbarkeit "`private"' wird nicht unterstützt. 
 
-Der gesammte PHP-Quellcode einer Extension ist Objektbasiert, nicht nur Modellklassen, sondern auch Konstroller oder Repositorys sind als Klassen abgebildet. 
+Der gesammte PHP-Quellcode einer Extension ist objektbasiert, nicht nur Modellklassen, sondern auch Controller oder Repositorys sind als Klassen abgebildet. 
 
 \begin{wrapfigure}{r}{4cm}
 \centering
@@ -56,26 +55,26 @@ Der gesammte PHP-Quellcode einer Extension ist Objektbasiert, nicht nur Modellkl
 \end{wrapfigure}
 
 \paragraph{Model-View-Controller}\label{MVCTypo} ist ein sehr bekanntes Strukturierungsmittel in der Informatik und kommt auch bei TYPO3 Extensions zum Einsatz.
-In einem Extension-Projekt, müssen alle Klassen innerhalb fester Pfade abgelegt werden.
+In einem Extension-Projekt müssen alle Klassen innerhalb fester Pfade abgelegt werden.
 
 In Abbildung \ref{Extension Struktur} ist die Struktur der Basis-Extension für das Supportportal zu sehen.
 
 \subparagraph{Modellklassen,} welche nach dem \ac{MVC}-Prinzip reale Objekte verkörpern, sind unter Classes/Domain/Model zu finden.
 \subparagraph{Controller} sind unter Classes/Controller zu finden.
-\subparagraph{Views,} welche bei Webseiten als HTML-Dateien realisiert werden, sind unter Resources/Private zu finden. Hier wiederum sind sie im Unterordner Templates zu finden. Eine Besonderheit bei Extensions ist, dass wiederkehrende Views, so genannte "`Partials"' im Unterordner Partials zu finden sind. Partials werden innerhalb von Templates gerendert und dargsestellt.
+\subparagraph{Views,} welche bei Webseiten als HTML-Dateien realisiert werden, sind unter Resources/Private zu finden. Hier wiederum sind sie im Unterordner Templates zu finden. Eine Besonderheit bei Extensions ist, dass wiederkehrende Views, so genannte "`Partials"', im Unterordner Partials zu finden sind. Partials werden innerhalb von Templates gerendert und dargsestellt.
 
 Eine weitere Besonderheit sind die Repository-Klassen, welche unter /Classes/Domain/Repository zu finden sind. Sie stellen die Persistenzschicht zwischen Anwendung und Datenbank dar. Alle Lese- oder Schreiboperationen werden innerhalb der Repositorys durchgeführt. TYPO3 stellt innerhalb der Repositorys viele dynamische Methoden bereit, um Standardabfragen zu realisieren.
 
-Um den Grundstock für eine neue eigene Extension zu legen, kann der Extension-Builder\footnote{\url{https://typo3.org/extensions/repository/view/extension_builder}} verwendet werden. Dieser baut unter Angabe des Domain-Modells und der Constroller die Grundextension auf, die dann mit Inhalt gefüllt werden kann.
+Um den Grundstock für eine neue eigene Extension zu legen, kann der Extension-Builder\footnote{\url{https://typo3.org/extensions/repository/view/extension_builder}} verwendet werden. Dieser baut unter Angabe des Domain-Modells und der Controller die Grundextension auf, die dann mit Inhalt gefüllt werden kann.
 
-Eine genauere Beschreibung, aller Komponenten einer Extension und wie eine Extension grundlegend zu Programmieren ist, kann in den Büchern von Patrick Lobacher\footnote{Typo3 Extbase} nachgelesen werden. Lobacher beschreibt in verschiedenen Büchern die Grundlagen für die Programmierung anhand verschiedener TYPO3 Versionen.
+Eine genauere Beschreibung aller Komponenten einer Extension und wie eine Extension grundlegend zu Programmieren ist, kann in den Büchern von Patrick Lobacher\footnote{Typo3 Extbase} nachgelesen werden. Lobacher beschreibt in verschiedenen Büchern die Grundlagen für die Programmierung anhand verschiedener TYPO3 Versionen.
 
 \subsection{Das TER}
 Das \ac{TER}\footnote{\url{https://typo3.org/extensions/repository/}} ist eine von der TYPO3 Association bereitgestellte Sammlung von öffentlichen Extensions für TYPO3. Hier kann jeder Entwickler seine Extension für andere bereitstellen.
 Die Verwendung von fremden Extensions aus dem \ac{TER} geschieht jedoch immer auf eigene Verantwortung.
 
 \subsection{Fluid}\label{Fluid}
-Fluid ist eine TYPO3 System Extension, welche ein Framework für das Rendern von Templates bereit stellt. Zu jeder Aktion, welche es innerhalb eines Controllers (siehe \ref{MVCTypo}) gibt existiert auch ein Fluid Template, sofern kein Redirect zu einer anderen Aktion durchgeführt wird. 
+Fluid ist eine TYPO3 System Extension, welche ein Framework für das Rendern von Templates bereit stellt. Zu jeder Aktion, welche es innerhalb eines Controllers (siehe \ref{MVCTypo}) gibt, existiert auch ein Fluid Template, sofern kein Redirect zu einer anderen Aktion durchgeführt wird. 
 
 % Hat die Aktion des Controllers alle für das Template benötigten Daten ermittelt, so werden diese Fluid übergeben. Fluid wiederum bestimmt anhand der Namen des Controllers und der Aktion, das jeweilige Template und rendert es mit den entsprechenden Daten. 
 
@@ -83,15 +82,15 @@ Fluid ermittelt das entsprechende Template wie folgt Resources/Private/Templates
 
 Innerhalb eines Template können verschiedene Partials angegeben sein, welche wiederkehrende Teile enthalten (siehe \ref{MVCTypo}). 
 
-Was Fluid jedoch so mächtig macht, sind die sogenannten "`ViewHelper"'. ViewHelper sind Tags, welche Fluid anweisen, PHP-Routinen auszuführen. Diesen PHP-Routinen können für ihrere Arbeit Daten übergeben werden und geben an Fluid, dass entsprechende Ergebnis zurück, welches dann wiederum im Template durch den eigentlichen ViewHelper-Tag ersetzt wird.
+Was Fluid jedoch so mächtig macht, sind die sogenannten "`ViewHelper"'. ViewHelper sind Tags, welche Fluid anweisen, PHP-Routinen auszuführen. Diesen PHP-Routinen können  Daten übergeben werden. Die Routinen wiederum geben an Fluid das entsprechende Ergebnis zurück, welches dann im Template durch den eigentlichen ViewHelper-Tag ersetzt wird.
 
 \lstinputlisting[language=html, caption=Beispiel für ein ViewHelper, label=template example, captionpos=b]{Code/template_example.html}
 
 Im HTML-Beispiel Listing \ref{template example} ist ein Ausschnitt aus einem Template zu sehen, welcher einen ViewHelper für eine For-Schleife zeigt.
-Beim rendern des Templates, wird für jeden Eintrag innerhalb von "`{tempUsers}"' der Inhalt des Tags f:for dupliziert. Zusätzlich ersetzt Fluid die Platzhalter in den geschweiften Klammern mit den realen Werten.
+Beim Rendern des Templates wird für jeden Eintrag innerhalb von "`{tempUsers}"' der Inhalt des Tags f:for dupliziert. Zusätzlich ersetzt Fluid die Platzhalter in den geschweiften Klammern mit den realen Werten.
 
 \subsection{Schematische Darstellung eines Seitenaufrufs}
-In den vorangegangen Abschnitten wurden die einzelnen Bestandteile und der interne Aufbau einer TYPO3 Extension beschrieben. Zur besseren Verdeutlichung des Seitenaufrufs einer TYPO3 Extension, stellt die Abbildung \ref{Typo3_Call} den Zusammenhang noch einmal dar.
+In den vorangegangen Abschnitten wurden die einzelnen Bestandteile und der interne Aufbau einer TYPO3 Extension beschrieben. Zur besseren Verdeutlichung des Seitenaufrufs einer TYPO3 Extension stellt die Abbildung \ref{Typo3_Call} den Zusammenhang noch einmal dar.
 
 \begin{figure}[!ht]
 \centering
@@ -104,10 +103,10 @@ In den vorangegangen Abschnitten wurden die einzelnen Bestandteile und der inter
 \FloatBarrier
 
 \begin{enumerate}
- \item Nutzer ruft eine Funktion auf 
- \item Extbase Dispatcher leitet Request an entsprechenden Controller/ Aktion
- \item Aktion nutzt Repositorys um Daten zu suchen
- \item Repository liefert Daten zurück
- \item Aktion ruft den View (Fluid) auf und übergibt die Daten
- \item Fluid rendert das Template mit den Daten und gibt das HTML zurück
+ \item Nutzer ruft eine Funktion auf.
+ \item Extbase Dispatcher leitet Request an entsprechenden Controller/ Aktion.
+ \item Aktion nutzt Repositorys, um Daten zu suchen.
+ \item Repository liefert Daten zurück.
+ \item Aktion ruft den View (Fluid) auf und übergibt die Daten.
+ \item Fluid rendert das Template mit den Daten und gibt das HTML zurück.
 \end{enumerate}
