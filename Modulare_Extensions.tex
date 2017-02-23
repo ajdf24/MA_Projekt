@@ -1,6 +1,6 @@
 \section{Modulare Extensions}\label{Modulare Extensions}
-Im Verlauf der soll evaluiert werden in wie weit es möglich ist, dass verschiedene Extensions zusammen arbeiten können.
-Das Supportportal im ganzen soll aus verschiedenen Extensions bestehen, welche modular auf einander Aufbauen. 
+Im im Folgenden soll evaluiert werden in wie weit es möglich ist, dass verschiedene Extensions zusammen arbeiten können.
+Das Supportportal im Ganzen soll aus verschiedenen Extensions bestehen, welche modular auf einander aufbauen. 
 
 Es sollen folgende Extensions erstellt werden:
 
@@ -11,30 +11,30 @@ Template
 \begin{minipage}{13cm}
 In der Template Extension wird das grundlegende Layout des Supportportals definiert.\\
 Zusätzlich kommen noch einige ViewHelper und Utility-Funktion hinzu, welche von mehreren anderen Extensions genutzt werden können.\\
-Alle anderen Extensions bauen auf dieser auf, und sind ohne nicht Lauffähig.\\
+Alle anderen Extensions bauen auf dieser auf und sind ohne diese nicht Lauffähig.\\
 \end{minipage}
 
 \begin{minipage}{3cm}
 SupportBase
 \end{minipage}
 \begin{minipage}{13cm}
-Die Extension SupportBase, stellt das grundlegende Datenmodell zur Verfügung, dass andere Extensions nutzen und auch erweitern können.\\
-Zusätzlich kümmert sich diese Extension auch um das Login der nutzer. Dies schließt die Neuanmeldung und das ändern des Passwortes mit ein.\\
+Die Extension SupportBase stellt das grundlegende Datenmodell zur Verfügung, das andere Extensions nutzen und auch erweitern können.\\
+Zusätzlich kümmert sich diese Extension auch um das Login der Nutzer. Dies schließt die Neuanmeldung und das Ändern des Passwortes mit ein.\\
 \end{minipage}
 
 \begin{minipage}{3cm}
 Polymer
 \end{minipage}
 \begin{minipage}{13cm}
-Die Polymer Extension stellt Polymer-Elemente (siehe Abschnitt \ref{Typo und Polymer}) in Form von ViewHelpern (siehe Abschnitt \ref{Fluid}) zur Verfügung. Sie stellt eine Sammlung von Polymer-Elementen bereit.\\
-Alle Extensions, welche Polymer-Elemente verwenden sind von ihr abhängig.\\
+Die Polymer-Extension stellt Polymer-Elemente (siehe Abschnitt \ref{Typo und Polymer}) in Form von ViewHelpern (siehe Abschnitt \ref{Fluid}) zur Verfügung. Sie bildet eine Sammlung von Polymer-Elementen, welche andere Extensions verwenden können.\\
+Alle Extensions, welche Polymer-Elemente verwenden, sind von ihr abhängig.\\
 \end{minipage}
 
 \begin{minipage}{3cm}
 DownloadPortal
 \end{minipage}
 \begin{minipage}{13cm}
-Die Extension erweitert das Datenmodell der SupportBase und für die Nutzer von PDV-Produkten wichtige Downloads bereit.\\
+Die Extension erweitert das Datenmodell der SupportBase und stellt für die Nutzer von PDV-Produkten wichtige Downloads bereit.\\
 Zusätzlich bietet sie eine Abo-Funkion an, in der Nutzer sich für bestimmte Download-Kategorien anmelden können. Bei neuen Downloads werden sie dann entsprechend benachrichtigt.\\
 \end{minipage}
 
@@ -42,35 +42,35 @@ Zusätzlich bietet sie eine Abo-Funkion an, in der Nutzer sich für bestimmte Down
 SupportPortal
 \end{minipage}
 \begin{minipage}{13cm}
-Die SupportPortal Extension ist das Herzstück des allumfassenden Supportportals. Mit ihr ist es Möglich Calls zu Problemen oder Software-Bugs zu öffenen und mit Supportmitarbeitern in kontakt zu treten.\\
+Die SupportPortal-Extension ist das Herzstück des allumfassenden Supportportals. Mit ihr ist es möglich Calls zu Problemen oder Software-Bugs zu öffenen und mit Supportmitarbeitern in Kontakt zu treten.\\
 \end{minipage}
 
 \begin{minipage}{3cm}
 KnowledgeBase
 \end{minipage}
 \begin{minipage}{13cm}
-Die KnowledgeBase ist wie der Name schon sagt, ein Verzeichnis mit bekannten Problemen und Hinweisen zum verwenden der PDV-Software. Sie bezieht sich auf Daten aus der SupportBase.\\
+Die KnowledgeBase ist, wie der Name schon sagt, ein Verzeichnis mit bekannten Problemen und Hinweisen zum verwenden der PDV-Software. Sie bezieht sich auf Daten aus der SupportBase.\\
 \end{minipage}
 
 \begin{minipage}{3cm}
 DataExchange
 \end{minipage}
 \begin{minipage}{13cm}
-Um den Datenaustaus zu zwischen Kunden zu gewährleisten, soll die Extension DataExchange geschaffen werden. Über sie ist es möglich, dass PDV-Mitarbeiter Kunden Daten zu Verfügung stellen und umgekehrt.\\
+Um den Datenaustaus zwischen Kunden zu gewährleisten, soll die Extension DataExchange geschaffen werden. Über sie ist es möglich, dass PDV-Mitarbeiter Kunden Daten zur Verfügung stellen und umgekehrt.\\
 \end{minipage}
 
 \begin{minipage}{3cm}
 AdminSchulung
 \end{minipage}
 \begin{minipage}{13cm}
-Die AdminSchulung ist eine Extension, die es der PDV Systeme GmbH erlaubt, Schulungen und Prüfungen für Systemadministratoren online durchführen zu können.\\
+Die AdminSchulung ist eine Extension, welche es der PDV Systeme GmbH erlaubt Schulungen und Prüfungen für Systemadministratoren online durchführen zu können.\\
 \end{minipage}
 
 Die Extensions Template, SupportBase und Polymer stellen grundlegende Extensions dar, von denen alle Support-Extensions abhängig sind. Die Support-Extensions DownloadPortal, SupportPortal, KnowledgeBase, DataExchange und AdminSchulung sind alle voneinander unabhänig und können modular eingesetzt werden.
 
-Innerhalb der vorliegenden Arbeit, sollen nicht alle Extensions programmiert werden, da dies aus Gründen des Aufwandes nicht möglich ist. Es soll lediglich Anhand der Extensions Template, Polymer, SupportBase und DownloadPortal gezeigt werden, dass modulare Extensions unter Typo3 möglich sind und wie ein Lösungsansatz aussehen kann.
+Innerhalb der vorliegenden Arbeit sollen nicht alle Extensions programmiert werden, da dies aus Gründen des Aufwandes nicht möglich ist. Es soll lediglich Anhand der Extensions Template, Polymer, SupportBase und DownloadPortal gezeigt werden, dass modulare Extensions unter Typo3 möglich sind und wie ein Lösungsansatz aussehen kann.
 
-Im weiteren Verlauf soll auch nicht auf die genaue Programmierung der einzelnen Extensions eingegangen werden. Es wird sich auf die Knackpunkte bezogen, welche wichtig sind um die Extensions modular aufzubauen und wie es möglich ist, moderne Web-Technologien wie Polymer oder AngularJS in Typo3 Extensions einzubauen (siehe Kapitel \ref{Zusammenspiel der Technologien}).
+Im weiteren Verlauf wird ebenso auf die genaue Programmierung der einzelnen Extensions verzichtet. Es wird sich auf die Schwerpunkte bezogen, welche wichtig sind um die Extensions modular aufzubauen und wie es möglich ist, moderne Web-Technologien wie Polymer oder AngularJS in Typo3 Extensions einzubauen (siehe Kapitel \ref{Zusammenspiel der Technologien}).
 
 \subsection{Datenbasis}
 \subsection{Rendering}
