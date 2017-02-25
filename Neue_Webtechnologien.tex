@@ -59,7 +59,7 @@ Durch den modularen Aufbau von Bootstrap kann natürlich schnell und einfach ein 
 Ein anderes Framework, welches die Design-Richtlinien des "`Material Design"' umsetzt, ist das noch recht neue Framework "`MaterializeCSS"'. 
 MaterializeCSS ist ein eigenständiges Framework, welches versucht alle gegebenen Gestaltungsrichtlinen möglichst elegant und performat umzusetzen.
 
-Die MaterializeCSS Quellen sind mit \ac{SASS} geschrieben und müssen vor der Verwendung in CSS komiliert werden. Dieses Vorgehen hat mehere Vorteile. So ist es zum einen sehr einfach möglich, das Framework um eigene Style-Objete zu erweitern. Zum anderen hat es den Vorteil, dass die Farbgebung des gesamten Frameworks an einer Stelle zusammen gefasst ist. 
+Die MaterializeCSS Quellen sind mit \ac{SASS} geschrieben und müssen vor der Verwendung in CSS komiliert werden. Dieses Vorgehen hat mehrere Vorteile. So ist es zum einen sehr einfach möglich, das Framework um eigene Style-Objekte zu erweitern. Zum anderen hat es den Vorteil, dass die Farbgebung des gesamten Frameworks an einer Stelle zusammen gefasst ist. 
 Soll also die Farbgebung geändert werden, so werden in den \ac{SASS}-Quellen des Frameworks die Farben zentral angepasst. Nach einer erneuten Kompilierung stehen dann die Farben im gesamten Framework zur Verfügung.
 Ohne dieses Vorgehen müssten die entsprechenden Farben an unzähligen Stellen innerhalb der \ac{CSS}-Datei angepasst werden.
 \cite{Materialize}
@@ -164,14 +164,14 @@ Damit Komponenten nicht durch CSS-Klassen von der eigentlichen Web-Seite oder un
 Der Shadow DOM ist ein konstrukt um Komponenten vor dem eigentlichen HTML-DOM zu verbergen. Dieses vorgehen ist notwendig, um Komponenten verwenden zu können, denn Komponenten sollen sich werder untereinander Beeinflussen noch sollen sie von der Web-Seite beeinflusst werden.
 
 Komponenten im Shadow DOM werden vor dem eigentlich HTML-DOM verborgen, wie der Name schon sagt, liegen sie im Schatten. Der Browser rendert also zuerst das HTML-DOM und anschließend den Shadow DOM, ohne das dieser vom eigentlichen DOM beeinflusst wird.
-JQuery aufrufe auf der Hautseite zum Beispiel, können sich nicht auf Elemente im Shadow beziehen, da sie diese nicht kennen.
+JQuery aufrufe auf der Hauptseite zum Beispiel, können sich nicht auf Elemente im Shadow beziehen, da sie diese nicht kennen.
 
-Zur aktuellen Stunde, können alle modernen Browser den Shadow DOM umsetzten.
+Aktuell, können alle modernen Browser den Shadow DOM umsetzten.
 \cite{ShadowDomPolymer}
 
 \subsection{AngularJS} \label{AngularJS}
 AngularJS oder kurz Angular ist ein von Google entwickeltes Javascript Framework, welches sich sehr gut für Singe-Page-Web-Sites eignet. 
-Angular ist nach dem \ac{MVVM}-Prinzip aufgebaut, welches eine Trennung zwischen Darstellung und Logik bietet und arbeitet Client-Seitig.
+Angular ist nach dem \ac{MVVM}-Prinzip aufgebaut, welches eine Trennung zwischen Darstellung und Logik bietet und arbeitet Client-seitig.
 
 Die Darstellung wird über HTML abgebildet, welches Angular durch eigene Attribute ergänzt. Die Logik wiederum wird durch Javascript auf Basis von Angular abgebildet.
 
