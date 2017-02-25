@@ -1,7 +1,7 @@
 \section{Neue Webtechnologien}
 Im folgenden Kapitel wird auf neue und zum Teil noch nicht fertig spezifizierte Webtechnologien eingegangen. Die vorgestellten Technologien HTML5, CSS3, PHP7, Web Components, Angular JS, Google Polymer und die Service Worker sollen bei der Entwicklung des Supportportals Verwendung finden.
 
-\subsection{HTML5}
+\subsection{HTML5}\label{HTML5}
 
 \begin{wrapfigure}{r}{4cm}
 \centering
@@ -66,7 +66,7 @@ Ohne dieses Vorgehen müssten die entsprechenden Farben an unzähligen Stellen inn
 Ein weitere Vorteil von MaterializeCSS ist, das viele Templates wie ein Date-Picker im "`Material Design"' schon vorhanden sind. Diese Templates können ohne zusätzlichen Overhead verwendet werden.
 
 Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist und sich zut Zeit noch in der Beta befindet, so ist es doch eine gute Alternative, wenn eine Web-Seite im "`Material Design"' umgesetzt werden soll.
-\subsubsection{Vergleich beider CSS-Frameworks}
+\subsubsection{Vergleich beider CSS-Frameworks}\label{Vergleich beider CSS-Frameworks}
 \begin{table}[htbp]
   \begin{center}
     \begin{tabular}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.4\textwidth}|}
@@ -265,7 +265,7 @@ Es ist jedoch umgekehrt möglich, CSS-Klassen zu nutzen, im globalen CSS beschrie
 Die Verwendung von CSS-Abhängigkeiten in Polymer ist jedoch unschön, da dies ein Element gegebenen Falls auf Web-Seiten beschränkt, welche diese bestimmte CSS-Datei verwenden.
 Es ist somit in den meisten Fällen besser keine CSS-Abhängigkeiten in Elementen zu verwenden, vor allem dann wenn diese öffentlich sind.
 
-Im Listing \ref{Polymer Element} wurden CSS-Abhängigkeiten zu MaterializeCSS (Abschnitt \ref{MaterializeCSS}) aufgebaut, eine Begründung hierfür ist im Kapitel/Abschnitt (?????) zu finden.
+Im Listing \ref{Polymer Element} wurden CSS-Abhängigkeiten zu MaterializeCSS (Abschnitt \ref{MaterializeCSS}) aufgebaut, eine Begründung hierfür ist im Abschnitt \ref{Vergleich beider CSS-Frameworks} zu finden.
 
 \paragraph{Element-Script}
 Der "`script"'-Tag enthält das jeweilige Skript zum Element. Es ist JSON-Notation gehalten und basiert auf Callbacks.
@@ -300,10 +300,52 @@ Es bietet sich daher an, bei Neuentwicklungen auf Polymer zu setzen.
 
 Ob und wie eine Intergration von Polymer in Typo3 möglich ist, wird im Kapitel \ref{Zusammenspiel der Technologien} näher beschrieben.
 
-
-
-
 \subsection{Service Worker}
+Als Service Worker werden Skripte bezeichnet, welche vom Browser im Hintergrund ausgeführt werden. So können über Service Worker zum Beispiel Push-Nachrichten empfangen oder Hintergrund-Syncronisationen durchgeführt werden.
+Die entsprechenden Skripte werden beim laden einer Webseite mit ausgeliefert und vom Browser ausgeführt. 
+
+Service Worker sind bis heute noch nicht Vollständig standardisiert, bieten aber ein großes Potential, weshalb namenhafte Softwareunternehmen wie Google oder Facebook sie schon seit längeren im großen Stil einsetzen. 
+Da Service Worker hoch sensieble Daten wie zum Beispiel Nachrichten transportieren, sind sie nur unter verwenden von HTTPs einsetzbar. \cite{SWGoogle}
+
+Service Worker werden zur Zeit schon den aktuellen Versionen von Chrome, Firefox und Opera unterstützt. Für Safari und Edge, ist die Unterstützung momentan noch in er Entwicklung. \cite{SWSupp1} \cite{SWSupp2}
+
+\subsubsection{Lifecycle eines Service Workers}
+Im folgenden Abschnitt wird auf den Lebenszyklus eines Service Workers beschrieben.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/sw-lifecycle.png}
+\caption{Lifecycle von Service Worker \cite{SWGoogle}}
+\label{Lifecycle sw}
+\centering
+\end{figure}
+
+In Abbildung \ref{Lifecycle sw} ist der Lifecycle von Service Workern dargestellt.
+Nach dem Installieren ist der Service Worker aktiv und bereit zum arbeiten. Geht beim Installieren des Workers etwas schief, so gelangt er in einen Fehlerzustand und wird abgeschaltet. Dies kann zum Beispiel passieren, wenn der verwendete Browser keine Service Worker unterstützt.
+
+Nachdem der Worker Aktiviert wurde, geht er in den Leerlauf (Idle) bis er eine Aufgabe zugeteilt bekommt. 
+Bekommt der Service Worker eine Aufgabe erledigt er diese und geht danach wieder in den Leerlauf.
+
+Wird der Browser beendet, wird auch die Ausführung des Workers beendet. Sobald der Browser nun erneut gestartet wird, werden auch alle aktivierten Service Worker gestartet.
+Nutzer müssen sich also keine gedanken um das starten oder beenden der jeweilien Service Worker machen.
+
+\subsubsection{Entwicklung eines Service Workers}
+Zur Entwicklung eines Service Workers sollte der Google Chrome verwendet werden, da dieser die Entwicklung zur Zeit am besten unterstützt. Nur der Chrome erlaubt es momentan einen Service Worker beim einem Seiten-Reload erneut zu installieren. Dies ist wichtige, da nun nicht nach jedem Entwicklungsschritt der komplette Browser-Cache gelöscht werden muss.
+
+Im folgenden wird erläutert wie Push-Nachrichten über einen Service Worker empfangen werden können.
+
+\lstinputlisting[language=JavaScript, caption=Service Worker registrieren, label=sw_reg, captionpos=b]{Code/sw_reg.js}
+
+Im Codebeispiel \ref{sw_reg} wird überprüft, ob der aktuelle Browser Service Worker und Push-Nachrichten unterstützt. Ist dies der Fall, wird der Service Worker welcher sich in der Datei \texttt{sw.js} zu finden ist installiert.
+
+\lstinputlisting[language=JavaScript, caption=Service Worker Hauptfunktion, label=sw_main, captionpos=b]{Code/sw.js}
+
+Innerhalb des Service Worker ist die Codebeispiel \ref{sw_main} gezeigte Funktion dafür verantwortlich Nachrichten zu empfangen und dem Nutzer anzuzeigen.
+Im Codebeispiel werden dem Nutzer Standardtexte angezeigt. Es ist aber auch möglich Texte und Nutzdaten in der Nachricht einzubetten und diese im Worker auszulesen.
+
+Das gesamte Beispiel zum empfangen von Push-Nachrichten ist innerhalb der Google Developer Seiten zu finden\footnote{\url{https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/}}.
+
+
 \section{Zusammenspiel der Technologien}\label{Zusammenspiel der Technologien}
 \subsection{Integration von Polymer in Typo3}\label{Typo und Polymer}
 Im Abschnitt \ref{Google Polymer} wurde ausführlicher auf die Verwendung und die Erstellung von Polymer-Elementen eingegangen. Nun soll untersucht werden wie sich Polymer möglichst elegant in Typo3 integrieren lässt.
@@ -373,7 +415,36 @@ Außerdem ist es möglich mit MaterialiezeCSS die standard Icons und Schriftarten 
 
 Im Listing \ref{MaterialieCSS Anbindung} ist ein Typo-Script-Beispiel zu sehen, mit welchem MaterializeCSS in Typo3 integriert wird. Das angegebe Typo-Script an entweder in der Konfiguration einer Extension angegeben sein oder es wird direkt in einem Typo3-Template definiert.
 \lstinputlisting[caption=MaterialiezeCSS Anbindung, label=MaterialieCSS Anbindung, captionpos=b]{Code/materilaize_anbindung.txt}
-\subsection{Nutzer Anmeldung und Registrierung}
+
+\subsection{Nutzer Registrierung und Anmeldung}
+Typo3 liefert eine Extension zur Anmeldung und Registrierung von Fronten Nutzer bereits mit. Diese Extension genügt jedoch nicht den Anforderungen der Use Cases der PDV.
+
+\subsubsection{Use Case Registrierung}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/reg_use_case.eps}
+\caption{Use Case Nutzerregistrierung}
+\label{Use Case Nutzerregistrierung}
+\centering
+\end{figure}
+
+In Abbildung \ref{Use Case Nutzerregistrierung} ist der Use Case zur Nutzerregistrierung zu sehen. Als erstes registriert sich der Nutzer am Portal. Nach dem Absenden erhält er automatisiert eine Nachricht zur bestätigung der E-Mail-Adresse (Double-Opt-In). Nachdem der Nutzer seine E-Mail-Adresse bestätigt hat, bekommen die Supportmitarbeiter der PDV eine Nachricht, in der sie darüber informiert werden, dass ein neuer Nutzer freigegeben werden möchte. 
+
+Ein Mitarbeiter prüft die Plausibilität der Registrierung und gibt den Nutzer für eine Firma (PDV-Kunde) frei. Anschließend muss der Mitarbeiter noch die Berechtigungen für den Nutzer setzen. Ist der Nutzer von einem Mitarbeiter freigegeben wurden, bekommt er eine Nachricht das er sich nun anmelden kann.
+
+Leider gibt es keine bestehende Extension im \ac{TER} die diesen Use Case auch nur im Ansatz umsetzt, weshalb entschiedende wurde die Registration für Nutzer selbst zu entwickeln.
+
+\subsubsection{Umsetzung der Nutzerregistrierung}
+
+Die Nutzerregistrierung besteht aus einem HTML5-Formular, welches durch den Browser validiert wird (siehe Abschnitt \ref{HTML5}).
+Zusätzlich zur Registration im Fronten wurde ein Backend-Modul erstellt, welches es erlaubt PDV Mitarbeitern die Firmen- und Rechtezuordung umzusetzen (siehe Abbildung \ref{Use Case Nutzerregistrierung}. 4 und 5).
+
+Die Firmenrichtlinien der PDV Systeme GmbH erlauben es leider nicht an dieser Stelle den gesamten Controller zur Nutzerregistrierung zu veröffentlichen, weshalb an dieser Stelle kein praktisches Beispiel gegeben werden kann.
+
+\subsubsection{Die Nutzer Anmeldung}
+Die TYPO3 eigene Extension \textit{FE_Login} ist nur schwer zu konfigurieren und bietet keine Möglichkeit den Login in modale Dialoge auszulagern. Aus diesen Gründen wurde entschieden dein Login durch einen eigenen Controller innerhalb der \textit{SupportBase}-Extension zu realisieren.
+
+Hat sich ein Nutzer 
 
 \section{Zusammenfassung}
 \section{Fazit}
