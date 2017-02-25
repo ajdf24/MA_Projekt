@@ -74,3 +74,54 @@ Im weiteren Verlauf wird ebenso auf die genaue Programmierung der einzelnen Exte
 
 \subsection{Datenbasis}
 \subsection{Rendering}
+Im folgenden Abschnitt, soll dargestellt werden, wie es unter TYPO3 möglich ist ein modulares Rendering aufzubauen. 
+Dies geschieht am Beispiel der oberen Menüleiste des des Templates.
+
+Die \textit{Template}-Extension stellt die grundlegende Menüleiste siehe Abbildung ????? dar.
+Ohne eine Extension, welche das Login bereitstellt (\textit{SupportBase}), kann die \textit{Template}-Extension also keinen Login darstellen.
+Alle Elemente wie zum Beispiel Buttons, welche modale Dialoge zum Einloggen triggern, müssen also bei rendern vom Template gesucht und eingebunden werden. Dies betrifft natürlich auch die modalen Dialoge selbst.
+
+Um das eben beschriebene Problemen zu lösen, wurde ein \textit{ViewHelper} entwickelt, welcher innerhalb der Menüleiste eingebunden werden kann.
+Wird nun das Template mit der Menüleiste gerendert, wird der \textit{ViewHelper} aufgerufen, welcher die entsprechend Elemente in die Menüleiste rendert.
+
+Der \textit{ViewHelper} muss nun alle installierten Extensions nach Elementen durchsuchen, welche innerhalb der Menüleiste gerendert werden sollen. Hierbei muss natürlich darauf geachtet werden, dass es in der Menüleiste drei Arten von Elementen gibt. 
+
+\begin{itemize}
+ \item Elemente die immer geladen werden müssen
+ \item Elemente die angezeigt werden, wenn der Nutzer eingeloggt ist
+ \item Elemente die angezeigt werden, wenn der Nutzer nicht eingeloggt ist
+\end{itemize}
+
+Damit die entsprechenden Elemente gefunden und im passenden Fall geladen werden, wurden drei Annotationen geschaffen, mit denen die entsprechenden HTML-Dateien beginnen müssen.
+
+\begin{itemize}
+ \item \texttt{@additionHTML}
+ \item \texttt{@authenticated}
+ \item \texttt{@notAuthenticated}
+\end{itemize}
+
+Um die Suche nach entsprechenden HTML-Dateien zu beschleunigen, wurde festgelegt, dass Elemente nur in Extensions gesucht werden, welche mit "`pdv"' beginnen. Somit durchsucht der ViewHelper nur PDV eigene Extensions, welche nach der Konvention mit "`pdv"' beginnen. Damit die Suche noch schneller von statten geht, wurde außerdem festgelegt, dass Elemente innerhalb eines festgelegt Pfades zu finden sind. Konkret bedeutet das, dass Elemente innerhalb von Extensions im Pfad \texttt{Resources/Private/NavBar} abgelegt werden müssen.
+
+Damit der \textit{ViewHelper} die entsprechenden Element-Arten an den richtigen stellen einbringt, kann dieser mit Hilfe des Attributs \textit{section} gesteuert werden.
+
+\begin{itemize}
+ \item \texttt{add}
+ \item \texttt{Auth}
+ \item \texttt{noAuth}
+\end{itemize}
+
+\lstinputlisting[language=html, caption=ViewHelper-Aufruf, label=NavViewHelper, captionpos=b]{Code/nav_helper.html}
+
+Im Codebeispiel \ref{NavViewHelper} wird der Aufruf des \textit{ViewHelpers} schematisch dargestellt. Über den \textit{Standard-ViewHelper} \texttt{ifAuthenticated} geprüft, ob der Nutzer angemeldet ist. Ist dies der Fall, wird wiederum der eben beschriebene \texttt{NavBarViewHelper} mit dem Attribut \texttt{section="\ Auth"} aufgerufen. Somit sucht der \textit{ViewHelper} beim Rendern nun nach allen Elementen, die angezeigt werden müssen wenn ein Nutzer angemeldet ist.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/NavBar.eps}
+\caption{Darstellung des NavBarViewHelper \cite{NeosBild}}
+\label{NavBarViewHelper}
+\centering
+\end{figure}
+
+In Abbildung \ref{NavBarViewHelper} ist die Funkion des \texttt{NavBarViewHelper} noch einmal schematisch dargestellt. Der \textit{ViewHelper} wird mit einem Parameter aufgerufen. Dieser wird zuerst ausgewertet, um zu bestimmen, welche Elemente benötigt werden. Anschliesend werden im nächsten Schritt die entsprechenden Elemente gesucht. Als nächstes, wird die Annotationen aus den geladenen HTML-Elementen entfernt. Zum Schluss werden alle geladenen Elemente anstelle des \textit{ViewHelpers} innerhalb das angeforderten HTML-Template eingefügt.
+
+% TYPO3 unterstützt war "`Partials"', welche Teil-Templates innerhalb von Templates darstellen, diese können aber nicht dynamisch geladen werden.
