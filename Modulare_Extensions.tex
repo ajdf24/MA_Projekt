@@ -73,7 +73,7 @@ Innerhalb der vorliegenden Arbeit sollen nicht alle Extensions programmiert werd
 Im weiteren Verlauf wird ebenso auf die genaue Programmierung der einzelnen Extensions verzichtet. Es wird sich auf die Schwerpunkte bezogen, welche wichtig sind um die Extensions modular aufzubauen und wie es möglich ist, moderne Web-Technologien wie \textit{Polymer} oder AngularJS in Typo3 Extensions einzubauen (siehe Kapitel \ref{Zusammenspiel der Technologien}).
 
 \subsection{Datenbasis}
-\subsection{Rendering}
+\subsection{Rendering}\label{Rendering}
 Im folgenden Abschnitt, soll dargestellt werden, wie es unter TYPO3 möglich ist ein modulares Rendering aufzubauen. 
 Dies geschieht am Beispiel der oberen Menüleiste des des Templates.
 
@@ -123,5 +123,7 @@ Im Codebeispiel \ref{NavViewHelper} wird der Aufruf des \textit{ViewHelpers} sch
 \end{figure}
 
 In Abbildung \ref{NavBarViewHelper} ist die Funkion des \texttt{NavBarViewHelper} noch einmal schematisch dargestellt. Der \textit{ViewHelper} wird mit einem Parameter aufgerufen. Dieser wird zuerst ausgewertet, um zu bestimmen, welche Elemente benötigt werden. Anschliesend werden im nächsten Schritt die entsprechenden Elemente gesucht. Als nächstes, wird die Annotationen aus den geladenen HTML-Elementen entfernt. Zum Schluss werden alle geladenen Elemente anstelle des \textit{ViewHelpers} innerhalb das angeforderten HTML-Template eingefügt.
+
+TYPO3 besitzt sehr intelligente Caching-Mechanismen die ein solches vorgehen erlauben. Denn durch die Nutzung von Caches erstellt TYPO3 nicht bei jedem Seitenaufruf das Template neu.
 
 % TYPO3 unterstützt war "`Partials"', welche Teil-Templates innerhalb von Templates darstellen, diese können aber nicht dynamisch geladen werden.

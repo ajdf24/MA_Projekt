@@ -417,7 +417,7 @@ Im Listing \ref{MaterialieCSS Anbindung} ist ein Typo-Script-Beispiel zu sehen, 
 \lstinputlisting[caption=MaterialiezeCSS Anbindung, label=MaterialieCSS Anbindung, captionpos=b]{Code/materilaize_anbindung.txt}
 
 \subsection{Nutzer Registrierung und Anmeldung}
-Typo3 liefert eine Extension zur Anmeldung und Registrierung von Fronten Nutzer bereits mit. Diese Extension genügt jedoch nicht den Anforderungen der Use Cases der PDV.
+TYPO3 liefert eine Extension zur Anmeldung und Registrierung von Fronten Nutzer bereits mit. Diese Extension genügt jedoch nicht den Anforderungen der Use Cases der PDV.
 
 \subsubsection{Use Case Registrierung}
 \begin{figure}[!ht]
@@ -442,9 +442,41 @@ Zusätzlich zur Registration im Fronten wurde ein Backend-Modul erstellt, welches
 Die Firmenrichtlinien der PDV Systeme GmbH erlauben es leider nicht an dieser Stelle den gesamten Controller zur Nutzerregistrierung zu veröffentlichen, weshalb an dieser Stelle kein praktisches Beispiel gegeben werden kann.
 
 \subsubsection{Die Nutzer Anmeldung}
-Die TYPO3 eigene Extension \textit{FE_Login} ist nur schwer zu konfigurieren und bietet keine Möglichkeit den Login in modale Dialoge auszulagern. Aus diesen Gründen wurde entschieden dein Login durch einen eigenen Controller innerhalb der \textit{SupportBase}-Extension zu realisieren.
+Die TYPO3 eigene Extension \textit{FE\_Login} ist nur schwer zu konfigurieren und bietet keine Möglichkeit den Login in modale Dialoge auszulagern. Aus diesen Gründen wurde entschieden dein Login durch einen eigenen Controller innerhalb der \textit{SupportBase}-Extension zu realisieren.
 
-Hat sich ein Nutzer 
+Hat ein Nutzer das Anmeldeformular ????? Abbildung abgeschickt, gelangen die Anmeldedaten (Nutzername und Passwort) durch TYPO3 in die Controller-Action \texttt{loginAction}
 
+\lstinputlisting[language=php, caption=loginAction, label=loginAction, captionpos=b]{Code/login.php}
+
+Im Quellcodebeispiel \ref{loginAction} wird der User anhand des Namen aus der Datenbank geholt (Zeile 4). 
+Anschliesend wird geprüft, ob das angegebene Passwort mit dem in der Datenbank überein stimmt. Ist dies der Fall, so wird die Nutzer-Session in das \texttt{\$GLOBALS['TSFE']}-Array geschrieben, womit der Nutzer eingeloggt ist. Anschliesend wird der Nutzer zur ursprünglichen Seite von der aus er sich eingeloggt hat umgeleitet.
+
+Wie die modalen Dialoge in das Template gerendert werden, wurde im Abschnitt \ref{Rendering} erklärt.
+
+\subsection{Push-Nachrichten über Service Worker}
+Ging bisher noch nicht, weil isso ?????
+
+\newpage
 \section{Zusammenfassung}
+Die vorliegende Arbeit befasst sich mit der Entwicklung eines modularen Supportportals für die PDV Systeme GmbH auf Basis eines existierenden \ac{CMS}-Systems. 
+
+Es wurden die vier bekannten \ac{CMS}-Systeme TYPO3 \ac{CMS}, Neos, Joomla und Drupal anhand vorgegebener Kriterien verglichen um eins für die weitere Entwicklung auszuwählen.
+Die Entscheidung viel auf TYPO3 \ac{CMS}, welches die Kriterien am besten erfüllt.
+
+TYPO3 \ac{CMS} wird Anschliesend genauer vorgestellt. Hierbei wird der Schwerpunkt auf die Extension-Entwicklung gelegt.
+
+In der Arbeit wird gezeigt, wie es möglich ist modulare Extensions für TYPO3 \ac{CMS} zu erstellen. Hierbei wird darauf eingegangen wie das Datenmodell Extensionübergreifend aufgebaut werden kann. Außerdem ist das Rendering ein wichtiger Punkt. Hier wird gezeigt wie es möglich ist Template-Elemente dynamisch von anderen Extensions zu laden.
+
+Es wird sich damit befasst, wie neue Webtechnologien wie HTML5, CSS3, PHP7, AngularJS, Google Polymer und Service Workern in die aktuelle Version von TYPO3 integriert werden können. Hierfür werden die Technologien zuerst einzeln vorgestellt um später zu zeigen, wie sie sich mit TYPO3 verbinden lassen.
+% 
+% Zusätzlich wurde anhand einer Neuentwicklung eines Supportportals für die PDV Systeme GmbH gezeigt, wie es möglich ist TYPO3-Extension modular aufzubauen.
+% 
+% Im Verlauf der Arbeit wurde verschiedene , 
 \section{Fazit}
+Es ist möglich TYPO3-Extensions modular aufzubauen und neue Webtechnologien zu integrieren. Hierfür wurden in der arbeit viele Beispiele gegeben. 
+
+Neben der Arbeit entstand ein Grundgerüst für ein modulares Supportportal, welches nun nicht nur technisch auf den neusten Stand ist, es lässt sich zudem einfach erweitern.
+
+Durch die gewonnenen Erkentnissen konnte nicht nur die Basis für ein Supportportal geschaffen werden. Es wurde Testweise auch ein weiteres Modul, das Download-Portal implementiert um die genannten Behauptungen zu belegen.
+
+Auf der Basis dieser Arbeit wurden weitere Projektmittel durch die PDV Systeme GmbH gewährt, um das nun begonne Projekt weiterzuführen und das neue Supportportal mit den restlichen Modulen zu vervollständigen.
