@@ -350,7 +350,7 @@ Das gesamte Beispiel zum empfangen von Push-Nachrichten ist innerhalb der Google
 \subsection{Integration von Polymer in Typo3}\label{Typo und Polymer}
 Im Abschnitt \ref{Google Polymer} wurde ausführlicher auf die Verwendung und die Erstellung von Polymer-Elementen eingegangen. Nun soll untersucht werden wie sich Polymer möglichst elegant in Typo3 integrieren lässt.
 
-Der beste Weg Polymer-Elemente in Typo3 zu integrieren ist, diese in ViewHelper zu kapseln (Siehe Kapitel ?????). 
+Der beste Weg Polymer-Elemente in Typo3 zu integrieren ist, diese in ViewHelper zu kapseln (siehe Abschnitt \ref{Fluid}). 
 
 Das Ziel ist es also, einen ViewHelper zu erstellen, welcher einen ViewHelper-Tag in einen Polymer-Tag umwandelt.
 
@@ -444,7 +444,15 @@ Die Firmenrichtlinien der PDV Systeme GmbH erlauben es leider nicht an dieser St
 \subsubsection{Die Nutzer Anmeldung}
 Die TYPO3 eigene Extension \textit{FE\_Login} ist nur schwer zu konfigurieren und bietet keine Möglichkeit den Login in modale Dialoge auszulagern. Aus diesen Gründen wurde entschieden dein Login durch einen eigenen Controller innerhalb der \textit{SupportBase}-Extension zu realisieren.
 
-Hat ein Nutzer das Anmeldeformular ????? Abbildung abgeschickt, gelangen die Anmeldedaten (Nutzername und Passwort) durch TYPO3 in die Controller-Action \texttt{loginAction}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{Bilder/login.png}
+\caption{Login für Frontend-Nutzer}
+\label{Login}
+\centering
+\end{figure}
+
+Hat ein Nutzer das Anmeldeformular \ref{Login} Abbildung abgeschickt, gelangen die Anmeldedaten (Nutzername und Passwort) durch TYPO3 in die Controller-Action \texttt{loginAction}
 
 \lstinputlisting[language=php, caption=loginAction, label=loginAction, captionpos=b]{Code/login.php}
 

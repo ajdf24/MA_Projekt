@@ -73,11 +73,22 @@ Innerhalb der vorliegenden Arbeit sollen nicht alle Extensions programmiert werd
 Im weiteren Verlauf wird ebenso auf die genaue Programmierung der einzelnen Extensions verzichtet. Es wird sich auf die Schwerpunkte bezogen, welche wichtig sind um die Extensions modular aufzubauen und wie es möglich ist, moderne Web-Technologien wie \textit{Polymer} oder AngularJS in Typo3 Extensions einzubauen (siehe Kapitel \ref{Zusammenspiel der Technologien}).
 
 \subsection{Datenbasis}
+
+
 \subsection{Rendering}\label{Rendering}
 Im folgenden Abschnitt, soll dargestellt werden, wie es unter TYPO3 möglich ist ein modulares Rendering aufzubauen. 
 Dies geschieht am Beispiel der oberen Menüleiste des des Templates.
 
-Die \textit{Template}-Extension stellt die grundlegende Menüleiste siehe Abbildung ????? dar.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/nav_bar.png}
+\caption{Navigationsleiste wenn Nutzer ein nicht eingeloggt ist}
+\label{Nav_Logout}
+\centering
+\end{figure}
+
+Die \textit{Template}-Extension stellt die grundlegende Menüleiste siehe Abbildung \ref{Nav_Logout} dar.
+
 Ohne eine Extension, welche das Login bereitstellt (\textit{SupportBase}), kann die \textit{Template}-Extension also keinen Login darstellen.
 Alle Elemente wie zum Beispiel Buttons, welche modale Dialoge zum Einloggen triggern, müssen also bei rendern vom Template gesucht und eingebunden werden. Dies betrifft natürlich auch die modalen Dialoge selbst.
 
@@ -125,5 +136,15 @@ Im Codebeispiel \ref{NavViewHelper} wird der Aufruf des \textit{ViewHelpers} sch
 In Abbildung \ref{NavBarViewHelper} ist die Funkion des \texttt{NavBarViewHelper} noch einmal schematisch dargestellt. Der \textit{ViewHelper} wird mit einem Parameter aufgerufen. Dieser wird zuerst ausgewertet, um zu bestimmen, welche Elemente benötigt werden. Anschliesend werden im nächsten Schritt die entsprechenden Elemente gesucht. Als nächstes, wird die Annotationen aus den geladenen HTML-Elementen entfernt. Zum Schluss werden alle geladenen Elemente anstelle des \textit{ViewHelpers} innerhalb das angeforderten HTML-Template eingefügt.
 
 TYPO3 besitzt sehr intelligente Caching-Mechanismen die ein solches vorgehen erlauben. Denn durch die Nutzung von Caches erstellt TYPO3 nicht bei jedem Seitenaufruf das Template neu.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{Bilder/nav_bar_login.png}
+\caption{Navigationsleiste wenn ein Nutzer eingeloggt ist}
+\label{Login}
+\centering
+\end{figure}
+
+Ist der Nutzer eingeloggt, so ändern sich die Symbole in der Menüleiste auf der linken Seite (siehe Abbildung).
 
 % TYPO3 unterstützt war "`Partials"', welche Teil-Templates innerhalb von Templates darstellen, diese können aber nicht dynamisch geladen werden.
