@@ -73,7 +73,44 @@ Innerhalb der vorliegenden Arbeit sollen nicht alle Extensions programmiert werd
 Im weiteren Verlauf wird ebenso auf die genaue Programmierung der einzelnen Extensions verzichtet. Es wird sich auf die Schwerpunkte bezogen, welche wichtig sind um die Extensions modular aufzubauen und wie es möglich ist, moderne Web-Technologien wie \textit{Polymer} oder AngularJS in Typo3 Extensions einzubauen (siehe Kapitel \ref{Zusammenspiel der Technologien}).
 
 \subsection{Datenbasis}
+Im Verlauf der Arbeit wurde schon erwähnt, dass die verschiedenen Extensions modular aufgebaut werden sollen. Hierfür muss natürlich auch eine grundlegende Datenbasis geschaffen werden. Diese Basis stellt die Extension \textit{Support Base} zur Verfügung. In Abbildung \ref{data_support_base} ist die Datenbasis einmal grafisch dargestellt.
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/datenmodel_supportbase.png}
+\caption{Datenbasis der \textit{Support Base} Extension}
+\label{data_support_base}
+\centering
+\end{figure}
+
+Die Datenbasis besteht insgesamt aus neun Klassen, wobei die Klassen \textit{TempUser}, \textit{User}, \textit{PushInformation} und \textit{Company} die Frontend-Nutzer abbilden. \textit{Projekt}, \textit{AddOn}, \textit{ProductGroup}, \textit{Product} und \textit{ProductDependences} stellen die Datenbasis für Produktentwicklungen der PDV Systeme GmbH dar.
+
+\textit{TempUser} ist eine Hilfsklasse, welche innerhalb der Registrierung verwendet wird. Solange der Nutzer nicht freigegeben ist, sind seine Daten als "`TempUser"' gespeichert. Sobald er Freigegeben wurde, werden die entsprechenden Daten zu einer Instanz der Klasse \textit{User} ungewandelt und gespeichert. Ein "`User"' gehört einem Unternehmen an und kann zusätzlich auch Stellvertetungen (\textit{substitue}) für andere Firmen übernehmen. Zusätzlich werden für einen "`User"' auch Informationen gespeichert, welche für die Übertragung der Push-Nachrichten benötigt werden (\textit{PushInformation}).
+
+Produkte (\textit{Product}) innerhalb der PDV werden für Mandanten erstellt, welche innerhalb eines Projekts (\textit{Project}) teilnehmen. Innerhalb eines Projekts, können mehrere Firmen als Mandanten angegeben werden. Produkte wiederum sind in Produktgruppen (\textit{ProductGroup}) angeordnet und können verschiedene Abhängigkeiten (\textit{ProductDependences}) haben.
+
+Zusätzlich zum eigentlichen Produkt, können Projekte auch "`AddOns"' (\textit{AddOn}) enthalten, welche ein Produkt erweitern.
+
+Die Klasse \textit{User} erbt von der TYPO3 eigenen Klasse \textit{FrontendUser} und erweitert diese. Diese Erweiterung muss innerhalb der Extensionkonfiguration \texttt{Configuration/TCA/Overrides} angegeben werden. TYPO3 erweitert bei installieren der Extension dann die Datenbanktabelle der "`FrontendUser"' um die entsprechenden Felder.
+
+Das Datenmodell der \textit{Downloads} Extension wiederum ist in Abbildung \ref{data_downloads} zu sehen und erweitert das Datenmodell der \textit{Support Base}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=13cm]{Bilder/datenmodell_Download_Portal_2.png}
+\caption{Datenbasis der \textit{Downloads} Extension}
+\label{data_downloads}
+\centering
+\end{figure}
+
+Die \textit{Downloads} Extension beinhaltet die Klassen \textit{DownloadUser}, \textit{DownloadItem}, \textit{Category}, \textit{SubCategory}, \textit{Type} und \textit{SubType}. Die Klasse \textit{Company} gehört zur \textit{Support Base} Extension und wurde hier nur zur Veranschaulichung hinzugefügt.
+
+\textit{DownloadUser} erweitert die Klasse \textit{User} der \textit{Support Base} Extension und fügt ihr weitere Attribute hinzu. Ein "`DownloadItem"' kann in verschiedene Kategorien (\textit{Category}) und Unterkategorien (\textit{SubCategory}) eingeordnet sein. Zusätzlich enthält ein "`DownloadItem"', zur besseren Gliederung noch einen Typ (\textit{Type}) und einen Untertyp (SubType).
+
+Um nachverfolgen zu können, welche Nutzer und Firmen welche Downloads heruntergeladen haben, werden hier Zusätzliche informationen gespeichert. Es kann nachverfolgt werden, welcher Nutzer welches "`DownloadItem"' geladen hat. Zusätzlich wird ein vermerk an das "`DownloadItem"' angebracht um verfolgen zu können, welche Firmen den Download bezogen haben.
+Diese Informationen werden von Supportmitarbeitern benötigt, um möglichst schnell sehen zu können, ob eine Firma schon die neusten Änderungen der Software bezogen hat.
+
+Weitere Extensions, welche zur Zeit noch nicht existieren, sollen dieses Prinzip der modularen Datenhaltung weiterverfolgen.
 
 \subsection{Rendering}\label{Rendering}
 Im folgenden Abschnitt, soll dargestellt werden, wie es unter TYPO3 möglich ist ein modulares Rendering aufzubauen. 
@@ -141,7 +178,7 @@ TYPO3 besitzt sehr intelligente Caching-Mechanismen die ein solches vorgehen erl
 \centering
 \includegraphics[width=12cm]{Bilder/nav_bar_login.png}
 \caption{Navigationsleiste wenn ein Nutzer eingeloggt ist}
-\label{Login}
+\label{userLogin}
 \centering
 \end{figure}
 

@@ -300,7 +300,7 @@ Es bietet sich daher an, bei Neuentwicklungen auf Polymer zu setzen.
 
 Ob und wie eine Intergration von Polymer in Typo3 möglich ist, wird im Kapitel \ref{Zusammenspiel der Technologien} näher beschrieben.
 
-\subsection{Service Worker}
+\subsection{Service Worker}\label{sw}
 Als Service Worker werden Skripte bezeichnet, welche vom Browser im Hintergrund ausgeführt werden. So können über Service Worker zum Beispiel Push-Nachrichten empfangen oder Hintergrund-Syncronisationen durchgeführt werden.
 Die entsprechenden Skripte werden beim laden einer Webseite mit ausgeliefert und vom Browser ausgeführt. 
 
@@ -462,7 +462,30 @@ Anschliesend wird geprüft, ob das angegebene Passwort mit dem in der Datenbank ü
 Wie die modalen Dialoge in das Template gerendert werden, wurde im Abschnitt \ref{Rendering} erklärt.
 
 \subsection{Push-Nachrichten über Service Worker}
-Ging bisher noch nicht, weil isso ?????
+Im Abschnitt \ref{sw} wurde beschrieben, wie ein Service Worker erstellt wird um Nutzern Push-Nachrichten anzuzeigen. Nachdem die Clients konfiguriert wurden um Nachrichten zu empfangen, muss natürlich nun auch ein Sender innerhalb der Servers umgesetzt werden. 
+
+Um das senden von Push-Nachrichten zu ermöglichen, gibt es eine Reihe von Librarys für unterschiedliche Programmiersprachen. So auch auch eine für PHP\footnote{\url{https://github.com/web-push-libs/web-push-php}}, welche innerhalb von TYPO3 verwendet werden kann.
+
+Bisher konnte das versenden und empfangen von Nachrichten noch nicht Praktisch umgesetzt werden, da Service Worker wie schon beschrieben nur mittels HTTPs arbeiten. Leider bietet die aktuelle Testumgebung der PDV Systeme keine Möglichkeit eine HTTPs verbindung umzusetzten. Aus diesem Grund, kann die Einbindung der Library "`web-push-php"' nur theoretisch ausgearbeitet werden.
+
+Die Library bietet die Möglichkeit Push-Nachrichten zu erstellen und diese zu versenden. Diese Funktion soll in die \textit{Support Base} Extension integriert werden, da verschiedene Extension in der Lage sein müssen Nachrichten zu versenden.
+
+Es soll eine Wrapperklasse entstehen, welche unter angabe des "`Users"', einer Überschrift, einer Nachricht und einem Link automatisch eine Push-Nachricht erstellt.
+Die Wrapperklasse soll anhand des "`Users"' selbstständig die benötigten Verbindungsdaten aus der Datenbank abrufen und die Nachricht versenden.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=8cm]{Bilder/push_worker.eps}
+\caption{Klassendiagramm für PushWorker}
+\label{push_uml}
+\centering
+\end{figure}
+
+\FloatBarrier
+
+In Abbildung \ref{push_uml} ist einmal schematisch dargestellt, wie die Klasse PushWorker aussehen soll. Sie besitzt die öffentliche Methode \texttt{send()}, welche eine Push-Nachricht versendet. Sie wiederum ruft die Methode \texttt{getConnectionData()} auf, welche unter Verwendung der Methode \texttt{getPushinformation()} des \textit{UserRepository} die benötigten Daten für die Push-Nachricht holt. 
+
+Sind anschliesend alle Daten vorhanden, wird die Methode \texttt{sendPush()} innerhalb der Methode \texttt{send()} aufgerufen, welche wiederum unter Verwendung der Klasse \textit{WebPush} aus der \textit{web-push-php}-Library die entsprechende Nachricht generiert und versendet.
 
 \newpage
 \section{Zusammenfassung}
