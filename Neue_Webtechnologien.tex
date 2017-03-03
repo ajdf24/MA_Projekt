@@ -72,24 +72,24 @@ Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist und sich z
     \begin{tabular}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.4\textwidth}|}
       \hline
 	Vergleichspunkte & Bootstrap Material & MaterializeCSS\\ \hline
-	Abhängigkeiten & \begin{minipage}[t]{0.3\textwidth}
+	Abhängigkeiten & \vspace{0.1cm}\begin{minipage}[t]{0.3\textwidth}
 	                  \begin{itemize}
 	                    \item Bootstrap
 	                    \item JQuery
 	                   \end{itemize} 
-	                 \end{minipage}
-		      & \begin{minipage}[t]{0.3\textwidth}
+	                 \end{minipage}\vspace{0.1cm}
+		      & \vspace{0.1cm}\begin{minipage}[t]{0.3\textwidth}
 	                  \begin{itemize}
 	                   \item JQuery
 	                  \end{itemize}
 	                \end{minipage}\\ \hline
-	Umfang & \begin{minipage}{0.3\textwidth}
+	Umfang & \vspace{0.1cm}\begin{minipage}{0.3\textwidth}
 	          \begin{itemize}
 	           \item Standard Layout
 	           \item Dialoge
 	          \end{itemize}
 	         \end{minipage}
-	       & \begin{minipage}{0.3\textwidth}
+	       & \vspace{0.1cm}\begin{minipage}{0.3\textwidth}
 	          \begin{itemize}
 	           \item Standard Layout
 	           \item Dialoge
@@ -98,7 +98,7 @@ Auch wenn MaterializeCSS noch sehr jung im Vergleich zu Bootstrap ist und sich z
 	           \item Side-Navs
 	           \item viele weitere
 	          \end{itemize}
-	         \end{minipage}\\ \hline
+	         \end{minipage}\vspace{0.1cm}\\ \hline
 	Farbanpassung & über CSS Klassen (17 Farben) & Farben werden in SASS-Quellcode definiert (kein Limit)\\ \hline
 	Icons & Verwendung von Material Icons & Verwendung von Material Icons\\ \hline
 	Subjektive Geschwindigkeit & teilweise Träge und Langsam & immer schnell und flüssig\\ \hline
@@ -131,11 +131,11 @@ Durch die Verwendung soll die Programmierung von Webtechnologien vereinfacht wer
 Komponenten können also auf einer Vielzahl von Technologien aufbauen. Die Nutzung einer Komponente durch einen Programmierer geht somit auch ohne die Kenntnis aller in der Komponente verwendeten Technologien. 
 Ein Programmiere muss sich nicht um die Funktion oder den Aufbau einer Komponente kümmern. Er kann sie einfach benutzen.
 
-Dies bringt zum einen den Vorteil, dass Programmierer sich nicht mehr mit allen Technologien beschäftigen und auskennen muss. Zum anderen können Komponenten schnell in bestehende und neue Projekte integriert werden. 
+Dies bringt zum einen den Vorteil, dass Programmierer sich nicht mehr mit allen Technologien beschäftigen und auskennen müssen. Zum anderen können Komponenten schnell in bestehende und neue Projekte integriert werden. 
 Hierdurch kann die Entwicklungszeit einer Web-Seite im Idealfall drastisch gesenkt werden.
 \cite{GolemWebComponents}
 
-Web Components bestehen nach der Definition des W3C aus fünf bestandteilen:
+Web Components bestehen nach der Definition des W3C aus fünf Bestandteilen:
 \begin{itemize}
  \item Templates
  \item Decorators
@@ -145,7 +145,7 @@ Web Components bestehen nach der Definition des W3C aus fünf bestandteilen:
 \end{itemize}
 
 \paragraph{Templates}
-sind HTML-Teile, welche beim rendern einer Web Komponente zum tragen kommen. Sie werden innerhalb der Komponente definiert (siehe Listing \ref{Polymer Element}) und sind innerhalb von HTML5 standardisiert.
+sind HTML-Teile, welche beim Rendern einer Web Komponente zum tragen kommen. Sie werden innerhalb der Komponente definiert (siehe Listing \ref{Polymer Element}) und sind von HTML5 standardisiert.
 
 \paragraph{Decorators}
 beschreiben das Aussehen eines Templates innerhalb einer Komponente mit Hilfe von CSS. Zum aktuellen Zeitpunkt sind sie jedoch nicht spezifiziert.
@@ -163,12 +163,12 @@ Imports sind wie Templates ebenfalls schon in HTML standardisiert.
 \cite{W3CWebComponents}
 
 \subsubsection{Shadow DOM} \label{Shadow DOM}
-Damit Komponenten nicht durch CSS-Klassen von der eigentlichen Web-Seite oder untereinander beeinflussen, wurde der Shadow DOM erfunden.
+Damit Komponenten nicht durch CSS-Klassen von der eigentlichen Web-Seite oder sich untereinander beeinflussen, wurde der Shadow DOM erfunden.
 
-Der Shadow DOM ist ein konstrukt um Komponenten vor dem eigentlichen HTML-DOM zu verbergen. Dieses vorgehen ist notwendig, um Komponenten verwenden zu können, denn Komponenten sollen sich werder untereinander Beeinflussen noch sollen sie von der Web-Seite beeinflusst werden.
+Der Shadow DOM ist ein Konstrukt, um Komponenten vor dem eigentlichen HTML-DOM zu verbergen. Dieses Vorgehen ist notwendig, um Komponenten verwenden zu können, denn Komponenten sollen sich werder untereinander Beeinflussen noch sollen sie von der Web-Seite beeinflusst werden.
 
-Komponenten im Shadow DOM werden vor dem eigentlich HTML-DOM verborgen, wie der Name schon sagt, liegen sie im Schatten. Der Browser rendert also zuerst das HTML-DOM und anschließend den Shadow DOM, ohne das dieser vom eigentlichen DOM beeinflusst wird.
-JQuery aufrufe auf der Hauptseite zum Beispiel, können sich nicht auf Elemente im Shadow beziehen, da sie diese nicht kennen.
+Komponenten im Shadow DOM werden vor dem eigentlichen HTML-DOM verborgen, wie der Name schon sagt, liegen sie im Schatten. Der Browser rendert also zuerst das HTML-DOM und anschließend den Shadow DOM, ohne das dieser vom eigentlichen DOM beeinflusst wird.
+JQuery-Aufrufe auf der Hauptseite zum Beispiel, können sich nicht auf Elemente im Shadow beziehen, da sie diese nicht kennen.
 
 Aktuell, können alle modernen Browser den Shadow DOM umsetzten.
 \cite{ShadowDomPolymer}
@@ -179,14 +179,14 @@ Angular ist nach dem \ac{MVVM}-Prinzip aufgebaut, welches eine Trennung zwischen
 
 Die Darstellung wird über HTML abgebildet, welches Angular durch eigene Attribute ergänzt. Die Logik wiederum wird durch Javascript auf Basis von Angular abgebildet.
 
-Angular ist in der Lage das HTML-DOM entsprechend der Befehle der Logik umzubauen ohne dafür auf JQuery zurückgreifen zu müssen.
+Angular ist in der Lage das HTML-DOM entsprechend der Befehle der Logik umzubauen, ohne dafür auf JQuery zurückgreifen zu müssen.
 
-Aufgaben, wie das Suchen oder Sortieren einer Tabelle sind typische Anwendungsbeispiele von Angular.
+Aufgaben, wie das Suchen oder Sortieren einer Tabelle, sind typische Anwendungsbeispiele von Angular.
 \cite{AngularBuch}
 
 Die momentan aktuelle Version von Angular ist 1.5.6, welche auch in dieser Arbeit verwendet wird. Zur Zeit wird aber auch der Release von Angular 2.0 vorbereitet, wobei die neue Version nicht abwertskompatibel ist, da sich sehr viel an der Codebasis geändert hat.
 
-Durch das neue Framework, soll das ohnehin schon schnelle Framework noch einmal an Geschwindigkeit zunehmen. 
+Durch das neue Framework soll das ohnehin schon schnelle Framework noch einmal an Geschwindigkeit zunehmen. 
 
 Im folgenden Beispiel der W3C-School wird gezeigt wie Angular eingesetzt werden kann.
 
@@ -194,17 +194,17 @@ Im folgenden Beispiel der W3C-School wird gezeigt wie Angular eingesetzt werden 
 
 Die im Div-Tag zu sehenden Attribute "`ng-app"' und "`ng-controller"' werden von Angular genutzt. "`ng-app"' gibt dabei an, wie die Angular Applikation heißen soll. "`ng-controller"' gibt den Namen des Controllers an, welcher für das HTML-Element zum Einsatz kommen soll.
 
-Innerhalb des Div-Tags, welcher die Applikation darstellt, sind zwei Input-Tag zu sehen, welche das Angular-Attribut "`ng-model"' beinhalten. "`ng-model"' sagt aus, dass diese Elemente zum Datenmodell gehören und welchen Namen sie tragen.
+Innerhalb des Div-Tags, welcher die Applikation darstellt, sind zwei Input-Tags zu sehen, welche das Angular-Attribut "`ng-model"' beinhalten. "`ng-model"' sagt aus, dass diese Elemente zum Datenmodell gehören und welchen Namen sie tragen.
 
-In doppelten geschweiften Klammern werden Modell-Attribute, welche zur Laufzeit von Angular durch die konkreten Werte der Modell-Attribut ersetzt werden.
+In doppelten geschweiften Klammern werden Modell-Attribute, welche zur Laufzeit von Angular durch die konkreten Werte der Modell-Attribut ersetzt werden, gesetzt.
 
 \lstinputlisting[language=html, caption=Angular ViewModel und Model im HTML-DOM \cite{W3CAngular}, label=Angular ViewModel und Model, captionpos=b]{Code/angular_view-model.html}
 
 Im Listing \ref{Angular ViewModel und Model} ist das ViewModel beziehungsweise das Model des im Listing \ref{Angular View} gezeigten Views zu sehen.
 
-Als erster Schritt, wird der zu referenzierende Angular View angegeben und in der Variable "`app"' abgelegt. Daraufhin wird ein Controller innerhalb der Applikation, unter Verwendung des Namens, angelegt.
+Als erster Schritt wird der zu referenzierende Angular View angegeben und in der Variable "`app"' abgelegt. Daraufhin wird ein Controller innerhalb der Applikation, unter Verwendung des Namens, angelegt.
 
-Innerhalb des Controllers werden dann für die Model-Attribute angegeben. Im Beispiel sind das die Werte "`John"' und "`Doe"'. 
+Innerhalb des Controllers werden dann die Model-Attribute angegeben. Im Beispiel sind das die Werte "`John"' und "`Doe"'. 
 
 Wird nun die entsprechende HTML-Seite im Browser aufgerufen, füllt Angular die beiden Input-Tags mit den Standardwerten und ersetzt auch die Platzhalter in geschweiften Klammern.
 Ändert ein Nutzer nun den Inhalt der Input-Tags, so passt Angular automatisch das HTML-Dom an und aktualisiert die Werte innerhalb der geschweiten Klammern.
@@ -212,8 +212,8 @@ Wird nun die entsprechende HTML-Seite im Browser aufgerufen, füllt Angular die b
 Das vom Browser geparste Dom enthält keine Angaben darüber, wo sich Platzhalter befinden. Einzig Angular weis, welche Elemente bei einer Änderung angepasst werden müssen.
 \cite{W3CAngular}
 
-Durch die neue Version 2.0 von Angular ändert sich die Verwendung und das Paradigma darmatisch. 
-Wärend Angular 1 noch auf das \ac{MVVM}-Prinzip setzt, geht Angular 2 den Weg der Web Komponenten. Da bald eine neue Version erscheint, kann zum aktuellen Zeitpunkt noch nicht gesagt werden wie lange Angular 1 noch unterstützt wird und ob der Einsatz noch sinnvoll ist.
+Durch die neue Version 2.0 von Angular ändert sich die Verwendung und das Paradigma dramatisch. 
+Wärend Angular 1 noch auf das \ac{MVVM}-Prinzip setzt, geht Angular 2 den Weg der Web Komponenten. Da bald eine neue Version erscheint, kann zum aktuellen Zeitpunkt noch nicht gesagt, werden wie lange Angular 1 noch unterstützt wird und ob der Einsatz noch sinnvoll ist.
 
 Eine Alternative zu Angular 1 wäre das Java-Script-Framework Aurelia\footnote{\url{www.aurelia.io}} welches einen ähnlichen Umfang wie Angular 1 bietet.
 
@@ -230,29 +230,29 @@ In den folgenten Abschnitten wird nun weiter auf Polymer in der Version 1.0 eing
 \cite{PolymerProject}
 
 \subsubsection{Wozu Polymer Elemente}\label{Wozu Polymer Elemente}
-Polymer Elemente versuchen sogenannten Boiler-Code unter Zuhilfenahme von Web Komponenten zu vermeiden. Als Boiler-Code wird die Verschmelzung verschiedener Programmiersprachen innerhalb einer Datei oder eines Elements bezeichnet. Boiler-Code ist häufig in Web-Seiten zu finden, was historsch bis heute bedingt ist. Eine weiter gängiger Name für Boiler-Code im Web ist "`DOM Pollution"', was so viel aussagt wie, das der DOM mit verschiedenen Sprachen verschmutzt ist.
+Polymer Elemente versuchen den so genannten Boiler-Code unter Zuhilfenahme von Web Komponenten zu vermeiden. Als Boiler-Code wird die Verschmelzung verschiedener Programmiersprachen innerhalb einer Datei oder eines Elements bezeichnet. Boiler-Code ist häufig in Web-Seiten zu finden, was historsch bis heute bedingt ist. Eine weiter gängiger Name für Boiler-Code im Web ist "`DOM Pollution"', was so viel aussagt wie, dass der DOM mit verschiedenen Sprachen verschmutzt ist.
 
-Um eine HTML-Element zu erstellen wird als Grundgerüst HTML verwendet. Zusätzlich enthält das HTML-Element aber auch CSS um das aussehen zu beeinflussen. Um ein HTML-Element dynamisch oder interaktiv zu gestalten wird meist zusätzlich auch noch Java-Skript oder AngularJS verwendet. Typischer weise findet mal alle drei Sprachen in einer HTML-Datei oder in getrennten Dateien. 
+Um ein HTML-Element zu erstellen wird als Grundgerüst HTML verwendet. Zusätzlich enthält das HTML-Element aber auch CSS um das Aussehen zu beeinflussen. Um ein HTML-Element dynamisch oder interaktiv zu gestalten, wird meist zusätzlich auch noch Java-Skript oder AngularJS verwendet. Typischer Weise findet mal alle drei Sprachen in einer HTML-Datei oder in getrennten Dateien. 
 
-Beide Ansätze haben jedoch Nachteile. Bei der Vereinigung verschiedener Sprachen in einer Datei, leidet meist die Übersicht, denn CSS, Java-Skript und zugehöriges HTML muss nicht an festen Positionen sein. So kommt es öfter vor, dass zusammengehörige Elemente innerhalb einer Datei weit auseinander stehen. Hier leidet die Übersicht und Zusammenhänge sich wenn überhaupt oft nur schwer für fremde Programmierer zu erkennen.
+Beide Ansätze haben jedoch Nachteile. Bei der Vereinigung verschiedener Sprachen in einer Datei, leidet meist die Übersicht, denn CSS, Java-Skript und zugehöriges HTML muss nicht an festen Positionen sein. So kommt es öfter vor, dass zusammengehörige Elemente innerhalb einer Datei weit auseinander stehen. Hier leidet die Übersicht und Zusammenhänge sind wenn überhaupt oft nur schwer für fremde Programmierer zu erkennen.
 
-Der Ansatz die verschiedenen Sprachen zu trennen, beseitigt zwar das durcheinander innerhalb der HTML-Dateien, jedoch entstehen hier wieder neue Probleme. Wenn alle Sprachen strikt in verschiedenen Dateien sind, ist es oft nur schwer nachzuvollziehen, welches Java-Skript zu welchem HTML-Element gehört. Für außenstehende Programmiere ist dies oft eine unlösbare Aufgabe. Nachteilig ist auch, dass immer alle Dateien benötigt werden, um das Gesamtbild verstehen zu können.
+Der Ansatz, die verschiedenen Sprachen zu trennen, beseitigt zwar das Durcheinander innerhalb der HTML-Dateien, jedoch entstehen hier wieder neue Probleme. Wenn alle Sprachen strikt in verschiedenen Dateien sind, ist es oft nur schwer nachzuvollziehen, welches Java-Skript zu welchem HTML-Element gehört. Für außenstehende Programmiere ist dies oft eine unlösbare Aufgabe. Nachteilig ist auch, dass immer alle Dateien benötigt werden, um das Gesamtbild verstehen zu können.
 
 \subsubsection{Was macht Polymer aus}
-Polymer wiederum geht, im Gegensatz zu den beiden im Abschnitt \ref{Wozu Polymer Elemente} genannten, einen dritten sehr eleganten Ansatz. Den der Web Components. Grundsätzlich kommen bei Polymer verschiedene Programmiersprachen und Konzepte wieder zusammen in eine HTML-Datei. 
+Polymer wiederum geht, im Gegensatz zu den beiden im Abschnitt \ref{Wozu Polymer Elemente} genannten, einen dritten sehr eleganten Ansatz und zwar den der Web Components. Grundsätzlich kommen bei Polymer verschiedene Programmiersprachen und Konzepte wieder zusammen in eine HTML-Datei. 
 
 Der entscheidende Unterschied jedoch ist, das HTML, CSS und Skripte ihre festen Bereiche haben, in denen sie implementiert werden. Dies gestaltet die HTML-Datei des jeweiligen Elements sehr übersichtlich und wurde so in den Web Components vom W3C spezifiziert.
 
 Ein weiterer Vorteil ist, dass in der Web-Seite, in der das Element Verwendung findet nur noch ein einzelner Tag zu sehen ist, der auf das Polymer Element verweist.
 
-Damit der Browser das entsprechende Element mit Hilfe der Polymer Library parsen kann muss vor der Verwendung das jeweilige Element über den HTML-Link-Tag eingebunden werden.
+Damit der Browser das entsprechende Element mit Hilfe der Polymer Library parsen kann, muss vor der Verwendung das jeweilige Element über den HTML-Link-Tag eingebunden werden.
 
 Das Polymer Projekt bietet eine ganze Reihe fertige Elemente, welche einfach verwendet werden können\footnote{\url{https://elements.polymer-project.org/}}.
 
 Wem diese Elemente mit ihren Funktion noch nicht reichen, kann entweder die bestehenden Elemente erweitern oder neue Elemente erstellen.
 
 \subsubsection{Ein eigenes Polymer Element erstellen}\label{Ein eigenes Polymer Element erstellen}
-Um zu zeigen, wie einfach es ist auf Basis von Polymer Elemente selbst zu erstellen folgt in den nun kommenden Abschnitten nun Beispiel, welches im Kapitel \ref{Zusammenspiel der Technologien} in Typo3 eingebunden wird.
+Um zu zeigen, wie einfach es ist, auf Basis von Polymer Elemente selbst zu erstellen, folgt in den nun kommenden Abschnitten nun ein Beispiel, welches im Kapitel \ref{Zusammenspiel der Technologien} in Typo3 eingebunden wird.
 
 \lstinputlisting[language=html, caption=Beispiel für ein eigenes Polymer-Element, label=Polymer Element, captionpos=b]{Code/polymer_element.html}
 
@@ -261,8 +261,8 @@ Als erstes wird der Polymer-Link hinzugefügt, welcher immer vorhanden sein muss.
 \paragraph{CSS für ein Element}
 Die Definition von CSS hat nur Einfluss auf das jeweilige Template. Elemente außerhalb des Element-DOM werden von dem hier definiertem CSS nicht beeinflusst.
 
-Es ist jedoch umgekehrt möglich, CSS-Klassen zu nutzen, im globalen CSS beschrieben sind. Eine erneute Einbindung der CSS-Datei in das Polymer-Element ist nicht notwendig.
-Die Verwendung von CSS-Abhängigkeiten in Polymer ist jedoch unschön, da dies ein Element gegebenen Falls auf Web-Seiten beschränkt, welche diese bestimmte CSS-Datei verwenden.
+Es ist jedoch umgekehrt möglich, CSS-Klassen zu nutzen, welche im globalen CSS beschrieben sind. Eine erneute Einbindung der CSS-Datei in das Polymer-Element ist nicht notwendig.
+Die Verwendung von CSS-Abhängigkeiten in Polymer ist jedoch unschön, da dies ein Element gegebenenfalls auf Web-Seiten beschränkt, welche diese bestimmte CSS-Datei verwenden.
 Es ist somit in den meisten Fällen besser keine CSS-Abhängigkeiten in Elementen zu verwenden, vor allem dann wenn diese öffentlich sind.
 
 Im Listing \ref{Polymer Element} wurden CSS-Abhängigkeiten zu MaterializeCSS (Abschnitt \ref{MaterializeCSS}) aufgebaut, eine Begründung hierfür ist im Abschnitt \ref{Vergleich beider CSS-Frameworks} zu finden.
@@ -270,32 +270,32 @@ Im Listing \ref{Polymer Element} wurden CSS-Abhängigkeiten zu MaterializeCSS (Ab
 \paragraph{Element-Script}
 Der "`script"'-Tag enthält das jeweilige Skript zum Element. Es ist JSON-Notation gehalten und basiert auf Callbacks.
 
-\subparagraph{Die Registrierung} eines Elements steht immer zu begin des Skripts. Dieser Teil muss also immer vorhanden sein, damit das jeweilige Element überhaupt dargestellt werden kann.
+\subparagraph{Die Registrierung} eines Elements steht immer zu Beginn des Skripts. Dieser Teil muss also immer vorhanden sein, damit das jeweilige Element überhaupt dargestellt werden kann (siehe \ref{Polymer Element} Zeile 12 und 13).
 
-\lstinputlisting[language=html, caption=Polymer-Element Registrierung, label=Element Registrierung, captionpos=b]{Code/element_registration.html}
+% \lstinputlisting[language=html, caption=Polymer-Element Registrierung, label=Element Registrierung, captionpos=b]{Code/element_registration.html}
 
-\subparagraph{Handler} werden in Polymer verwendet um einzelne Skripte aufzurufen. Innerhalb des Handlers kann ein Java-Skript definiert sein, das ausgeführt wird, wenn der jeweilige Handler getriggert wird.
+\subparagraph{Handler} werden in Polymer verwendet, um einzelne Skripte aufzurufen. Innerhalb des Handlers kann ein Java-Skript definiert sein, das ausgeführt wird, wenn der jeweilige Handler getriggert wird (siehe \ref{Polymer Element} Zeilen 14 bis 18).
 
-\lstinputlisting[language=html, caption=Polymer-Element Handler, label=Element Handler, captionpos=b]{Code/element_handler.html}
+% \lstinputlisting[language=html, caption=Polymer-Element Handler, label=Element Handler, captionpos=b]{Code/element_handler.html}
 
-Damit ein Handler überhaupt zum Tragen kommt, muss er innerhalb des HTML-Tags für das dass jeweilige Skript sein soll registriert werden.
+Damit ein Handler überhaupt zum Tragen kommt, muss er innerhalb des HTML-Tags, für das das jeweilige Skript sein soll, registriert werden (siehe \ref{Polymer Element} Zeile 7).
 
-\lstinputlisting[language=html, caption=Polymer-Element Handler Registration, label=Element Handler Registration, captionpos=b]{Code/element_handler_registration.html}
+% \lstinputlisting[language=html, caption=Polymer-Element Handler Registration, label=Element Handler Registration, captionpos=b]{Code/element_handler_registration.html}
 
 \subparagraph{Attribute,} welche das Polymer-Element haben soll, müssen ebenfalls im Skript definiert werden.
 
 \lstinputlisting[language=html, caption=Polymer-Element Attribute, label=Element Attribute, captionpos=b]{Code/element_attributes.html}
 
-Das Attribut "`owner"' wird im Beispiel als String definiert, und hat den Standardwert "`Daniel"'.
-Jedes im Skript definiertes Attribut lässt sich bei Verwendung des Elements wie ein normales XML-Attribut verwenden. Wird bei Verwendung des Elements das "`owner"'-Attribut nicht angegeben, so ist es "`Daniel"'. 
+Das Attribut "`owner"' wird im Beispiel als String definiert und hat den Standardwert "`Daniel"'.
+Jedes im Skript definierte Attribut lässt sich bei Verwendung des Elements wie ein normales XML-Attribut verwenden. Wird bei Verwendung des Elements das "`owner"'-Attribut nicht angegeben, so ist es "`Daniel"'. 
 Um den Inhalt des Attributs im Template zu verwenden, muss es in doppelten geschweiften Klammern aufgerufen werden. So kann zum Beispiel ein B-Tag wie folgt geschrieben werden.
 
 \lstinputlisting[language=html, caption=Polymer-Element Attribute benutzen, label=Element Attribute benutzen, captionpos=b]{Code/element_attributes_use.html}
 
-\subparagraph{Der Aufruf} dieses Polymer-Elements muss wie im Beispiel umgesetzt werden
+\subparagraph{Der Aufruf} dieses Polymer-Elements muss wie im Beispiel umgesetzt werden.
 
 \subsubsection{Zusammenfassung}
-Polymer bietet wie gezeigt wurde eine echte Alternative zum normalen Web-Seiten-Boiler-Code. Durch die Verwendung von Polymer-Elementen entsteht keine nennenswerte Verzögerung beim parsen einer Web-Seite durch den Browser.
+Polymer bietet, wie gezeigt wurde, eine echte Alternative zum normalen Web-Seiten-Boiler-Code. Durch die Verwendung von Polymer-Elementen entsteht keine nennenswerte Verzögerung beim Parsen einer Web-Seite durch den Browser.
 Es bietet sich daher an, bei Neuentwicklungen auf Polymer zu setzen.
 
 Ob und wie eine Intergration von Polymer in Typo3 möglich ist, wird im Kapitel \ref{Zusammenspiel der Technologien} näher beschrieben.
@@ -359,12 +359,12 @@ Das Ziel ist es also, einen ViewHelper zu erstellen, welcher einen ViewHelper-Ta
 \includegraphics[width=4cm]{Bilder/Polymer.eps}
 \caption{Polymer ViewHelper Hierarchie}
 \label{Polymer ViewHelper Hirarchie}
-\vspace{-40pt}
+\vspace{-70pt}
 \end{wrapfigure}
 
 In Abbildung \ref{Polymer ViewHelper Hirarchie} (rechts) ist die Aufrufhirarchie zu sehen, welche innerhalb des Projektes entwickelt wurde, um Polymer Elemente elegant in Typo3 einzuarbeiten.
 
-Die beim laden einer Seite aufgerufene "`Action"' eines bestimmten "`Controllers"' wird aufgerufen. Der "`Controller"' stellt alle zum Rendern des Templates benötigte Daten bereit und übergibt sie dem Template.
+Die beim Laden einer Seite aufgerufene "`Action"' eines bestimmten "`Controllers"' wird aufgerufen. Der "`Controller"' stellt alle zum Rendern des Templates benötigte Daten bereit und übergibt sie dem Template.
 
 Das Template wiederum beinhaltet einen für das Polymer Element entwickelten ViewHelper, welcher innerhalb des Templates aufgerufen wird.
 
@@ -382,9 +382,9 @@ Am Beispiel des Button-Up Elements (siehe Abschnitt \ref{Ein eigenes Polymer Ele
 
 Der ViewHelper erbt von der abstrakten Klasse "`AbstractTagBasedViewHelper"'. Dieser ist in der ViewHelper ist anschließend in der Lage, einen HTML-Tag zu verändern.
 
-Mit dem Attribut \$tagname, wird definiert wie der neue Tag heißen soll, welcher den ViewHelper-Tag ersetzt. Dieser Tag muss nun so heißen wie das Polymer-Element.
+Mit dem Attribut \texttt{\$tagName} wird definiert wie der neue Tag heißen soll, welcher den ViewHelper-Tag ersetzt. Dieser Tag muss nun so heißen wie das Polymer-Element.
 
-Die Methode "`render"' des ViewHelpers gibt den String zurück, der den ViewHelper-Tag ersetzt.
+Die Methode \texttt{render} des ViewHelpers gibt den String zurück, der den ViewHelper-Tag ersetzt.
 
 Die "`return"'-Anweisung gibt immer den Link zum entsprechenden Polymer-Element zurück, und den Polymer-Tag.
 
@@ -398,14 +398,14 @@ Beim ausliefern der Web-Seite ersetzt Typo3 nun den ViewHelper-Tag gegen die fol
 
 Wird die Web-Seite nun vom Browser gerendert wird, ersetzt er diesen Polymer-Tag schließlich durch das definierte Polymer-Element.
 
-Durch die Verwendung von ViewHelpern, kann jedes beliebige Polymer-Element auch unter Typo3 zum Einsatz kommen. Es ist also sehr elegant möglich Boiler-Code auch in Typo3-Templates und -Partial mit der Hilfe von Polymer zu umgehen.
+Durch die Verwendung von ViewHelpern kann jedes beliebige Polymer-Element auch unter Typo3 zum Einsatz kommen. Es ist also sehr elegant möglich Boiler-Code auch in Typo3-Templates und -Partial mit der Hilfe von Polymer zu umgehen.
 
-Durch die Kapselung der Polymer-Elemente in ViewHelpern verhalten sich diese sich außerdem wie standardmäßige ViewHelper mit Boiler-Code.
+Durch die Kapselung der Polymer-Elemente in ViewHelpern verhalten sich diese außerdem wie standardmäßige ViewHelper mit Boiler-Code.
 
 Um nun Polymer-Elemente in einem Template zu verwenden, ist kein extra Wissen notwendig, was eine Verwendung so einfach wie möglich macht. Der Programmierer eines Templates muss sich keine Gedanken über Links zu Polymer-Elementen machen und muss sich auch nicht mit Polymer auskennen. Es wird einfach der ViewHelper verwendet und alles andere passiert im Hintergrund.
 
 \subsection{MaterialzeCSS}
-Die Integration von MaterializeCSS in Typo3 ist genau so einfach, wie die Integration von Bootstrap oder jedem anderem CSS-Frameworks.
+Die Integration von MaterializeCSS in Typo3 ist genau so einfach wie die Integration von Bootstrap oder jedem anderem CSS-Frameworks.
 Um MaterializeCSS in Typo3 verwenden zu können, muss im Template nur angegeben werden, welche CSS-Dateien Typo3 einbinden soll.
 
 Zusätzlich zu der CSS-Datei benötigt MaterializeCSS noch eine eigene Java-Script-Datei und eine aktuelle Version von JQuery. 
@@ -413,7 +413,7 @@ Diese Dateien werden zusammen mit dem CSS im Template definiert.
 
 Außerdem ist es möglich mit MaterialiezeCSS die standard Icons und Schriftarten von Google zu nutzen. Sollen dieses Sachen verwendet werden, so müssen sie nur zusätzlich zum CSS und Java-Script im Template definiert werden.
 
-Im Listing \ref{MaterialieCSS Anbindung} ist ein Typo-Script-Beispiel zu sehen, mit welchem MaterializeCSS in Typo3 integriert wird. Das angegebe Typo-Script an entweder in der Konfiguration einer Extension angegeben sein oder es wird direkt in einem Typo3-Template definiert.
+Im Listing \ref{MaterialieCSS Anbindung} ist ein Typo-Script-Beispiel zu sehen, mit welchem MaterializeCSS in Typo3 integriert wird. Das angegebe Typo-Script wird entweder in der Konfiguration einer Extension angegeben oder es wird direkt in einem Typo3-Template definiert.
 \lstinputlisting[caption=MaterialiezeCSS Anbindung, label=MaterialieCSS Anbindung, captionpos=b]{Code/materilaize_anbindung.txt}
 
 \subsection{Nutzer Registrierung und Anmeldung}
