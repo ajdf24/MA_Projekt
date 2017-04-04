@@ -13,9 +13,9 @@ Im folgenden Kapitel wird auf neue und zum Teil noch nicht fertig spezifizierte 
 
 HTML5 ist die aktuelle Fassung, der Hypertext-Auszeichnungssprache HTML, welche vom W3C am 28. Oktober 2014 standardisiert wurde.
 
-Die erste wichtige Neuerung ist die angabe des Dokumententyps, welche nun nur noch \texttt{<!DOCTYPE html>} lautet.
+Die erste wichtige Neuerung ist die Angabe des Dokumententyps, welche nun nur noch \texttt{<!DOCTYPE html>} lautet.
 
-\texttt{section}, \texttt{header} und \texttt{footer} sind nur ein paar Beispiele für die neuen Struktur-Elemente in HTML5, welche es erlauben das Dokument besser zu Strukturieren.
+\texttt{section}, \texttt{header} und \texttt{footer} sind nur ein paar Beispiele für die neuen Struktur-Elemente in HTML5, welche es erlauben, das Dokument besser zu Strukturieren.
 
 HTML5 bietet aber nicht nur neues. Es erweitert zum Teil auch bestehende Elemente, wie den \texttt{input}-Tag, in welchem nun auch Typdefinitionen wie zum Beispiel Telefonnummern oder E-Mail-Adressen standardisiert sind. Dies ermöglicht dem Browser eine Validierung von gekennzeichneten Tags vorzunehmen ohne auf Java-Skript zurückgreifen zu müssen. 
 
@@ -116,11 +116,11 @@ Zusätzlich lässt sich Subjektiv sagen, dass MaterialiezeCSS schneller und flüssi
 Aus den vorgelegten Gründen wurde innerhalb der PDV Systeme GmbH entschieden für das neue Supportportal MaterialiezeCSS in der Version 0.97.0 (aktuelle Version) zu verwenden. Für die Verwendung innerhalb der PDV Systeme wurde das Framework an die Farben der PDV Systeme angepasst.
 
 \subsection{PHP7}
-PHP7 ist die aktuelle Version der Programmiersprache PHP, welche im Dezember 2015 veröffentlicht wurde. PHP7 ist nicht abwärtskompatibel zu alten Versionen und durch eine Neuimplementierung bis zu 30 Prozent schneller als Vorgängerversionen. PHP ist eine Serverseitige-Programmiersprache für die Erstellung von dynamischen Webseiten.\cite{PHPWiki} 
+PHP7 ist die aktuelle Version der Programmiersprache PHP welche im Dezember 2015 veröffentlicht wurde. PHP7 ist nicht abwärtskompatibel zu alten Versionen und durch eine Neuimplementierung bis zu 30 Prozent schneller als Vorgängerversionen. PHP ist eine Serverseitige-Programmiersprache für die Erstellung von dynamischen Webseiten.\cite{PHPWiki} 
 
-Neue Features in PHP7 sind zum Beispiel die Engine-Exceptions, welche es ermöglichen innerhalb von PHP PHP-Engine-Exceptions abzufangen. \cite{PHPEx}
+Neue Features in PHP7 sind zum Beispiel die Engine-Exceptions, welche es ermöglichen, innerhalb von PHP PHP-Engine-Exceptions abzufangen. \cite{PHPEx}
 
-Da TYPO3 in den aktuellen 8.x-Version auf PHP7 bassiert, muss die Programmiersprache zwingend verwendet werden um TYPO3-Extensions zu erstellen.
+Da TYPO3 in den aktuellen 8.x-Version auf PHP7 bassiert, muss die Programmiersprache zwingend verwendet werden, um TYPO3-Extensions zu erstellen.
 
 \subsection{Web Components}
 Web Components sind eine neue Technologie zur Erstellung von Web-Seiten. 
@@ -179,12 +179,12 @@ Angular ist nach dem \ac{MVVM}-Prinzip aufgebaut, welches eine Trennung zwischen
 
 Die Darstellung wird über HTML abgebildet, welches Angular durch eigene Attribute ergänzt. Die Logik wiederum wird durch Javascript auf Basis von Angular abgebildet.
 
-Angular ist in der Lage das HTML-DOM entsprechend der Befehle der Logik umzubauen, ohne dafür auf JQuery zurückgreifen zu müssen.
+Angular ist in der Lage das HTML-DOM entsprechend der Befehle der Logik umzubauen, ohne dafür auf JQuery zurückgreifen zu müssen. Somit ist JQuery nicht mehr notwendig.
 
 Aufgaben, wie das Suchen oder Sortieren einer Tabelle, sind typische Anwendungsbeispiele von Angular.
 \cite{AngularBuch}
 
-Die momentan aktuelle Version von Angular ist 1.5.6, welche auch in dieser Arbeit verwendet wird. Zur Zeit wird aber auch der Release von Angular 2.0 vorbereitet, wobei die neue Version nicht abwertskompatibel ist, da sich sehr viel an der Codebasis geändert hat.
+Die momentan aktuelle Version von Angular ist, abgesehen von 2.x.x Versionen, 1.5.6, welche auch in dieser Arbeit verwendet wird. Angular 2 ist seit September 2016 veröffentlicht, wird aber in dieser Arbeit noch nicht Verwendet, da sich Angular 2 viel mehr an Entwickler von "`Single-Page-Applikation"' richtet.
 
 Durch das neue Framework soll das ohnehin schon schnelle Framework noch einmal an Geschwindigkeit zunehmen. 
 
@@ -251,6 +251,8 @@ Das Polymer Projekt bietet eine ganze Reihe fertige Elemente, welche einfach ver
 
 Wem diese Elemente mit ihren Funktion noch nicht reichen, kann entweder die bestehenden Elemente erweitern oder neue Elemente erstellen.
 
+\newpage
+
 \subsubsection{Ein eigenes Polymer Element erstellen}\label{Ein eigenes Polymer Element erstellen}
 Um zu zeigen, wie einfach es ist, auf Basis von Polymer Elemente selbst zu erstellen, folgt in den nun kommenden Abschnitten nun ein Beispiel, welches im Kapitel \ref{Zusammenspiel der Technologien} in Typo3 eingebunden wird.
 
@@ -292,7 +294,7 @@ Um den Inhalt des Attributs im Template zu verwenden, muss es in doppelten gesch
 
 \lstinputlisting[language=html, caption=Polymer-Element Attribute benutzen, label=Element Attribute benutzen, captionpos=b]{Code/element_attributes_use.html}
 
-\subparagraph{Der Aufruf} dieses Polymer-Elements muss wie im Beispiel umgesetzt werden.
+\subparagraph{Der Aufruf} dieses Polymer-Elements muss wie im Beispiel \ref{Element Attribute benutzen} umgesetzt werden.
 
 \subsubsection{Zusammenfassung}
 Polymer bietet, wie gezeigt wurde, eine echte Alternative zum normalen Web-Seiten-Boiler-Code. Durch die Verwendung von Polymer-Elementen entsteht keine nennenswerte Verzögerung beim Parsen einer Web-Seite durch den Browser.
@@ -302,15 +304,15 @@ Ob und wie eine Intergration von Polymer in Typo3 möglich ist, wird im Kapitel \
 
 \subsection{Service Worker}\label{sw}
 Als Service Worker werden Skripte bezeichnet, welche vom Browser im Hintergrund ausgeführt werden. So können über Service Worker zum Beispiel Push-Nachrichten empfangen oder Hintergrund-Syncronisationen durchgeführt werden.
-Die entsprechenden Skripte werden beim laden einer Webseite mit ausgeliefert und vom Browser ausgeführt. 
+Die entsprechenden Skripte werden beim Laden einer Webseite mit ausgeliefert und vom Browser ausgeführt. 
 
-Service Worker sind bis heute noch nicht Vollständig standardisiert, bieten aber ein großes Potential, weshalb namenhafte Softwareunternehmen wie Google oder Facebook sie schon seit längeren im großen Stil einsetzen. 
+Service Worker sind bis heute noch nicht vollständig standardisiert, bieten aber ein großes Potential, weshalb namenhafte Softwareunternehmen wie Google oder Facebook sie schon seit längeren im großen Stil einsetzen. 
 Da Service Worker hoch sensieble Daten wie zum Beispiel Nachrichten transportieren, sind sie nur unter verwenden von HTTPs einsetzbar. \cite{SWGoogle}
 
-Service Worker werden zur Zeit schon den aktuellen Versionen von Chrome, Firefox und Opera unterstützt. Für Safari und Edge, ist die Unterstützung momentan noch in er Entwicklung. \cite{SWSupp1} \cite{SWSupp2}
+Service Worker werden zur Zeit schon den aktuellen Versionen von Chrome, Firefox und Opera unterstützt. Für Safari und Edge, ist die Unterstützung momentan noch in der Entwicklung. \cite{SWSupp1} \cite{SWSupp2}
 
 \subsubsection{Lifecycle eines Service Workers}
-Im folgenden Abschnitt wird auf den Lebenszyklus eines Service Workers beschrieben.
+Im folgenden Abschnitt wird der Lebenszyklus eines Service Workers beschrieben.
 
 \begin{figure}[!ht]
 \centering
@@ -321,56 +323,58 @@ Im folgenden Abschnitt wird auf den Lebenszyklus eines Service Workers beschrieb
 \end{figure}
 
 In Abbildung \ref{Lifecycle sw} ist der Lifecycle von Service Workern dargestellt.
-Nach dem Installieren ist der Service Worker aktiv und bereit zum arbeiten. Geht beim Installieren des Workers etwas schief, so gelangt er in einen Fehlerzustand und wird abgeschaltet. Dies kann zum Beispiel passieren, wenn der verwendete Browser keine Service Worker unterstützt.
+Nach dem Installieren ist der Service Worker aktiv und bereit zum Arbeiten. Geht beim Installieren des Workers etwas schief, so gelangt er in einen Fehlerzustand und wird abgeschaltet. Dies kann zum Beispiel passieren, wenn der verwendete Browser keine Service Worker unterstützt.
 
 Nachdem der Worker Aktiviert wurde, geht er in den Leerlauf (Idle) bis er eine Aufgabe zugeteilt bekommt. 
-Bekommt der Service Worker eine Aufgabe erledigt er diese und geht danach wieder in den Leerlauf.
+Ist dies der Fall erledigt er Service Worker diese und geht danach wieder in den Leerlauf.
 
 Wird der Browser beendet, wird auch die Ausführung des Workers beendet. Sobald der Browser nun erneut gestartet wird, werden auch alle aktivierten Service Worker gestartet.
-Nutzer müssen sich also keine gedanken um das starten oder beenden der jeweilien Service Worker machen.
+Nutzer müssen sich also keine Gedanken um das Starten oder Beenden der jeweilien Service Worker machen.
 
 \subsubsection{Entwicklung eines Service Workers}
-Zur Entwicklung eines Service Workers sollte der Google Chrome verwendet werden, da dieser die Entwicklung zur Zeit am besten unterstützt. Nur der Chrome erlaubt es momentan einen Service Worker beim einem Seiten-Reload erneut zu installieren. Dies ist wichtige, da nun nicht nach jedem Entwicklungsschritt der komplette Browser-Cache gelöscht werden muss.
-
+Zur Entwicklung eines Service Workers sollte der Google Chrome verwendet werden, da dieser die Entwicklung zur Zeit am besten unterstützt. Nur der Chrome erlaubt es momentan, einen Service Worker bei einem Seiten-Reload erneut zu installieren. Dies ist wichtig, da nun nicht nach jedem Entwicklungsschritt der komplette Browser-Cache gelöscht werden muss.
+\newpage
 Im folgenden wird erläutert wie Push-Nachrichten über einen Service Worker empfangen werden können.
 
 \lstinputlisting[language=JavaScript, caption=Service Worker registrieren, label=sw_reg, captionpos=b]{Code/sw_reg.js}
 
-Im Codebeispiel \ref{sw_reg} wird überprüft, ob der aktuelle Browser Service Worker und Push-Nachrichten unterstützt. Ist dies der Fall, wird der Service Worker welcher sich in der Datei \texttt{sw.js} zu finden ist installiert.
+Im Codebeispiel \ref{sw_reg} wird überprüft, ob der aktuelle Browser Service Worker und Push-Nachrichten unterstützt. Ist dies der Fall, wird der Service Worker, welcher sich in der Datei \texttt{sw.js} befindet installiert.
 
 \lstinputlisting[language=JavaScript, caption=Service Worker Hauptfunktion, label=sw_main, captionpos=b]{Code/sw.js}
 
-Innerhalb des Service Worker ist die Codebeispiel \ref{sw_main} gezeigte Funktion dafür verantwortlich Nachrichten zu empfangen und dem Nutzer anzuzeigen.
-Im Codebeispiel werden dem Nutzer Standardtexte angezeigt. Es ist aber auch möglich Texte und Nutzdaten in der Nachricht einzubetten und diese im Worker auszulesen.
+Innerhalb des Service Worker ist die im Codebeispiel \ref{sw_main} gezeigte Funktion dafür verantwortlich, Nachrichten zu empfangen und dem Nutzer anzuzeigen.
+Im Codebeispiel werden dem Nutzer Standardtexte angezeigt. Es ist aber auch möglich, Texte und Nutzdaten in der Nachricht einzubetten und diese im Worker auszulesen.
 
-Das gesamte Beispiel zum empfangen von Push-Nachrichten ist innerhalb der Google Developer Seiten zu finden\footnote{\url{https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/}}.
+Das gesamte Beispiel zum Empfangen von Push-Nachrichten ist innerhalb der Google Developer Seiten zu finden\footnote{\url{https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/}}.
+
+\newpage
 
 
 \section{Zusammenspiel der Technologien}\label{Zusammenspiel der Technologien}
 \subsection{Integration von Polymer in Typo3}\label{Typo und Polymer}
 Im Abschnitt \ref{Google Polymer} wurde ausführlicher auf die Verwendung und die Erstellung von Polymer-Elementen eingegangen. Nun soll untersucht werden wie sich Polymer möglichst elegant in Typo3 integrieren lässt.
 
-Der beste Weg Polymer-Elemente in Typo3 zu integrieren ist, diese in ViewHelper zu kapseln (siehe Abschnitt \ref{Fluid}). 
+Der beste Weg Polymer-Elemente in Typo3 zu integrieren ist, diese in \textit{ViewHelper} zu kapseln (siehe Abschnitt \ref{Fluid}). 
 
-Das Ziel ist es also, einen ViewHelper zu erstellen, welcher einen ViewHelper-Tag in einen Polymer-Tag umwandelt.
+Das Ziel ist es also, einen \textit{ViewHelper} zu erstellen, welcher einen \textit{ViewHelper}-Tag in einen Polymer-Tag umwandelt.
 
 \begin{wrapfigure}{r}{4cm}
 \centering
 \includegraphics[width=4cm]{Bilder/Polymer.eps}
-\caption{Polymer ViewHelper Hierarchie}
+\caption{Polymer \textit{ViewHelper} Hierarchie}
 \label{Polymer ViewHelper Hirarchie}
 \vspace{-70pt}
 \end{wrapfigure}
 
-In Abbildung \ref{Polymer ViewHelper Hirarchie} (rechts) ist die Aufrufhirarchie zu sehen, welche innerhalb des Projektes entwickelt wurde, um Polymer Elemente elegant in Typo3 einzuarbeiten.
+In Abbildung \ref{Polymer ViewHelper Hirarchie} (rechts) ist die Aufrufhirarchie zu sehen, welche innerhalb des Projektes entwickelt wurde, um Polymer Elemente elegant in Typo3 einzuarbeiten. Die gezeigte Hirarchie läuft innerhalb der Abbildung \ref{Typo3_Call} im Schitt fünf ab.
 
 Die beim Laden einer Seite aufgerufene "`Action"' eines bestimmten "`Controllers"' wird aufgerufen. Der "`Controller"' stellt alle zum Rendern des Templates benötigte Daten bereit und übergibt sie dem Template.
 
-Das Template wiederum beinhaltet einen für das Polymer Element entwickelten ViewHelper, welcher innerhalb des Templates aufgerufen wird.
+Das Template wiederum beinhaltet einen für das Polymer Element entwickelten \textit{ViewHelper}, welcher innerhalb des Templates aufgerufen wird.
 
-Das Fluid-Framework ruft beim Rendern eines Templates den entsprechenden ViewHelper auf. 
+Das Fluid-Framework ruft beim Rendern eines Templates den entsprechenden \textit{ViewHelper} auf. 
 
-Der ViewHelper wiederum gibt den Link zum entsprechenden Polymer Element und den Polymer Tag zurück.
+Der \textit{ViewHelper} wiederum gibt den Link zum entsprechenden Polymer Element und den Polymer Tag zurück.
 
 Ist das Template fertig gerendert, so wird es an den aufrufenden Client gesendet.
 
@@ -378,31 +382,31 @@ Der Client wiederum ersetzt das Polymer Element durch HTML.
 
 Am Beispiel des Button-Up Elements (siehe Abschnitt \ref{Ein eigenes Polymer Element erstellen}), wird im folgenden erklärt, wie dieser Prozess im Quellcode umgesetzt wird.
 \newpage
-\lstinputlisting[language=php, caption=Polymer ViewHelper, label=Polymer ViewHelper, captionpos=b]{Code/viewhelper.php}
+\lstinputlisting[language=php, caption=Polymer \textit{ViewHelper}, label=Polymer ViewHelper, captionpos=b]{Code/viewhelper.php}
 
-Der ViewHelper erbt von der abstrakten Klasse "`AbstractTagBasedViewHelper"'. Dieser ist in der ViewHelper ist anschließend in der Lage, einen HTML-Tag zu verändern.
+Der \textit{ViewHelper} erbt von der abstrakten Klasse "`AbstractTagBasedViewHelper"'. Dieser ist in der \textit{ViewHelper} ist anschließend in der Lage, einen HTML-Tag zu verändern.
 
-Mit dem Attribut \texttt{\$tagName} wird definiert wie der neue Tag heißen soll, welcher den ViewHelper-Tag ersetzt. Dieser Tag muss nun so heißen wie das Polymer-Element.
+Mit dem Attribut \texttt{\$tagName} wird definiert wie der neue Tag heißen soll, welcher den \textit{ViewHelper}-Tag ersetzt. Dieser Tag muss nun so heißen wie das Polymer-Element.
 
-Die Methode \texttt{render} des ViewHelpers gibt den String zurück, der den ViewHelper-Tag ersetzt.
+Die Methode \texttt{render} des \textit{ViewHelpers} gibt den String zurück, der den \textit{ViewHelper}-Tag ersetzt.
 
 Die "`return"'-Anweisung gibt immer den Link zum entsprechenden Polymer-Element zurück, und den Polymer-Tag.
 
-Der ViewHelper wird nun wie folgt aufgerufen.
+Der \textit{ViewHelper} wird nun wie folgt aufgerufen.
 
-\lstinputlisting[language=html, caption=Polymer ViewHelper aufrufen, label=Polymer ViewHelper aufrufen, captionpos=b]{Code/viewhelper_call.php}
+\lstinputlisting[language=html, caption=Polymer \textit{ViewHelper} aufrufen, label=Polymer ViewHelper aufrufen, captionpos=b]{Code/viewhelper_call.php}
 
-Beim ausliefern der Web-Seite ersetzt Typo3 nun den ViewHelper-Tag gegen die folgenden HTML-Elemente
+Beim ausliefern der Web-Seite ersetzt Typo3 nun den \textit{ViewHelper}-Tag gegen die folgenden HTML-Elemente
 
-\lstinputlisting[language=html, caption=Polymer ViewHelper Ersetzung, label=Polymer ViewHelper Ersetung, captionpos=b]{Code/viewhelper_after.php}
+\lstinputlisting[language=html, caption=Polymer \textit{ViewHelper} Ersetzung, label=Polymer ViewHelper Ersetung, captionpos=b]{Code/viewhelper_after.php}
 
 Wird die Web-Seite nun vom Browser gerendert wird, ersetzt er diesen Polymer-Tag schließlich durch das definierte Polymer-Element.
 
-Durch die Verwendung von ViewHelpern kann jedes beliebige Polymer-Element auch unter Typo3 zum Einsatz kommen. Es ist also sehr elegant möglich Boiler-Code auch in Typo3-Templates und -Partial mit der Hilfe von Polymer zu umgehen.
+Durch die Verwendung von \textit{ViewHelpern} kann jedes beliebige Polymer-Element auch unter Typo3 zum Einsatz kommen. Es ist also sehr elegant möglich Boiler-Code auch in Typo3-Templates und -Partial mit der Hilfe von Polymer zu umgehen.
 
-Durch die Kapselung der Polymer-Elemente in ViewHelpern verhalten sich diese außerdem wie standardmäßige ViewHelper mit Boiler-Code.
+Durch die Kapselung der Polymer-Elemente in \textit{ViewHelpern} verhalten sich diese außerdem wie standardmäßige \textit{ViewHelper} mit Boiler-Code.
 
-Um nun Polymer-Elemente in einem Template zu verwenden, ist kein extra Wissen notwendig, was eine Verwendung so einfach wie möglich macht. Der Programmierer eines Templates muss sich keine Gedanken über Links zu Polymer-Elementen machen und muss sich auch nicht mit Polymer auskennen. Es wird einfach der ViewHelper verwendet und alles andere passiert im Hintergrund.
+Um nun Polymer-Elemente in einem Template zu verwenden, ist kein extra Wissen notwendig, was eine Verwendung so einfach wie möglich macht. Der Programmierer eines Templates muss sich keine Gedanken über Links zu Polymer-Elementen machen und muss sich auch nicht mit Polymer auskennen. Es wird einfach der \textit{ViewHelper} verwendet und alles andere passiert im Hintergrund.
 
 \subsection{MaterialzeCSS}
 Die Integration von MaterializeCSS in Typo3 ist genau so einfach wie die Integration von Bootstrap oder jedem anderem CSS-Frameworks.
@@ -419,6 +423,8 @@ Im Listing \ref{MaterialieCSS Anbindung} ist ein Typo-Script-Beispiel zu sehen, 
 \subsection{Nutzer Registrierung und Anmeldung}
 TYPO3 liefert eine Extension zur Anmeldung und Registrierung von Fronten Nutzer bereits mit. Diese Extension genügt jedoch nicht den Anforderungen der Use Cases der PDV.
 
+\newpage
+
 \subsubsection{Use Case Registrierung}
 \begin{figure}[!ht]
 \centering
@@ -428,21 +434,23 @@ TYPO3 liefert eine Extension zur Anmeldung und Registrierung von Fronten Nutzer 
 \centering
 \end{figure}
 
+
 In Abbildung \ref{Use Case Nutzerregistrierung} ist der Use Case zur Nutzerregistrierung zu sehen. Als erstes registriert sich der Nutzer am Portal. Nach dem Absenden erhält er automatisiert eine Nachricht zur bestätigung der E-Mail-Adresse (Double-Opt-In). Nachdem der Nutzer seine E-Mail-Adresse bestätigt hat, bekommen die Supportmitarbeiter der PDV eine Nachricht, in der sie darüber informiert werden, dass ein neuer Nutzer freigegeben werden möchte. 
 
-Ein Mitarbeiter prüft die Plausibilität der Registrierung und gibt den Nutzer für eine Firma (PDV-Kunde) frei. Anschließend muss der Mitarbeiter noch die Berechtigungen für den Nutzer setzen. Ist der Nutzer von einem Mitarbeiter freigegeben wurden, bekommt er eine Nachricht das er sich nun anmelden kann.
+Ein Mitarbeiter prüft die Plausibilität der Registrierung und gibt den Nutzer für eine Firma (PDV-Kunde) frei. Anschließend muss der Mitarbeiter noch die Berechtigungen für den Nutzer setzen. Ist der Nutzer von einem Mitarbeiter freigegeben worden, bekommt er eine Nachricht, dass er sich nun anmelden kann.
 
-Leider gibt es keine bestehende Extension im \ac{TER} die diesen Use Case auch nur im Ansatz umsetzt, weshalb entschiedende wurde die Registration für Nutzer selbst zu entwickeln.
+Leider gibt es keine bestehende Extension im \ac{TER}, die diesen Use Case auch nur im Ansatz umsetzt, weshalb entschieden wurde, die Registration für Nutzer selbst zu entwickeln.
 
 \subsubsection{Umsetzung der Nutzerregistrierung}
 
 Die Nutzerregistrierung besteht aus einem HTML5-Formular, welches durch den Browser validiert wird (siehe Abschnitt \ref{HTML5}).
-Zusätzlich zur Registration im Fronten wurde ein Backend-Modul erstellt, welches es erlaubt PDV Mitarbeitern die Firmen- und Rechtezuordung umzusetzen (siehe Abbildung \ref{Use Case Nutzerregistrierung}. 4 und 5).
+Zusätzlich zur Registration im Fronten wurde ein Backend-Modul erstellt, welches es erlaubt, PDV Mitarbeitern die Firmen- und Rechtezuordung umzusetzen (siehe Abbildung \ref{Use Case Nutzerregistrierung}. 4 und 5).
 
 Die Firmenrichtlinien der PDV Systeme GmbH erlauben es leider nicht an dieser Stelle den gesamten Controller zur Nutzerregistrierung zu veröffentlichen, weshalb an dieser Stelle kein praktisches Beispiel gegeben werden kann.
 
 \subsubsection{Die Nutzer Anmeldung}
-Die TYPO3 eigene Extension \textit{FE\_Login} ist nur schwer zu konfigurieren und bietet keine Möglichkeit den Login in modale Dialoge auszulagern. Aus diesen Gründen wurde entschieden dein Login durch einen eigenen Controller innerhalb der \textit{SupportBase}-Extension zu realisieren.
+Die TYPO3 eigene Extension \textit{FE\_Login} ist nur schwer zu konfigurieren und bietet keine Möglichkeit den Login in modale Dialoge auszulagern. Aus diesen Gründen wurde entschieden, den Login durch einen eigenen Controller innerhalb der \textit{SupportBase}-Extension zu realisieren.
+
 
 \begin{figure}[!ht]
 \centering
@@ -451,26 +459,26 @@ Die TYPO3 eigene Extension \textit{FE\_Login} ist nur schwer zu konfigurieren un
 \label{Login}
 \centering
 \end{figure}
-
+\FloatBarrier
 Hat ein Nutzer das Anmeldeformular \ref{Login} Abbildung abgeschickt, gelangen die Anmeldedaten (Nutzername und Passwort) durch TYPO3 in die Controller-Action \texttt{loginAction}
 
 \lstinputlisting[language=php, caption=loginAction, label=loginAction, captionpos=b]{Code/login.php}
 
-Im Quellcodebeispiel \ref{loginAction} wird der User anhand des Namen aus der Datenbank geholt (Zeile 4). 
-Anschliesend wird geprüft, ob das angegebene Passwort mit dem in der Datenbank überein stimmt. Ist dies der Fall, so wird die Nutzer-Session in das \texttt{\$GLOBALS['TSFE']}-Array geschrieben, womit der Nutzer eingeloggt ist. Anschliesend wird der Nutzer zur ursprünglichen Seite von der aus er sich eingeloggt hat umgeleitet.
+Im Quellcodebeispiel \ref{loginAction} wird der User anhand des Namens aus der Datenbank geholt (Zeile 4). 
+Anschliesend wird geprüft, ob das angegebene Passwort mit dem in der Datenbank überein stimmt. Ist dies der Fall, so wird die Nutzer-Session in das \texttt{\$GLOBALS['TSFE']}-Array geschrieben, womit der Nutzer eingeloggt ist. Anschliesend wird der Nutzer zur ursprünglichen Seite, von der aus er sich eingeloggt hat, umgeleitet.
 
 Wie die modalen Dialoge in das Template gerendert werden, wurde im Abschnitt \ref{Rendering} erklärt.
 
 \subsection{Push-Nachrichten über Service Worker}
-Im Abschnitt \ref{sw} wurde beschrieben, wie ein Service Worker erstellt wird um Nutzern Push-Nachrichten anzuzeigen. Nachdem die Clients konfiguriert wurden um Nachrichten zu empfangen, muss natürlich nun auch ein Sender innerhalb der Servers umgesetzt werden. 
+Im Abschnitt \ref{sw} wurde beschrieben, wie ein Service Worker erstellt wird, um Nutzern Push-Nachrichten anzuzeigen. Nachdem die Clients konfiguriert wurden, um Nachrichten zu empfangen, muss natürlich nun auch ein Sender innerhalb der Servers umgesetzt werden. 
 
-Um das senden von Push-Nachrichten zu ermöglichen, gibt es eine Reihe von Librarys für unterschiedliche Programmiersprachen. So auch auch eine für PHP\footnote{\url{https://github.com/web-push-libs/web-push-php}}, welche innerhalb von TYPO3 verwendet werden kann.
+Um das Senden von Push-Nachrichten zu ermöglichen, gibt es eine Reihe von Librarys für unterschiedliche Programmiersprachen. So auch auch eine für PHP\footnote{\url{https://github.com/web-push-libs/web-push-php}}, welche innerhalb von TYPO3 verwendet werden kann.
 
-Bisher konnte das versenden und empfangen von Nachrichten noch nicht Praktisch umgesetzt werden, da Service Worker wie schon beschrieben nur mittels HTTPs arbeiten. Leider bietet die aktuelle Testumgebung der PDV Systeme keine Möglichkeit eine HTTPs verbindung umzusetzten. Aus diesem Grund, kann die Einbindung der Library "`web-push-php"' nur theoretisch ausgearbeitet werden.
+Bisher konnte das Versenden und Empfangen von Nachrichten noch nicht Praktisch umgesetzt werden, da Service Worker wie schon beschrieben nur mittels HTTPs arbeiten. Leider bietet die aktuelle Testumgebung der PDV Systeme keine Möglichkeit, eine HTTPs Verbindung umzusetzten. Aus diesem Grund kann die Einbindung der Library "`web-push-php"' nur theoretisch ausgearbeitet werden.
 
 Die Library bietet die Möglichkeit Push-Nachrichten zu erstellen und diese zu versenden. Diese Funktion soll in die \textit{Support Base} Extension integriert werden, da verschiedene Extension in der Lage sein müssen Nachrichten zu versenden.
 
-Es soll eine Wrapperklasse entstehen, welche unter angabe des "`Users"', einer Überschrift, einer Nachricht und einem Link automatisch eine Push-Nachricht erstellt.
+Es soll eine Wrapperklasse entstehen, welche unter Angabe des "`Users"', einer Überschrift, einer Nachricht und einem Link automatisch eine Push-Nachricht erstellt.
 Die Wrapperklasse soll anhand des "`Users"' selbstständig die benötigten Verbindungsdaten aus der Datenbank abrufen und die Nachricht versenden.
 
 \begin{figure}[!ht]
@@ -483,7 +491,7 @@ Die Wrapperklasse soll anhand des "`Users"' selbstständig die benötigten Verbind
 
 \FloatBarrier
 
-In Abbildung \ref{push_uml} ist einmal schematisch dargestellt, wie die Klasse PushWorker aussehen soll. Sie besitzt die öffentliche Methode \texttt{send()}, welche eine Push-Nachricht versendet. Sie wiederum ruft die Methode \texttt{getConnectionData()} auf, welche unter Verwendung der Methode \texttt{getPushinformation()} des \textit{UserRepository} die benötigten Daten für die Push-Nachricht holt. 
+In Abbildung \ref{push_uml} ist schematisch dargestellt, wie die Klasse PushWorker aussehen soll. Sie besitzt die öffentliche Methode \texttt{send()}, welche eine Push-Nachricht versendet. Sie wiederum ruft die Methode \texttt{getConnectionData()} auf, welche unter Verwendung der Methode \texttt{getPushinformation()} des \textit{UserRepository} die benötigten Daten für die Push-Nachricht holt. 
 
 Sind anschliesend alle Daten vorhanden, wird die Methode \texttt{sendPush()} innerhalb der Methode \texttt{send()} aufgerufen, welche wiederum unter Verwendung der Klasse \textit{WebPush} aus der \textit{web-push-php}-Library die entsprechende Nachricht generiert und versendet.
 
@@ -494,20 +502,20 @@ Die vorliegende Arbeit befasst sich mit der Entwicklung eines modularen Supportp
 Es wurden die vier bekannten \ac{CMS}-Systeme TYPO3 \ac{CMS}, Neos, Joomla und Drupal anhand vorgegebener Kriterien verglichen um eins für die weitere Entwicklung auszuwählen.
 Die Entscheidung viel auf TYPO3 \ac{CMS}, welches die Kriterien am besten erfüllt.
 
-TYPO3 \ac{CMS} wird Anschliesend genauer vorgestellt. Hierbei wird der Schwerpunkt auf die Extension-Entwicklung gelegt.
+TYPO3 \ac{CMS} wird anschliesend genauer vorgestellt. Hierbei wird der Schwerpunkt auf die Extension-Entwicklung gelegt.
 
-In der Arbeit wird gezeigt, wie es möglich ist modulare Extensions für TYPO3 \ac{CMS} zu erstellen. Hierbei wird darauf eingegangen wie das Datenmodell Extensionübergreifend aufgebaut werden kann. Außerdem ist das Rendering ein wichtiger Punkt. Hier wird gezeigt wie es möglich ist Template-Elemente dynamisch von anderen Extensions zu laden.
+In der Arbeit wird gezeigt, wie es möglich ist modulare Extensions für TYPO3 \ac{CMS} zu erstellen. Hierbei wird darauf eingegangen wie das Datenmodell Extensionübergreifend aufgebaut werden kann. Außerdem ist das Rendering ein wichtiger Punkt. Hier wird gezeigt, wie es möglich ist Template-Elemente dynamisch von anderen Extensions zu laden.
 
-Es wird sich damit befasst, wie neue Webtechnologien wie HTML5, CSS3, PHP7, AngularJS, Google Polymer und Service Workern in die aktuelle Version von TYPO3 integriert werden können. Hierfür werden die Technologien zuerst einzeln vorgestellt um später zu zeigen, wie sie sich mit TYPO3 verbinden lassen.
+Es wird sich damit befasst, wie neue Webtechnologien wie HTML5, CSS3, PHP7, AngularJS, Google Polymer und Service Workern in die aktuelle Version von TYPO3 integriert werden können. Hierfür werden die Technologien zuerst einzeln vorgestellt, um später zu zeigen, wie sie sich mit TYPO3 verbinden lassen.
 % 
 % Zusätzlich wurde anhand einer Neuentwicklung eines Supportportals für die PDV Systeme GmbH gezeigt, wie es möglich ist TYPO3-Extension modular aufzubauen.
 % 
 % Im Verlauf der Arbeit wurde verschiedene , 
 \section{Fazit}
-Es ist möglich TYPO3-Extensions modular aufzubauen und neue Webtechnologien zu integrieren. Hierfür wurden in der arbeit viele Beispiele gegeben. 
+Es ist möglich TYPO3-Extensions modular aufzubauen und neue Webtechnologien zu integrieren. Hierfür wurden in dieser Arbeit viele Beispiele gegeben. 
 
 Neben der Arbeit entstand ein Grundgerüst für ein modulares Supportportal, welches nun nicht nur technisch auf den neusten Stand ist, es lässt sich zudem einfach erweitern.
 
-Durch die gewonnenen Erkentnissen konnte nicht nur die Basis für ein Supportportal geschaffen werden. Es wurde Testweise auch ein weiteres Modul, das Download-Portal implementiert um die genannten Behauptungen zu belegen.
+Durch die gewonnenen Erkentnisse konnte nicht nur die Basis für ein Supportportal geschaffen werden. Es wurde Testweise auch ein weiteres Modul, das Download-Portal implementiert, um die genannten Behauptungen zu belegen.
 
 Auf der Basis dieser Arbeit wurden weitere Projektmittel durch die PDV Systeme GmbH gewährt, um das nun begonne Projekt weiterzuführen und das neue Supportportal mit den restlichen Modulen zu vervollständigen.
